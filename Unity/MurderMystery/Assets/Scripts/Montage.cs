@@ -4,46 +4,62 @@ using UnityEngine;
 
 public class Montage : MonoBehaviour
 {
-    private Renderer rend;
+    public Collider boundingCollider;
+    private List<Renderer> renderers;
     
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        BuildRendererList();
+        
         Disappear();
-        if (!IsVisibleFromMainCam(rend)){
+        if (!IsVisibleFromMainCam(boundingCollider)){
             AttractAttention();
         }
         StartCoroutine(AppearWhenOffScreen());
     }
 
-    void Update(){
-        Debug.Log("Visible: " + IsVisibleFromMainCam(rend));
-    }
-
     private IEnumerator AppearWhenOffScreen(){
-        while (IsVisibleFromMainCam(rend)){
+        while (IsVisibleFromMainCam(boundingCollider)){
             yield return null;
         }
         Appear();
+        TriggerAction();
     }
 
     private void AttractAttention(){
-        //Something to activate sound/lights will eventually go here
+        //Something to activate sound/lights attract the players attention
         Debug.Log("Look at " + name + "!");
     }
 
+    private void TriggerAction(){
+        //Something to trigger whatever animations and sound we want to happen once the player sees it
+        Debug.Log("You're looking at " + name);
+    }
+
+    private void BuildRendererList(){
+        renderers = new List<Renderer>();
+        foreach (Renderer rend in GetComponentsInChildren<Renderer>()){
+            renderers.Add(rend);
+        }
+
+    }
+    
     private void Disappear(){
-        rend.enabled = false;
+        foreach(Renderer rend in renderers){
+            rend.enabled = false;
+        }
     }
 
     private void Appear(){
-        rend.enabled = true;
+        foreach(Renderer rend in renderers){
+            rend.enabled = true;
+        }
     }
     
-    public bool IsVisibleFromMainCam(Renderer renderer)
+    public bool IsVisibleFromMainCam(Collider collider)
     {
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
-        return GeometryUtility.TestPlanesAABB(planes, renderer.bounds);
+        return GeometryUtility.TestPlanesAABB(planes, collider.bounds);
     }
 
 }
