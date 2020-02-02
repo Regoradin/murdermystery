@@ -23,6 +23,10 @@ public class Montage : MonoBehaviour
             yield return null;
         }
         Appear();
+        while (!IsVisibleFromMainCam(boundingCollider))
+        {
+            yield return null;
+        }
         TriggerAction();
     }
 
