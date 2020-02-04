@@ -6,6 +6,6 @@ public class StoryDebugger : MonoBehaviour
 
     public void ReadStory()
     {
-        Debug.Log("Next story: " + structure.GetNextStory().story);
+        
     }
 }
