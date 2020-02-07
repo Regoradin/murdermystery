@@ -4,5 +4,5 @@ using System.Collections.Generic;
 
 public class StoryStructure : MonoBehaviour
 {
-    
+    private Story currentStory;
 }

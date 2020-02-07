@@ -29,6 +29,7 @@ public class Story : MonoBehaviour
         {
             if (!isPlaying && !isFinished)
             {
+                Debug.Log("Playing Snippet");
                 anim.enabled = true;
                 anim.SetTrigger(trigger);
                 isPlaying = true;
@@ -46,6 +47,7 @@ public class Story : MonoBehaviour
     private int currentSnippetIndex;
 
     private float startTime;
+    private float interruptTime;
     private bool playing = false;
 
     public void AddSnippet(string name, Animator anim, string trigger, float relativeStartTime)
@@ -56,31 +58,37 @@ public class Story : MonoBehaviour
 
     public void AddDebugSnippet(Animator anim)
     {
-        AddSnippet(anim, "test", 0);
+        AddSnippet("Test1", anim, "test", 0);
+        AddSnippet("Test2", anim, "test", 2);
+        AddSnippet("Test3", anim, "test", 5);
     }
 
     private void Start()
     {
         snippets = new Dictionary<string, Snippet>();
+        interruptTime = 0;
     }
 
     private void Update()
     {
         if (playing)
         {
-            StartNewSnippets();            
+            StartNewSnippets();
         }
     }
 
     public void Play()
     {
         startTime = Time.time;
+        Debug.Log("Start time: " + startTime);
         playing = true;
     }
 
     public void Stop()
     {
         playing = false;
+        interruptTime = Time.time - startTime;
+        Debug.Log("Interrupt Time: " + interruptTime);
         InterruptAllSnippets();
     }
 
@@ -88,11 +96,14 @@ public class Story : MonoBehaviour
     {
         foreach (Snippet snippet in snippets.Values)
         {
-            snippet.Play();
+            if (Time.time - startTime + interruptTime >= snippet.startTime)
+            {
+                snippet.Play();
+            }
         }
     }
 
-    public void InterruptAllSnippets()
+    private void InterruptAllSnippets()
     {
         foreach (Snippet snippet in snippets.Values)
         {
