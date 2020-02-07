@@ -6,31 +6,52 @@ public class Story : MonoBehaviour
 {
     public class Snippet
     {
-        public Animator anim;
-        public string trigger;
+        private Animator anim;
+        private string trigger;
 
         public float startTime;
+        private bool isPlaying;
         public bool isFinished;
+
+        private bool interrupted;
 
         public Snippet (Animator anim, string trigger, float startTime)
         {
             this.anim = anim;
             this.trigger = trigger;
             this.startTime = startTime;
+            isPlaying = false;
             isFinished = false;
+            interrupted = false;
+        }
+
+        public void Play()
+        {
+            if (!isPlaying && !isFinished)
+            {
+                anim.enabled = true;
+                anim.SetTrigger(trigger);
+                isPlaying = true;
+            }
+        }
+        public void Interrupt()
+        {
+            anim.enabled = false;
+            interrupted = true;
+            isPlaying = false;
         }
     }
 
-    private SortedList<float, Snippet> snippets;
+    private Dictionary<string, Snippet> snippets;
     private int currentSnippetIndex;
 
     private float startTime;
     private bool playing = false;
 
-    public void AddSnippet(Animator anim, string trigger, float relativeStartTime)
+    public void AddSnippet(string name, Animator anim, string trigger, float relativeStartTime)
     {
         Snippet newSnippet = new Snippet (anim, trigger, relativeStartTime);
-        snippets.Add(relativeStartTime, newSnippet);
+        snippets.Add(name, newSnippet);
     }
 
     public void AddDebugSnippet(Animator anim)
@@ -40,7 +61,7 @@ public class Story : MonoBehaviour
 
     private void Start()
     {
-        snippets = new SortedList<float, Snippet>();
+        snippets = new Dictionary<string, Snippet>();
     }
 
     private void Update()
@@ -60,29 +81,27 @@ public class Story : MonoBehaviour
     public void Stop()
     {
         playing = false;
-        StopAllSnippets();
+        InterruptAllSnippets();
     }
 
     private void StartNewSnippets()
     {
-        while (snippets[currentSnippetIndex].startTime <= Time.time - startTime)
+        foreach (Snippet snippet in snippets.Values)
         {
-            snippets[currentSnippetIndex].anim.enabled = true;
-            snippets[currentSnippetIndex].anim.SetTrigger(snippets[currentSnippetIndex].trigger);
-            currentSnippetIndex++;
-            if (currentSnippetIndex == snippets.Count)
-            {
-                currentSnippetIndex = 0;
-            }
-        }        
+            snippet.Play();
+        }
     }
 
-    private void StopAllSnippets()
+    public void InterruptAllSnippets()
     {
         foreach (Snippet snippet in snippets.Values)
         {
-            //TODO: make this a less shoddy solution
-            snippet.anim.enabled = false;
+            snippet.Interrupt();
         }
+    }
+
+    public void FinishSnippet(string name)
+    {
+        snippets[name].isFinished = true;
     }
 }
