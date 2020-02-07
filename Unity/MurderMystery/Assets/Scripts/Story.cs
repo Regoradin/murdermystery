@@ -44,11 +44,20 @@ public class Story : MonoBehaviour
     }
 
     private Dictionary<string, Snippet> snippets;
-    private int currentSnippetIndex;
 
     private float startTime;
     private float interruptTime;
-    private bool playing = false;
+    private bool isPlaying = false;
+    private bool isFinished = false;
+
+    public enum InteractionType
+    {
+        Interrupt,
+        Continue
+    }
+    
+    public Dictionary<string, Story> interactions;
+    public Dictionary<string, InteractionType> interactionTypes;
 
     public void AddSnippet(string name, Animator anim, string trigger, float relativeStartTime)
     {
@@ -67,13 +76,17 @@ public class Story : MonoBehaviour
     {
         snippets = new Dictionary<string, Snippet>();
         interruptTime = 0;
+
+        interactions = new Dictionary<string, Story>();
+        interactionTypes = new Dictionary<string, InteractionType>();
     }
 
     private void Update()
     {
-        if (playing)
+        if (isPlaying)
         {
             StartNewSnippets();
+            CheckIfFinished();
         }
     }
 
@@ -81,12 +94,12 @@ public class Story : MonoBehaviour
     {
         startTime = Time.time;
         Debug.Log("Start time: " + startTime);
-        playing = true;
+        isPlaying = true;
     }
 
     public void Stop()
     {
-        playing = false;
+        isPlaying = false;
         interruptTime = Time.time - startTime;
         Debug.Log("Interrupt Time: " + interruptTime);
         InterruptAllSnippets();
@@ -114,5 +127,17 @@ public class Story : MonoBehaviour
     public void FinishSnippet(string name)
     {
         snippets[name].isFinished = true;
+    }
+
+    private void CheckIfFinished()
+    {
+        foreach (snippet in snippets.Values)
+        {
+            if (!snippet.isFinished)
+            {
+                return
+            }
+        }
+        isFinished = true;
     }
 }
