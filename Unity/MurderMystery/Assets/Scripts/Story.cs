@@ -31,6 +31,7 @@ public class Story : MonoBehaviour
             {
                 Debug.Log("Playing Snippet");
                 anim.enabled = true;
+                anim.Play("Base", 0, 0);
                 anim.SetTrigger(trigger);
                 isPlaying = true;
             }
@@ -48,7 +49,7 @@ public class Story : MonoBehaviour
     private float startTime;
     private float interruptTime;
     private bool isPlaying = false;
-    private bool isFinished = false;
+    public bool isFinished = false;
 
     public enum InteractionType
     {
@@ -131,11 +132,11 @@ public class Story : MonoBehaviour
 
     private void CheckIfFinished()
     {
-        foreach (snippet in snippets.Values)
+        foreach (Snippet snippet in snippets.Values)
         {
             if (!snippet.isFinished)
             {
-                return
+                return;
             }
         }
         isFinished = true;
