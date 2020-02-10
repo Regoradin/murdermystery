@@ -17,7 +17,11 @@ ScriptedImporter:
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://dmls_silver_mirror_polished\" label=\"\" >\n
       \ <presetinput identifier=\"$outputsize\" uid=\"1584213574\" type=\"8\" value=\"9,9\"
-      />\n </sbspreset>\n"
+      />\n  <presetinput identifier=\"color\" uid=\"690364194\" type=\"2\" value=\"0.858491,0.858491,0.858491\"
+      />\n  <presetinput identifier=\"polish\" uid=\"688412371\" type=\"0\" value=\"1\"
+      />\n  <presetinput identifier=\"channel_roughness\" uid=\"571150077\" type=\"4\"
+      value=\"0\" />\n  <presetinput identifier=\"hue_shift\" uid=\"1529976719\" type=\"0\"
+      value=\"1\" />\n </sbspreset>\n"
     shaderName: Standard
     materialProperties:
       shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}

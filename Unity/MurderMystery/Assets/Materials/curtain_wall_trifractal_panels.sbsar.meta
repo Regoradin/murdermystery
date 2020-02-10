@@ -17,6 +17,8 @@ ScriptedImporter:
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://curtain_wall_trifractal_panels\" label=\"\"
       >\n  <presetinput identifier=\"$outputsize\" uid=\"904315479\" type=\"8\" value=\"9,9\"
+      />\n  <presetinput identifier=\"color\" uid=\"1602616951\" type=\"2\" value=\"0.660377,0.657262,0.657262\"
+      />\n  <presetinput identifier=\"metallic\" uid=\"1602371716\" type=\"0\" value=\"1\"
       />\n </sbspreset>\n"
     shaderName: Standard
     materialProperties:
