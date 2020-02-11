@@ -29,7 +29,6 @@ public class Story : MonoBehaviour
         {
             if (!isPlaying && !isFinished)
             {
-                Debug.Log("Playing Snippet");
                 anim.enabled = true;
                 anim.Play("Base", 0, 0);
                 anim.SetTrigger(trigger);
@@ -66,14 +65,7 @@ public class Story : MonoBehaviour
         snippets.Add(name, newSnippet);
     }
 
-    public void AddDebugSnippet(Animator anim)
-    {
-        AddSnippet("Test1", anim, "test", 0);
-        AddSnippet("Test2", anim, "test", 2);
-        AddSnippet("Test3", anim, "test", 5);
-    }
-
-    private void Start()
+    private void Awake()
     {
         snippets = new Dictionary<string, Snippet>();
         interruptTime = 0;
@@ -87,22 +79,26 @@ public class Story : MonoBehaviour
         if (isPlaying)
         {
             StartNewSnippets();
-            CheckIfFinished();
+
+            //Turning this off only applies if snippet-finishing is non functional
+            //if this ever gets changed, the currentStory.isFinished line in Interact() on
+            //StoryStructure will need to be removed
+            //CheckIfFinished();
         }
     }
 
     public void Play()
     {
         startTime = Time.time;
-        Debug.Log("Start time: " + startTime);
         isPlaying = true;
+        //this will also need to be removed if snippet-finishing is re-enabled
+        isFinished = false;
     }
 
     public void Stop()
     {
         isPlaying = false;
         interruptTime = Time.time - startTime;
-        Debug.Log("Interrupt Time: " + interruptTime);
         InterruptAllSnippets();
     }
 
