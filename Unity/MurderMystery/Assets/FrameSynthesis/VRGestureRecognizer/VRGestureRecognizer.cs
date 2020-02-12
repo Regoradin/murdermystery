@@ -28,7 +28,7 @@ namespace FrameSynthesis.VR
         public static VRGestureRecognizer Current { get; private set; }
 
         [SerializeField]
-        float recognitionInterval = 0.5f;
+        float recognitionInterval = 100f;
 
         public event Action NodHandler;
         public event Action HeadshakeHandler;
