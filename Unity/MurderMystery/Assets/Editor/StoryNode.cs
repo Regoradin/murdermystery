@@ -7,19 +7,28 @@ public class StoryNode
     public Rect rect;
     public string title;
     public bool isDragged;
+    public bool isSelected;
 
     public ConnectionPoint inPoint;
     public ConnectionPoint outPoint;
     
     public GUIStyle style;
+    public GUIStyle defaultNodeStyle;
+    public GUIStyle selectedNodeStyle;
 
-    public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint)
+    public Action<StoryNode> OnRemoveNode;
+
+    public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<StoryNode> OnClickRemoveNode)
     {
         rect = new Rect(position.x, position.y, width, height);
-        this.style = style;
+        this.defaultNodeStyle = style;
+        this.selectedNodeStyle = selectedStyle;
+        this.style = defaultNodeStyle;
 
         inPoint = new ConnectionPoint(this, ConnectionPointType.In, inPointStyle, OnClickInPoint);
-        outPoint = new ConnectionPoint(this, ConnectionPointType.Out, inPointStyle, OnClickInPoint);
+        outPoint = new ConnectionPoint(this, ConnectionPointType.Out, inPointStyle, OnClickOutPoint);
+
+        this.OnRemoveNode = OnClickRemoveNode;
     }
 
     public void Drag(Vector2 delta)
@@ -44,13 +53,21 @@ public class StoryNode
                     if (rect.Contains(e.mousePosition))
                     {
                         isDragged = true;
+                        isSelected = true;
+                        style = selectedNodeStyle;
                     }
                     GUI.changed = true;
                 }
-                break;
+                if (e.button == 1 && isSelected && rect.Contains(e.mousePosition))
+                {
+                    ProcessContextMenu();
+                    e.Use();
+                }
+                break;                
                 
             case EventType.MouseUp:
                 isDragged = false;
+                style = defaultNodeStyle;
                 break;
 
             case EventType.MouseDrag:
@@ -63,5 +80,20 @@ public class StoryNode
                 break;
         }
         return false;
+    }
+
+    private void ProcessContextMenu()
+    {
+        GenericMenu genericMenu = new GenericMenu();
+        genericMenu.AddItem(new GUIContent("Remove node"), false, OnClickRemoveNode);
+        genericMenu.ShowAsContext();
+    }
+
+    private void OnClickRemoveNode()
+    {
+        if (OnRemoveNode != null)
+        {
+            OnRemoveNode(this);
+        }
     }
 }
