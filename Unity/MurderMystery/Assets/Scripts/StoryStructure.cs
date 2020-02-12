@@ -97,35 +97,4 @@ public class StoryStructure : Singleton<StoryStructure>
         }
         return null;
     }
-
-    public void DebugSetup(Animator anim)
-    {
-        Story sone = gameObject.AddComponent<Story>();
-        Story stwo = gameObject.AddComponent<Story>();
-        Story sthree = gameObject.AddComponent<Story>();
-        
-        sone.AddSnippet("123", anim, "123", 1);
-        stwo.AddSnippet("1Down", anim, "1Down", 0);
-        sthree.AddSnippet("1Back", anim, "1Back", 0);
-
-        sone.interactions.Add("down", stwo);
-        sone.interactions.Add("back", sthree);
-
-        sone.interactionTypes.Add("down", Story.InteractionType.Continue);
-        sone.interactionTypes.Add("back", Story.InteractionType.Interrupt);
-
-        List<Story> l1 = new List<Story>();
-        List<Story> l2 = new List<Story>();
-
-        l1.Add(sone);
-        l2.Add(stwo);
-        l2.Add(sthree);
-
-        sequences.Add(l1);
-        sequences.Add(l2);
-        
-        currentStory = sone;
-        currentStory.Play();
-    }
-
 }
