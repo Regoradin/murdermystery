@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1062,7 +1062,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1940678035}
-  - component: {fileID: 1940678034}
   - component: {fileID: 1940678033}
   - component: {fileID: 1940678032}
   - component: {fileID: 1940678031}
@@ -1190,23 +1189,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1940678030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddceca155a8ec394187ad9218fa477a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 68bcc59cf9f19494a97102458586cc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1940678034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940678030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5f420d93a3a29e4586662ef429ce895, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptEngine: {fileID: 1940678033}
-  gestureSound: {fileID: 1940678031}
 --- !u!4 &1940678035
 Transform:
   m_ObjectHideFlags: 0
