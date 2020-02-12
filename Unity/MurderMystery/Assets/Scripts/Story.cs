@@ -4,16 +4,13 @@ using System.Collections.Generic;
 
 public class Story : MonoBehaviour
 {
-    public class Snippet
+    private class Snippet
     {
         private Animator anim;
         private string trigger;
 
         public float startTime;
         private bool isPlaying;
-        public bool isFinished;
-
-        private bool interrupted;
 
         public Snippet (Animator anim, string trigger, float startTime)
         {
@@ -22,12 +19,11 @@ public class Story : MonoBehaviour
             this.startTime = startTime;
             isPlaying = false;
             isFinished = false;
-            interrupted = false;
         }
 
         public void Play()
         {
-            if (!isPlaying && !isFinished)
+            if (!isPlaying)
             {
                 anim.enabled = true;
                 anim.Play("Base", 0, 0);
@@ -35,10 +31,10 @@ public class Story : MonoBehaviour
                 isPlaying = true;
             }
         }
-        public void Interrupt()
+
+        public void Stop()
         {
             anim.enabled = false;
-            interrupted = true;
             isPlaying = false;
         }
     }
@@ -79,11 +75,6 @@ public class Story : MonoBehaviour
         if (isPlaying)
         {
             StartNewSnippets();
-
-            //Turning this off only applies if snippet-finishing is non functional
-            //if this ever gets changed, the currentStory.isFinished line in Interact() on
-            //StoryStructure will need to be removed
-            //CheckIfFinished();
         }
     }
 
@@ -91,7 +82,6 @@ public class Story : MonoBehaviour
     {
         startTime = Time.time;
         isPlaying = true;
-        //this will also need to be removed if snippet-finishing is re-enabled
         isFinished = false;
     }
 
@@ -99,14 +89,13 @@ public class Story : MonoBehaviour
     {
         isPlaying = false;
         interruptTime = Time.time - startTime;
-        InterruptAllSnippets();
+        StopAllSnippets();
     }
 
     private void StartNewSnippets()
     {
         foreach (Snippet snippet in snippets.Values)
         {
-            //if (Time.time - startTime + interruptTime >= snippet.startTime)
             if (Time.time - startTime  >= snippet.startTime)
             {
                 snippet.Play();
@@ -114,28 +103,11 @@ public class Story : MonoBehaviour
         }
     }
 
-    private void InterruptAllSnippets()
+    private void StopAllSnippets()
     {
         foreach (Snippet snippet in snippets.Values)
         {
-            snippet.Interrupt();
+            snippet.Stop();
         }
-    }
-
-    public void FinishSnippet(string name)
-    {
-        snippets[name].isFinished = true;
-    }
-
-    private void CheckIfFinished()
-    {
-        foreach (Snippet snippet in snippets.Values)
-        {
-            if (!snippet.isFinished)
-            {
-                return;
-            }
-        }
-        isFinished = true;
     }
 }

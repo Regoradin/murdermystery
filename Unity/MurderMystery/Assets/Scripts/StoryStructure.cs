@@ -62,7 +62,7 @@ public class StoryStructure : Singleton<StoryStructure>
         currentStory.Play();
     }
     
-    private void FinishCurrentStory()
+    public void FinishCurrentStory()
     {
         currentStory.isFinished = true;
         currentStory.Stop();
