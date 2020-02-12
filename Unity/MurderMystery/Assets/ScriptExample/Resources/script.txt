@@ -1,0 +1,19 @@
+delay 500
+
+*start
+Do you want to try nodding?
+gesture *yes, *no
+
+*yes
+delay 300
+Cool you said yes.
+delay 1500
+goto *start
+
+*no
+delay 300
+Oh no so sad.
+delay 1500
+goto *start
+
+
