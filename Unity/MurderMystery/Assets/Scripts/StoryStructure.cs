@@ -1,18 +1,23 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using static Story;
 
 public class StoryStructure : Singleton<StoryStructure>
 {
     private Story currentStory;
-    private Stack<Story> storyStack;
 
+    private Stack<Story> storyStack;
     private List<List<Story>> sequences;
+
+    private Dictionary<string, Interaction> interactions;
 
     private void Awake()
     {
         storyStack = new Stack<Story>();
         sequences = new List<List<Story>>();
+
+        interactions = new Dictionary<string, Interaction>();
     }
 
     private void Update()
@@ -31,16 +36,17 @@ public class StoryStructure : Singleton<StoryStructure>
         }
     }
     
-    public void Interact(string interaction)
+    public void Interact(string interactionName)
     {
-        if (interaction == "Finish")
+        if (interactionName == "Finish")
         {
             FinishCurrentStory();
         }
-        else if (currentStory.interactions.ContainsKey(interaction))
+        else if (interactions.ContainsKey(interactionName))
         {
-            Story nextStory = currentStory.interactions[interaction];
-            if (currentStory.interactionTypes[interaction] == Story.InteractionType.Interrupt)
+            Interaction interaction = interactions[interactionName];
+            Story nextStory = interaction.nextStory;
+            if (interaction.type == Interaction.InteractionType.Interrupt)
             {
                 //Interuptions shouldn't mark the current story as finished,
                 //as you want to be able to return to it
@@ -55,10 +61,18 @@ public class StoryStructure : Singleton<StoryStructure>
         }
     }
 
+    private void AddInteraction(Interaction interaction)
+    {
+        interactions.Add(interaction.name, interaction);
+    }
+
     private void StartStory(Story story)
     {
         currentStory = story;
-        //handle grabbing interaction dicts
+        foreach(Interaction interaction in currentStory.interactions)
+        {
+            AddInteraction(interaction);
+        }
         currentStory.Play();
     }
     

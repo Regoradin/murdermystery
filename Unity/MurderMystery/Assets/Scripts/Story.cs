@@ -18,7 +18,6 @@ public class Story : MonoBehaviour
             this.trigger = trigger;
             this.startTime = startTime;
             isPlaying = false;
-            isFinished = false;
         }
 
         public void Play()
@@ -38,36 +37,48 @@ public class Story : MonoBehaviour
             isPlaying = false;
         }
     }
+    
+    public class Interaction
+    {
+        public enum InteractionType
+        {
+            Interrupt,
+            Continue
+        }
 
-    private Dictionary<string, Snippet> snippets;
+        public string name;
+        public Story nextStory;
+        public InteractionType type;
+
+        public Interaction(string name, Story nextStory, InteractionType type)
+        {
+            this.name = name;
+            this.nextStory = nextStory;
+            this.type = type;
+        }
+    }
+    
+    private HashSet<Snippet> snippets;
 
     private float startTime;
     private float interruptTime;
     private bool isPlaying = false;
     public bool isFinished = false;
 
-    public enum InteractionType
-    {
-        Interrupt,
-        Continue
-    }
-    
-    public Dictionary<string, Story> interactions;
-    public Dictionary<string, InteractionType> interactionTypes;
+    public HashSet<Interaction> interactions;
 
-    public void AddSnippet(string name, Animator anim, string trigger, float relativeStartTime)
+    public void AddSnippet(Animator anim, string trigger, float relativeStartTime)
     {
         Snippet newSnippet = new Snippet (anim, trigger, relativeStartTime);
-        snippets.Add(name, newSnippet);
+        snippets.Add(newSnippet);
     }
 
     private void Awake()
     {
-        snippets = new Dictionary<string, Snippet>();
+        snippets = new HashSet<Snippet>();
         interruptTime = 0;
 
-        interactions = new Dictionary<string, Story>();
-        interactionTypes = new Dictionary<string, InteractionType>();
+        interactions = new HashSet<Interaction>();
     }
 
     private void Update()
@@ -94,7 +105,7 @@ public class Story : MonoBehaviour
 
     private void StartNewSnippets()
     {
-        foreach (Snippet snippet in snippets.Values)
+        foreach (Snippet snippet in snippets)
         {
             if (Time.time - startTime  >= snippet.startTime)
             {
@@ -105,7 +116,7 @@ public class Story : MonoBehaviour
 
     private void StopAllSnippets()
     {
-        foreach (Snippet snippet in snippets.Values)
+        foreach (Snippet snippet in snippets)
         {
             snippet.Stop();
         }
