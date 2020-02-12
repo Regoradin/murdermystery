@@ -106,7 +106,8 @@ public class Story : MonoBehaviour
     {
         foreach (Snippet snippet in snippets.Values)
         {
-            if (Time.time - startTime + interruptTime >= snippet.startTime)
+            //if (Time.time - startTime + interruptTime >= snippet.startTime)
+            if (Time.time - startTime  >= snippet.startTime)
             {
                 snippet.Play();
             }
