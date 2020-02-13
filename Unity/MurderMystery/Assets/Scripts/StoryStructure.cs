@@ -6,6 +6,7 @@ using static Story;
 public class StoryStructure : Singleton<StoryStructure>
 {
     private Story currentStory;
+    public Story startingStory;
 
     private Stack<Story> storyStack;
     private List<List<Story>> sequences;
@@ -18,6 +19,12 @@ public class StoryStructure : Singleton<StoryStructure>
         sequences = new List<List<Story>>();
 
         interactions = new Dictionary<string, Interaction>();
+
+    }
+
+    private void Start()
+    {
+        StartStory(startingStory);
     }
 
     private void Update()
@@ -63,7 +70,14 @@ public class StoryStructure : Singleton<StoryStructure>
 
     private void AddInteraction(Interaction interaction)
     {
-        interactions.Add(interaction.name, interaction);
+        if (!interactions.ContainsKey(interaction.name))
+        {
+            interactions.Add(interaction.name, interaction);
+        }
+        else
+        {
+            interactions[interaction.name] = interaction;
+        }
     }
 
     private void StartStory(Story story)
