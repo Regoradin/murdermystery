@@ -312,8 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: I was added manually
-  nodePosition: {x: 245, y: 76}
+  name: I was added manuallys
+  nodePosition: {x: 467, y: 156}
   isFinished: 0
 --- !u!114 &476522304
 MonoBehaviour:
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: am I saved either?
-  nodePosition: {x: 65, y: 306}
+  nodePosition: {x: 148, y: 368}
   isFinished: 0
 --- !u!114 &476522305
 MonoBehaviour:
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: am I saved?
-  nodePosition: {x: 531, y: 178}
+  nodePosition: {x: 52, y: 76}
   isFinished: 0
 --- !u!1 &682400172
 GameObject:

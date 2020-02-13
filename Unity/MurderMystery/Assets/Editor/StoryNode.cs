@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
 using System;
 
 public class StoryNode
@@ -47,6 +48,8 @@ public class StoryNode
     {
         rect.position += delta;
         story.nodePosition = rect.position;
+
+        EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
     }
 
     public void Draw()
@@ -72,7 +75,12 @@ public class StoryNode
 
         GUILayout.EndArea();
 
-        EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
+        if (GUI.changed)
+        {
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());            
+        }
+
+
     }
 
     public bool ProcessEvents(Event e)
