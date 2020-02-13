@@ -69,7 +69,7 @@ public class Story : MonoBehaviour
     
     private float startTime;
     private float interruptTime;
-    private bool isPlaying = false;
+    public bool isPlaying = false;
     public bool isFinished = false;
 
     public List<Interaction> interactions;
@@ -92,10 +92,10 @@ public class Story : MonoBehaviour
 
     private void Awake()
     {
-        snippets = new List<Snippet>();
+        //snippets = new List<Snippet>();
         interruptTime = 0;
 
-        interactions = new List<Interaction>();
+        //interactions = new List<Interaction>();
     }
 
     private void Update()
