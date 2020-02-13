@@ -12,9 +12,6 @@ public class StoryStructure : Singleton<StoryStructure>
 
     private Dictionary<string, Interaction> interactions;
 
-    [Header("DON'T TOUCH ANY OF THE STORY SCRIPTS")]
-    public string didYouTouchThem = "no";
-
     private void Awake()
     {
         storyStack = new Stack<Story>();

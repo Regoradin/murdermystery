@@ -1,9 +1,11 @@
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Story : MonoBehaviour
 {
+    [Serializable]
     public class Snippet
     {
         public Animator anim;
@@ -37,7 +39,8 @@ public class Story : MonoBehaviour
             isPlaying = false;
         }
     }
-    
+
+    [Serializable]
     public class Interaction
     {
         public enum InteractionType
@@ -58,7 +61,7 @@ public class Story : MonoBehaviour
         }
     }
 
-    public HashSet<Snippet> snippets;
+    public List<Snippet> snippets;
 
     //Data to work properly with story editor window
     public string name;
@@ -69,7 +72,7 @@ public class Story : MonoBehaviour
     private bool isPlaying = false;
     public bool isFinished = false;
 
-    public HashSet<Interaction> interactions;
+    public List<Interaction> interactions;
 
     public void AddSnippet(Animator anim, string trigger, float relativeStartTime)
     {
@@ -77,18 +80,22 @@ public class Story : MonoBehaviour
         snippets.Add(newSnippet);
     }
 
-    public void UpdateSnippets(HashSet<Snippet> newSnippets)
+    public void UpdateSnippets(List<Snippet> newSnippets)
     {
         snippets = newSnippets;
-        Debug.Log(snippets.Count);
+    }
+
+    public void UpdateInteractions(List<Interaction> newInteractions)
+    {
+        interactions = newInteractions;
     }
 
     private void Awake()
     {
-        snippets = new HashSet<Snippet>();
+        snippets = new List<Snippet>();
         interruptTime = 0;
 
-        interactions = new HashSet<Interaction>();
+        interactions = new List<Interaction>();
     }
 
     private void Update()

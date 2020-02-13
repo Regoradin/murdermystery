@@ -14,13 +14,16 @@ public class StoryNode
     public bool isSelected;
 
     public ConnectionPoint inPoint;
-    public ConnectionPoint outPoint;
+    public List<ConnectionPoint> outPoints;
     
     public GUIStyle style;
     public GUIStyle defaultNodeStyle;
     public GUIStyle selectedNodeStyle;
 
     public Action<StoryNode> OnRemoveNode;
+
+    private GUIStyle outPointStyle;
+    private Action<ConnectionPoint> OnClickOutPoint;
 
     private Story story;
 
@@ -31,8 +34,11 @@ public class StoryNode
         this.selectedNodeStyle = selectedStyle;
         this.style = defaultNodeStyle;
 
+        this.outPointStyle = outPointStyle;
+        this.OnClickOutPoint = OnClickOutPoint;
+
         inPoint = new ConnectionPoint(this, ConnectionPointType.In, inPointStyle, OnClickInPoint);
-        outPoint = new ConnectionPoint(this, ConnectionPointType.Out, inPointStyle, OnClickOutPoint);
+        outPoints = new List<ConnectionPoint>();
 
         this.OnRemoveNode = OnClickRemoveNode;
 
@@ -56,10 +62,9 @@ public class StoryNode
 
     public void Draw()
     {
-        inPoint.Draw();
-        outPoint.Draw();
         GUI.Box(rect, title, style);
-        
+        inPoint.Draw();
+
         DrawContents();
         
         if (GUI.changed)
@@ -135,7 +140,50 @@ public class StoryNode
         story.name = GUILayout.TextField(story.name);
         GUILayout.EndHorizontal();
 
-        HashSet<Snippet> newSnippets = new HashSet<Snippet>();
+        List<Interaction> newInteractions = new List<Interaction>();
+
+        if (story.interactions != null)
+        {
+            foreach(Interaction interaction in story.interactions)
+            {
+                string name = interaction.name;
+                Story nextStory = interaction.nextStory;
+                Interaction.InteractionType type = interaction.type;
+                
+                Interaction newInteraction = DrawInteractionField(name, nextStory, type);
+
+                if (newInteraction != null)
+                {
+                    newInteractions.Add(newInteraction);
+                }
+            }
+        }
+        
+        Interaction newBlankInteraction = DrawInteractionField(null, null, Interaction.InteractionType.Continue);
+        if (newBlankInteraction != null)
+        {
+            newInteractions.Add(newBlankInteraction);
+        }
+
+        DrawAllSnippetFields();
+
+        GUILayout.EndArea();
+
+        for(int i =0; i < newInteractions.Count; i++)
+        {
+            ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1));
+            point.Draw();
+
+            outPoints.Add(point);
+        }
+
+        story.UpdateInteractions(newInteractions);
+
+    }
+
+    private void DrawAllSnippetFields()
+    {
+        List<Snippet> newSnippets = new List<Snippet>();
 
         if (story.snippets != null)
         {
@@ -145,7 +193,7 @@ public class StoryNode
                 string trigger = snippet.trigger;
                 float time = snippet.startTime;
 
-                Snippet newSnippet = DrawSnippetFields(anim, trigger, time);
+                Snippet newSnippet = DrawSnippetField(anim, trigger, time);
                 if (newSnippet != null)
                 {
                     newSnippets.Add(newSnippet);
@@ -154,28 +202,28 @@ public class StoryNode
 
         }
 
-        Snippet newBlankSnippet = DrawSnippetFields(null, null, 0);
+        Snippet newBlankSnippet = DrawSnippetField(null, null, 0);
         if (newBlankSnippet != null)
         {
             newSnippets.Add(newBlankSnippet);
         }
-
         
         story.UpdateSnippets(newSnippets);
-
-        GUILayout.EndArea();
-
     }
 
-    private Snippet DrawSnippetFields(Animator anim, string trigger, float time)
+    private Snippet DrawSnippetField(Animator anim, string trigger, float time)
     {
-        GUILayout.Label("Animation: ");
+        GUILayout.BeginHorizontal();
+
+        GUILayout.Label("Animation:");
         anim = (Animator)EditorGUILayout.ObjectField(anim, typeof(Animator), true);
+
+        GUILayout.EndHorizontal();
             
         GUILayout.BeginHorizontal();
 
         GUILayout.Label("Trigger:");
-        trigger = GUILayout.TextField(trigger);
+        trigger = EditorGUILayout.TextField(trigger);
         GUILayout.Label("Time:");
         time = EditorGUILayout.FloatField(time);
 
@@ -190,5 +238,31 @@ public class StoryNode
             return null;
         }
 
+    }
+
+    private Interaction DrawInteractionField(string name, Story nextStory, Interaction.InteractionType type)
+    {
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Interaction:");
+        name = EditorGUILayout.TextField(name);
+        GUILayout.EndHorizontal();
+        
+        GUILayout.BeginHorizontal();
+
+        bool isInterrupt = (type == Interaction.InteractionType.Interrupt);
+        GUILayout.Label("Interrupt?");
+        isInterrupt = EditorGUILayout.Toggle(isInterrupt);
+        
+        GUILayout.EndHorizontal();
+
+        if (name != null && name != "")
+        {
+            return new Interaction(name, null, isInterrupt ? Interaction.InteractionType.Interrupt : Interaction.InteractionType.Continue);
+        }
+        else
+        {
+            return null;
+        }
     }
 }

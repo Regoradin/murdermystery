@@ -210,7 +210,7 @@ public class StoryEditor : EditorWindow
         {
             nodes = new List<StoryNode>();
         }
-        nodes.Add(new StoryNode(mousePosition, 200, 200, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, story));
+        nodes.Add(new StoryNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, story));
     }
 
     private void OnClickInPoint(ConnectionPoint inPoint)
@@ -262,7 +262,7 @@ public class StoryEditor : EditorWindow
 
             for (int i = 0; i < connections.Count; i++)
             {
-                if (connections[i].inPoint == node.inPoint || connections[i].outPoint == node.outPoint)
+                if (connections[i].inPoint == node.inPoint || node.outPoints.Contains(connections[i].outPoint))
                 {
                     connectionsToRemove.Add(connections[i]);
                 }
