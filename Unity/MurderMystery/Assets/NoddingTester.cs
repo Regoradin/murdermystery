@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FrameSynthesis.VR;
+using FrameSynthesis.VR; // https://github.com/korinVR/VRGestureRecognizer by korinVR
 
 public class NoddingTester : MonoBehaviour
 {
