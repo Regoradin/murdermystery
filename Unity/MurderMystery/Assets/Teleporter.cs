@@ -24,10 +24,9 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(delayCounter);
-        RightGrabButton = OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) > 0 || Input.GetKeyDown(KeyCode.D);
-        triggerPressed = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) > 0 || Input.GetKeyDown(KeyCode.A);
-        if (RightGrabButton && currentIndex < positions.Length)
+        RightGrabButton = OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.D);
+        triggerPressed = OVRInput.GetDown(OVRInput.RawButton.B) || Input.GetKeyDown(KeyCode.A);
+        if (RightGrabButton && currentIndex < positions.Length - 1)
         {
             lights[currentIndex].SetActive(false);
             currentIndex++;
