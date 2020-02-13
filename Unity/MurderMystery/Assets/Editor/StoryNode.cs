@@ -3,6 +3,8 @@ using UnityEditor;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 using System;
+using System.Collections.Generic;
+using static Story;
 
 public class StoryNode
 {
@@ -58,23 +60,8 @@ public class StoryNode
         outPoint.Draw();
         GUI.Box(rect, title, style);
         
-        GUILayout.BeginArea(new Rect(rect.x + 10, rect.y + 10, rect.width - 20, rect.height - 20));
-
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Name: ");
-        story.name = GUILayout.TextField(story.name);
-        GUILayout.EndHorizontal();
-
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Animation: ");
-        GameObject obj = null;
-        obj = (GameObject)EditorGUILayout.ObjectField(obj, typeof(GameObject), true);
-        GUILayout.Label("Trigger:");
-        GUILayout.TextField("triggerrrr");
-        GUILayout.EndHorizontal();
-
-        GUILayout.EndArea();
-
+        DrawContents();
+        
         if (GUI.changed)
         {
             EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());            
@@ -137,5 +124,71 @@ public class StoryNode
         {
             OnRemoveNode(this);
         }
+    }
+
+    private void DrawContents()
+    {
+        GUILayout.BeginArea(new Rect(rect.x + 10, rect.y + 10, rect.width - 20, rect.height - 20));
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Name: ");
+        story.name = GUILayout.TextField(story.name);
+        GUILayout.EndHorizontal();
+
+        HashSet<Snippet> newSnippets = new HashSet<Snippet>();
+
+        if (story.snippets != null)
+        {
+            foreach(Snippet snippet in story.snippets)
+            {
+                Animator anim = snippet.anim;
+                string trigger = snippet.trigger;
+                float time = snippet.startTime;
+
+                Snippet newSnippet = DrawSnippetFields(anim, trigger, time);
+                if (newSnippet != null)
+                {
+                    newSnippets.Add(newSnippet);
+                }
+            }
+
+        }
+
+        Snippet newBlankSnippet = DrawSnippetFields(null, null, 0);
+        if (newBlankSnippet != null)
+        {
+            newSnippets.Add(newBlankSnippet);
+        }
+
+        
+        story.UpdateSnippets(newSnippets);
+
+        GUILayout.EndArea();
+
+    }
+
+    private Snippet DrawSnippetFields(Animator anim, string trigger, float time)
+    {
+        GUILayout.Label("Animation: ");
+        anim = (Animator)EditorGUILayout.ObjectField(anim, typeof(Animator), true);
+            
+        GUILayout.BeginHorizontal();
+
+        GUILayout.Label("Trigger:");
+        trigger = GUILayout.TextField(trigger);
+        GUILayout.Label("Time:");
+        time = EditorGUILayout.FloatField(time);
+
+        GUILayout.EndHorizontal();
+
+        if(anim != null)
+        {
+            return new Snippet(anim, trigger, time);
+        }
+        else
+        {
+            return null;
+        }
+
     }
 }

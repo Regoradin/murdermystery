@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class Story : MonoBehaviour
 {
-    private class Snippet
+    public class Snippet
     {
-        private Animator anim;
-        private string trigger;
+        public Animator anim;
+        public string trigger;
 
         public float startTime;
         private bool isPlaying;
@@ -57,8 +57,8 @@ public class Story : MonoBehaviour
             this.type = type;
         }
     }
-    
-    private HashSet<Snippet> snippets;
+
+    public HashSet<Snippet> snippets;
 
     //Data to work properly with story editor window
     public string name;
@@ -75,6 +75,12 @@ public class Story : MonoBehaviour
     {
         Snippet newSnippet = new Snippet (anim, trigger, relativeStartTime);
         snippets.Add(newSnippet);
+    }
+
+    public void UpdateSnippets(HashSet<Snippet> newSnippets)
+    {
+        snippets = newSnippets;
+        Debug.Log(snippets.Count);
     }
 
     private void Awake()
