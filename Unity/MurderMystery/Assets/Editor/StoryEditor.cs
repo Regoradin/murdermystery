@@ -47,7 +47,16 @@ public class StoryEditor : EditorWindow
         outPointStyle.normal.background = EditorGUIUtility.Load("builtin skins/darkskin/images/btn right.png") as Texture2D;
         outPointStyle.active.background = EditorGUIUtility.Load("builtin skins/darkskin/images/btn right on.png") as Texture2D;
         outPointStyle.border = new RectOffset(4, 4, 12, 12);
-        
+
+        LoadSavedStories();
+    }
+
+    private void LoadSavedStories()
+    {
+        foreach(Story story in StoryStructure.Instance.GetComponents<Story>())
+        {
+            OnClickAddNode(story.nodePosition, story);
+        }
     }
 
     private void OnGUI()
@@ -195,13 +204,13 @@ public class StoryEditor : EditorWindow
         genericMenu.ShowAsContext();
     }
 
-    private void OnClickAddNode(Vector2 mousePosition)
+    private void OnClickAddNode(Vector2 mousePosition, Story story = null)
     {
         if (nodes == null)
         {
             nodes = new List<StoryNode>();
         }
-        nodes.Add(new StoryNode(mousePosition, 200, 50, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode));
+        nodes.Add(new StoryNode(mousePosition, 200, 200, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, story));
     }
 
     private void OnClickInPoint(ConnectionPoint inPoint)

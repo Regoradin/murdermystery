@@ -45,7 +45,6 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                         DontDestroyOnLoad(singletonObject);
                     }
                 }
-		DontDestroyOnLoad(m_Instance);
                 return m_Instance;
             }
         }

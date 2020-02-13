@@ -263,6 +263,9 @@ GameObject:
   m_Component:
   - component: {fileID: 476522302}
   - component: {fileID: 476522301}
+  - component: {fileID: 476522305}
+  - component: {fileID: 476522304}
+  - component: {fileID: 476522303}
   m_Layer: 0
   m_Name: Story Structure
   m_TagString: Untagged
@@ -282,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b36208b86a29dc72b8d986c1b3424d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  didYouTouchThem: no
 --- !u!4 &476522302
 Transform:
   m_ObjectHideFlags: 0
@@ -296,6 +300,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &476522303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: I was added manually
+  nodePosition: {x: 245, y: 76}
+  isFinished: 0
+--- !u!114 &476522304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: am I saved either?
+  nodePosition: {x: 65, y: 306}
+  isFinished: 0
+--- !u!114 &476522305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: am I saved?
+  nodePosition: {x: 531, y: 178}
+  isFinished: 0
 --- !u!1 &682400172
 GameObject:
   m_ObjectHideFlags: 0

@@ -60,6 +60,10 @@ public class Story : MonoBehaviour
     
     private HashSet<Snippet> snippets;
 
+    //Data to work properly with story editor window
+    public string name;
+    public Vector2 nodePosition;
+    
     private float startTime;
     private float interruptTime;
     private bool isPlaying = false;

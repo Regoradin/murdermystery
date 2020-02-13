@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 using System;
 
 public class StoryNode
@@ -18,7 +19,9 @@ public class StoryNode
 
     public Action<StoryNode> OnRemoveNode;
 
-    public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<StoryNode> OnClickRemoveNode)
+    private Story story;
+
+    public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<StoryNode> OnClickRemoveNode, Story story)
     {
         rect = new Rect(position.x, position.y, width, height);
         this.defaultNodeStyle = style;
@@ -29,11 +32,21 @@ public class StoryNode
         outPoint = new ConnectionPoint(this, ConnectionPointType.Out, inPointStyle, OnClickOutPoint);
 
         this.OnRemoveNode = OnClickRemoveNode;
+
+        if (story != null)
+        {
+            this.story = story;
+        }
+        else
+        {
+            this.story = StoryStructure.Instance.gameObject.AddComponent<Story>();
+        }
     }
 
     public void Drag(Vector2 delta)
     {
         rect.position += delta;
+        story.nodePosition = rect.position;
     }
 
     public void Draw()
@@ -41,6 +54,25 @@ public class StoryNode
         inPoint.Draw();
         outPoint.Draw();
         GUI.Box(rect, title, style);
+        
+        GUILayout.BeginArea(new Rect(rect.x + 10, rect.y + 10, rect.width - 20, rect.height - 20));
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Name: ");
+        story.name = GUILayout.TextField(story.name);
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Animation: ");
+        GameObject obj = null;
+        obj = (GameObject)EditorGUILayout.ObjectField(obj, typeof(GameObject), true);
+        GUILayout.Label("Trigger:");
+        GUILayout.TextField("triggerrrr");
+        GUILayout.EndHorizontal();
+
+        GUILayout.EndArea();
+
+        EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
     }
 
     public bool ProcessEvents(Event e)
@@ -91,6 +123,8 @@ public class StoryNode
 
     private void OnClickRemoveNode()
     {
+        UnityEngine.Object.DestroyImmediate(story);
+
         if (OnRemoveNode != null)
         {
             OnRemoveNode(this);
