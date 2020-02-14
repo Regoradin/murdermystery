@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 476522301}
   - component: {fileID: 476522303}
   - component: {fileID: 476522304}
+  - component: {fileID: 476522305}
   m_Layer: 0
   m_Name: Story Structure
   m_TagString: Untagged
@@ -284,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b36208b86a29dc72b8d986c1b3424d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingStory: {fileID: 0}
 --- !u!4 &476522302
 Transform:
   m_ObjectHideFlags: 0
@@ -315,11 +317,18 @@ MonoBehaviour:
     trigger: 1up
     startTime: 2.43
   name: 
-  nodePosition: {x: 79, y: 148}
+  nodePosition: {x: 41, y: 115}
+  isPlaying: 0
   isFinished: 0
   interactions:
   - name: test
-    nextStory: {fileID: 476522304}
+    nextStory: {fileID: 0}
+    type: 0
+  - name: yes
+    nextStory: {fileID: 0}
+    type: 1
+  - name: no
+    nextStory: {fileID: 0}
     type: 1
 --- !u!114 &476522304
 MonoBehaviour:
@@ -335,10 +344,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snippets: []
   name: 
-  nodePosition: {x: 613, y: 210}
+  nodePosition: {x: 626, y: 155}
+  isPlaying: 0
   isFinished: 0
   interactions:
   - name: sf
+    nextStory: {fileID: 0}
+    type: 1
+--- !u!114 &476522305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snippets: []
+  name: 
+  nodePosition: {x: 124, y: 408}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: j
     nextStory: {fileID: 0}
     type: 1
 --- !u!1 &682400172
