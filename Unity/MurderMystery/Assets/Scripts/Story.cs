@@ -1,88 +1,141 @@
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Story : MonoBehaviour
 {
+    [Serializable]
     public class Snippet
     {
         public Animator anim;
         public string trigger;
 
         public float startTime;
-        public bool isFinished;
+        private bool isPlaying;
 
         public Snippet (Animator anim, string trigger, float startTime)
         {
             this.anim = anim;
             this.trigger = trigger;
             this.startTime = startTime;
-            isFinished = false;
+            isPlaying = false;
+        }
+
+        public void Play()
+        {
+            if (!isPlaying)
+            {
+                anim.enabled = true;
+                anim.Play("Base", 0, 0);
+                anim.SetTrigger(trigger);
+                isPlaying = true;
+            }
+        }
+
+        public void Stop()
+        {
+            anim.enabled = false;
+            isPlaying = false;
         }
     }
 
-    private SortedList<float, Snippet> snippets;
-    private int currentSnippetIndex;
+    [Serializable]
+    public class Interaction
+    {
+        public enum InteractionType
+        {
+            Interrupt,
+            Continue
+        }
 
+        public string name;
+        public Story nextStory;
+        public InteractionType type;
+
+        public Interaction(string name, Story nextStory, InteractionType type)
+        {
+            this.name = name;
+            this.nextStory = nextStory;
+            this.type = type;
+        }
+    }
+
+    public List<Snippet> snippets;
+
+    //Data to work properly with story editor window
+    public string name;
+    public Vector2 nodePosition;
+    
     private float startTime;
-    private bool playing = false;
+    private float interruptTime;
+    public bool isPlaying = false;
+    public bool isFinished = false;
+
+    public List<Interaction> interactions;
 
     public void AddSnippet(Animator anim, string trigger, float relativeStartTime)
     {
         Snippet newSnippet = new Snippet (anim, trigger, relativeStartTime);
-        snippets.Add(relativeStartTime, newSnippet);
+        snippets.Add(newSnippet);
     }
 
-    public void AddDebugSnippet(Animator anim)
+    public void UpdateSnippets(List<Snippet> newSnippets)
     {
-        AddSnippet(anim, "test", 0);
+        snippets = newSnippets;
     }
 
-    private void Start()
+    public void UpdateInteractions(List<Interaction> newInteractions)
     {
-        snippets = new SortedList<float, Snippet>();
+        interactions = newInteractions;
+    }
+
+    private void Awake()
+    {
+        //snippets = new List<Snippet>();
+        interruptTime = 0;
+
+        //interactions = new List<Interaction>();
     }
 
     private void Update()
     {
-        if (playing)
+        if (isPlaying)
         {
-            StartNewSnippets();            
+            StartNewSnippets();
         }
     }
 
     public void Play()
     {
         startTime = Time.time;
-        playing = true;
+        isPlaying = true;
+        isFinished = false;
     }
 
     public void Stop()
     {
-        playing = false;
+        isPlaying = false;
+        interruptTime = Time.time - startTime;
         StopAllSnippets();
     }
 
     private void StartNewSnippets()
     {
-        while (snippets[currentSnippetIndex].startTime <= Time.time - startTime)
+        foreach (Snippet snippet in snippets)
         {
-            snippets[currentSnippetIndex].anim.enabled = true;
-            snippets[currentSnippetIndex].anim.SetTrigger(snippets[currentSnippetIndex].trigger);
-            currentSnippetIndex++;
-            if (currentSnippetIndex == snippets.Count)
+            if (Time.time - startTime  >= snippet.startTime)
             {
-                currentSnippetIndex = 0;
+                snippet.Play();
             }
-        }        
+        }
     }
 
     private void StopAllSnippets()
     {
-        foreach (Snippet snippet in snippets.Values)
+        foreach (Snippet snippet in snippets)
         {
-            //TODO: make this a less shoddy solution
-            snippet.anim.enabled = false;
+            snippet.Stop();
         }
     }
 }
