@@ -21,10 +21,12 @@ public class NoddingTester : MonoBehaviour
     void OnNod()
     {
         Debug.Log("nod");
+        StoryStructure.Instance.Interact("yes");
     }
 
     void OnHeadshake()
     {
         Debug.Log("headshake");
+        StoryStructure.Instance.Interact("no");
     }
 }
