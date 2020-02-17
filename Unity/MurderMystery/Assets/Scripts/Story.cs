@@ -120,10 +120,7 @@ public class Story : MonoBehaviour
 
     private void Awake()
     {
-        //snippets = new List<Snippet>();
         interruptTime = 0;
-
-        //interactions = new List<Interaction>();
     }
 
     private void Update()

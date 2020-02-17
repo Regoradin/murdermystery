@@ -86,13 +86,9 @@ public class StoryNode
     public void LoadInteractionConnections()
     {
         outPoints = new List<ConnectionPoint>();
-        //        MakeOldConnectionPoints();
-        //Debug.Log("interactions count " + story.interactions.Count + " outpoints count " + outPoints.Count);
 
         for(int i =0; i < story.interactions.Count; i++)
         {
-            //int totalIndex = outPoints.Count;
-
             ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1), story.interactions[i].name);
             point.Draw();
 
@@ -187,6 +183,14 @@ public class StoryNode
         story.name = GUILayout.TextField(story.name);
         GUILayout.EndHorizontal();
 
+        DrawAllInteractionFields();
+        DrawAllSnippetFields();
+
+        GUILayout.EndArea();
+    }
+
+    private void DrawAllInteractionFields()
+    {
         List<Interaction> newInteractions = new List<Interaction>();
 
         if (story.interactions != null)
@@ -212,37 +216,8 @@ public class StoryNode
             newInteractions.Add(newBlankInteraction);
         }
 
-        
-
-        DrawAllSnippetFields();
-
-        GUILayout.EndArea();
-
-        // for(int i =0; i < newInteractions.Count; i++)
-        // {
-        //     //int totalIndex = outPoints.Count;
-        //     outPoints = new List<ConnectionPoint>();
-
-        //     ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1), newInteractions[i].name);
-        //     point.Draw();
-
-        //     outPoints.Add(point);
-        // }
-
-
         story.UpdateInteractions(newInteractions);
-
     }
-
-    // private void MakeOldConnectionPoints()
-    // {
-    //     for(int i =0; i < story.interactions.Count; i++)
-    //     {
-    //         ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1), story.interactions[i].name);
-    //         outPoints.Add(point);
-    //     }
-
-    // }
 
     private void DrawAllSnippetFields()
     {

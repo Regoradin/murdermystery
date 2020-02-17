@@ -3,7 +3,7 @@ using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
-//Story editor heavily based on: https://gram.gs/gramlog/creating-node-based-editor-unity/
+//Story editor based on: https://gram.gs/gramlog/creating-node-based-editor-unity/
 
 public class StoryEditor : EditorWindow
 {
