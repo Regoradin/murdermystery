@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -281,18 +281,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets: []
+  snippets:
+  - anim: {fileID: 780354545}
+    trigger: 
+    startTime: 0
   name: 
-  nodePosition: {x: 235, y: 234}
+  nodePosition: {x: 219, y: 204}
   isPlaying: 0
   isFinished: 0
-  interactions:
-  - name: j
-    nextStory: {fileID: 476522303}
-    type: 1
-  - name: te
-    nextStory: {fileID: 0}
-    type: 1
+  interactions: []
 --- !u!1 &476522300
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +301,7 @@ GameObject:
   - component: {fileID: 476522302}
   - component: {fileID: 476522301}
   - component: {fileID: 462310319}
+  - component: {fileID: 476522304}
   - component: {fileID: 476522303}
   m_Layer: 0
   m_Name: Story Structure
@@ -352,8 +350,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snippets: []
-  name: story2
-  nodePosition: {x: 606, y: 137}
+  name: 4
+  nodePosition: {x: 652, y: -3}
+  isPlaying: 0
+  isFinished: 0
+  interactions: []
+--- !u!114 &476522304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snippets: []
+  name: 3
+  nodePosition: {x: 663, y: 267}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -937,7 +953,7 @@ RectTransform:
   - {fileID: 275149383}
   - {fileID: 1643801374}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1527,7 +1543,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1919501497
 GameObject:

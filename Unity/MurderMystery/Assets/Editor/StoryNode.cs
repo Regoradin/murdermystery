@@ -26,19 +26,20 @@ public class StoryNode
     private Action<ConnectionPoint> OnClickOutPoint;
 
     public Story story;
+    private StoryEditor editor;
 
-    public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<StoryNode> OnClickRemoveNode, Story story)
+    public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<StoryNode> OnClickRemoveNode, StoryEditor editor, Story story)
     {
         rect = new Rect(position.x, position.y, width, height);
         this.defaultNodeStyle = style;
         this.selectedNodeStyle = selectedStyle;
         this.style = defaultNodeStyle;
+        this.editor = editor;
 
         this.outPointStyle = outPointStyle;
         this.OnClickOutPoint = OnClickOutPoint;
 
         inPoint = new ConnectionPoint(this, ConnectionPointType.In, inPointStyle, OnClickInPoint);
-        outPoints = new List<ConnectionPoint>();
 
         this.OnRemoveNode = OnClickRemoveNode;
 
@@ -63,9 +64,16 @@ public class StoryNode
     public void Draw()
     {
         GUI.Box(rect, title, style);
-        inPoint.Draw();
-
         DrawContents();
+
+        inPoint.Draw();
+        if (outPoints != null)
+        {
+            foreach (ConnectionPoint point in outPoints)
+            {
+                point.Draw();
+            }
+        }
         
         if (GUI.changed)
         {
@@ -73,6 +81,45 @@ public class StoryNode
         }
 
 
+    }
+
+    public void LoadInteractionConnections()
+    {
+        outPoints = new List<ConnectionPoint>();
+        //        MakeOldConnectionPoints();
+        //Debug.Log("interactions count " + story.interactions.Count + " outpoints count " + outPoints.Count);
+
+        for(int i =0; i < story.interactions.Count; i++)
+        {
+            //int totalIndex = outPoints.Count;
+
+            ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1), story.interactions[i].name);
+            point.Draw();
+
+            outPoints.Add(point);
+        }
+
+
+        
+        for (int i = 0; i < story.interactions.Count; i++)
+        {
+            if (story.interactions[i].nextStory != null)
+            {
+                ConnectionPoint outPoint = outPoints[i];
+                ConnectionPoint inPoint = null;
+                foreach (StoryNode node in editor.nodes)
+                {
+                    if (node.story == story.interactions[i].nextStory)
+                    {
+                        inPoint = node.inPoint;
+                    
+                    }
+                }
+                outPoints.Add(outPoint);
+                editor.CreateConnection(outPoint, inPoint);
+            }
+        }
+        
     }
 
     public bool ProcessEvents(Event e)
@@ -165,21 +212,37 @@ public class StoryNode
             newInteractions.Add(newBlankInteraction);
         }
 
+        
+
         DrawAllSnippetFields();
 
         GUILayout.EndArea();
 
-        for(int i =0; i < newInteractions.Count; i++)
-        {
-            ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1), newInteractions[i].name);
-            point.Draw();
+        // for(int i =0; i < newInteractions.Count; i++)
+        // {
+        //     //int totalIndex = outPoints.Count;
+        //     outPoints = new List<ConnectionPoint>();
 
-            outPoints.Add(point);
-        }
+        //     ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1), newInteractions[i].name);
+        //     point.Draw();
+
+        //     outPoints.Add(point);
+        // }
+
 
         story.UpdateInteractions(newInteractions);
 
     }
+
+    // private void MakeOldConnectionPoints()
+    // {
+    //     for(int i =0; i < story.interactions.Count; i++)
+    //     {
+    //         ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1), story.interactions[i].name);
+    //         outPoints.Add(point);
+    //     }
+
+    // }
 
     private void DrawAllSnippetFields()
     {
@@ -258,11 +321,16 @@ public class StoryNode
 
         if (name != null && name != "")
         {
-            return new Interaction(name, null, isInterrupt ? Interaction.InteractionType.Interrupt : Interaction.InteractionType.Continue);
+            return new Interaction(name, nextStory, isInterrupt ? Interaction.InteractionType.Interrupt : Interaction.InteractionType.Continue);
         }
         else
         {
             return null;
         }
+    }
+
+    public void RemoveInteraction()
+    {
+        
     }
 }

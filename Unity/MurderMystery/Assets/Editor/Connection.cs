@@ -38,4 +38,9 @@ public class Connection
 
         outPoint.node.story.ConnectInteraction(outPoint.interactionName, inPoint.node.story);
     }
+
+    public void RemoveInteraction()
+    {
+        outPoint.node.RemoveInteraction();
+    }
 }
