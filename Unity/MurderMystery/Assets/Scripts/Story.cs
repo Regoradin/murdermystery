@@ -90,6 +90,18 @@ public class Story : MonoBehaviour
         interactions = newInteractions;
     }
 
+    public void ConnectInteraction(string name, Story nextStory)
+    {
+        foreach (Interaction interaction in interactions)
+        {
+            if (interaction.name == name)
+            {
+                interaction.nextStory = nextStory;
+                return;
+            }
+        }
+    }
+
     private void Awake()
     {
         //snippets = new List<Snippet>();

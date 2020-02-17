@@ -13,15 +13,16 @@ public class Connection
         this.inPoint = inPoint;
         this.outPoint = outPoint;
         this.OnClickRemoveConnection = OnClickRemoveConnection;
+
     }
 
     public void Draw()
     {
         Handles.DrawBezier(
-                           inPoint.rect.center,
-                           outPoint.rect.center,
-                           inPoint.rect.center + Vector2.left * 50f,
-                           outPoint.rect.center - Vector2.left * 50f,
+                           inPoint.GetCenter(),
+                           outPoint.GetCenter(),
+                           inPoint.GetCenter() + Vector2.left * 50f,
+                           outPoint.GetCenter() - Vector2.left * 50f,
                            Color.white,
                            null,
                            2f
@@ -34,5 +35,7 @@ public class Connection
                 OnClickRemoveConnection(this);
             }
         }
+
+        outPoint.node.story.ConnectInteraction(outPoint.interactionName, inPoint.node.story);
     }
 }

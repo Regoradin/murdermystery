@@ -25,7 +25,7 @@ public class StoryNode
     private GUIStyle outPointStyle;
     private Action<ConnectionPoint> OnClickOutPoint;
 
-    private Story story;
+    public Story story;
 
     public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<StoryNode> OnClickRemoveNode, Story story)
     {
@@ -171,7 +171,7 @@ public class StoryNode
 
         for(int i =0; i < newInteractions.Count; i++)
         {
-            ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1));
+            ConnectionPoint point = new ConnectionPoint(this, ConnectionPointType.Out, outPointStyle, OnClickOutPoint, 0.15f * (i + 1), newInteractions[i].name);
             point.Draw();
 
             outPoints.Add(point);

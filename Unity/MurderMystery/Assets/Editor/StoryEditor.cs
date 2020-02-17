@@ -104,9 +104,9 @@ public class StoryEditor : EditorWindow
         if (selectedInPoint != null && selectedOutPoint == null)
         {
             Handles.DrawBezier(
-                               selectedInPoint.rect.center,
+                               selectedInPoint.GetCenter(),
                                e.mousePosition,
-                               selectedInPoint.rect.center + Vector2.left * 50f,
+                               selectedInPoint.GetCenter() + Vector2.left * 50f,
                                e.mousePosition - Vector2.left * 50f,
                                Color.white,
                                null,
@@ -119,9 +119,9 @@ public class StoryEditor : EditorWindow
         if (selectedOutPoint != null && selectedInPoint == null)
         {
             Handles.DrawBezier(
-                               selectedOutPoint.rect.center,
+                               selectedOutPoint.GetCenter(),
                                e.mousePosition,
-                               selectedOutPoint.rect.center - Vector2.left * 50f,
+                               selectedOutPoint.GetCenter() - Vector2.left * 50f,
                                e.mousePosition + Vector2.left * 50f,
                                Color.white,
                                null,
@@ -287,7 +287,9 @@ public class StoryEditor : EditorWindow
             connections = new List<Connection>();
         }
 
-        connections.Add(new Connection(selectedInPoint, selectedOutPoint, OnClickRemoveConnection));
+        Connection newConnection = new Connection(selectedInPoint, selectedOutPoint, OnClickRemoveConnection);
+
+        connections.Add(newConnection);
     }
 
     private void ClearConnectionSelection()

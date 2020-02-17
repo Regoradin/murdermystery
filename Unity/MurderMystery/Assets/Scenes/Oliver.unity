@@ -283,11 +283,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snippets: []
   name: 
-  nodePosition: {x: 177, y: 238}
+  nodePosition: {x: 235, y: 234}
   isPlaying: 0
   isFinished: 0
   interactions:
   - name: j
+    nextStory: {fileID: 476522303}
+    type: 1
+  - name: te
     nextStory: {fileID: 0}
     type: 1
 --- !u!1 &476522300
@@ -301,6 +304,7 @@ GameObject:
   - component: {fileID: 476522302}
   - component: {fileID: 476522301}
   - component: {fileID: 462310319}
+  - component: {fileID: 476522303}
   m_Layer: 0
   m_Name: Story Structure
   m_TagString: Untagged
@@ -335,6 +339,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &476522303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snippets: []
+  name: story2
+  nodePosition: {x: 606, y: 137}
+  isPlaying: 0
+  isFinished: 0
+  interactions: []
 --- !u!1 &682400172
 GameObject:
   m_ObjectHideFlags: 0
