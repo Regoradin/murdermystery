@@ -61,9 +61,12 @@ public class StoryEditor : EditorWindow
 
     private void LoadSavedInteractions()
     {
-        foreach(StoryNode node in nodes)
+        if (nodes != null)
         {
-            node.LoadInteractionConnections();
+            foreach (StoryNode node in nodes)
+            {
+                node.LoadInteractionConnections();
+            }
         }
     }
 
