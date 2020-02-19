@@ -3,11 +3,11 @@ using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
-//Story editor heavily based on: https://gram.gs/gramlog/creating-node-based-editor-unity/
+//Story editor based on: https://gram.gs/gramlog/creating-node-based-editor-unity/
 
 public class StoryEditor : EditorWindow
 {
-    private List<StoryNode> nodes;
+    public List<StoryNode> nodes;
     private List<Connection> connections;
 
     private GUIStyle nodeStyle;
@@ -59,12 +59,24 @@ public class StoryEditor : EditorWindow
         }
     }
 
+    private void LoadSavedInteractions()
+    {
+        foreach(StoryNode node in nodes)
+        {
+            node.LoadInteractionConnections();
+        }
+    }
+
     private void OnGUI()
     {
         DrawGrid(20, 0.2f, Color.gray);
         DrawGrid(100, 0.4f, Color.gray);
+
+        connections = new List<Connection>();
         
         DrawNodes();
+
+        LoadSavedInteractions();
         DrawConnections();
 
         DrawConnectionLine(Event.current);
@@ -104,9 +116,9 @@ public class StoryEditor : EditorWindow
         if (selectedInPoint != null && selectedOutPoint == null)
         {
             Handles.DrawBezier(
-                               selectedInPoint.rect.center,
+                               selectedInPoint.GetCenter(),
                                e.mousePosition,
-                               selectedInPoint.rect.center + Vector2.left * 50f,
+                               selectedInPoint.GetCenter() + Vector2.left * 50f,
                                e.mousePosition - Vector2.left * 50f,
                                Color.white,
                                null,
@@ -119,9 +131,9 @@ public class StoryEditor : EditorWindow
         if (selectedOutPoint != null && selectedInPoint == null)
         {
             Handles.DrawBezier(
-                               selectedOutPoint.rect.center,
+                               selectedOutPoint.GetCenter(),
                                e.mousePosition,
-                               selectedOutPoint.rect.center - Vector2.left * 50f,
+                               selectedOutPoint.GetCenter() - Vector2.left * 50f,
                                e.mousePosition + Vector2.left * 50f,
                                Color.white,
                                null,
@@ -210,7 +222,7 @@ public class StoryEditor : EditorWindow
         {
             nodes = new List<StoryNode>();
         }
-        nodes.Add(new StoryNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, story));
+        nodes.Add(new StoryNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story));
     }
 
     private void OnClickInPoint(ConnectionPoint inPoint)
@@ -277,6 +289,7 @@ public class StoryEditor : EditorWindow
     
     private void OnClickRemoveConnection(Connection connection)
     {
+        connection.outPoint.node.story.RemoveInteraction(connection.outPoint.interactionName);
         connections.Remove(connection);
     }
 
@@ -287,7 +300,22 @@ public class StoryEditor : EditorWindow
             connections = new List<Connection>();
         }
 
-        connections.Add(new Connection(selectedInPoint, selectedOutPoint, OnClickRemoveConnection));
+        Connection newConnection = new Connection(selectedInPoint, selectedOutPoint, OnClickRemoveConnection);
+
+        connections.Add(newConnection);
+    }
+
+    public void CreateConnection(ConnectionPoint outPoint, ConnectionPoint inPoint)
+    {
+        if (connections == null)
+        {
+            connections = new List<Connection>();
+        }
+
+        Connection newConnection = new Connection(inPoint, outPoint, OnClickRemoveConnection);
+
+        connections.Add(newConnection);
+
     }
 
     private void ClearConnectionSelection()

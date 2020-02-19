@@ -90,12 +90,37 @@ public class Story : MonoBehaviour
         interactions = newInteractions;
     }
 
+    public void RemoveInteraction(string name)
+    {
+        List<Interaction> toRemove = new List<Interaction>();
+        foreach (Interaction interaction in interactions)
+        {
+            if (interaction.name == name)
+            {
+                toRemove.Add(interaction);
+            }
+        }
+        foreach(Interaction interaction in toRemove)
+        {
+            interactions.Remove(interaction);
+        }
+    }
+
+    public void ConnectInteraction(string name, Story nextStory)
+    {
+        foreach (Interaction interaction in interactions)
+        {
+            if (interaction.name == name)
+            {
+                interaction.nextStory = nextStory;
+                return;
+            }
+        }
+    }
+
     private void Awake()
     {
-        //snippets = new List<Snippet>();
         interruptTime = 0;
-
-        //interactions = new List<Interaction>();
     }
 
     private void Update()
