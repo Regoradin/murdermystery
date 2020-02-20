@@ -1195,8 +1195,8 @@ MonoBehaviour:
     trigger: Doyouknowwhereyouare
     startTime: 0
   name: Say yes
-  nodePosition: {x: -1311, y: 529}
-  isPlaying: 0
+  nodePosition: {x: 54, y: 410}
+  isPlaying: 1
   isFinished: 0
   interactions:
   - name: yesnod
@@ -1225,7 +1225,7 @@ MonoBehaviour:
     trigger: yesnod
     startTime: 0
   name: good
-  nodePosition: {x: -879, y: 372}
+  nodePosition: {x: 514, y: 192}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1249,7 +1249,7 @@ MonoBehaviour:
     trigger: noshake
     startTime: 0
   name: interrogation
-  nodePosition: {x: -880, y: 663}
+  nodePosition: {x: 513, y: 483}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1279,7 +1279,7 @@ MonoBehaviour:
     trigger: Lobster1
     startTime: 10
   name: KnifeQ1
-  nodePosition: {x: 243, y: 428}
+  nodePosition: {x: 1636, y: 248}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1306,7 +1306,7 @@ MonoBehaviour:
     trigger: Suityourself
     startTime: 0
   name: suityourself
-  nodePosition: {x: -174, y: 574}
+  nodePosition: {x: 1219, y: 394}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1330,7 +1330,7 @@ MonoBehaviour:
     trigger: yesnod
     startTime: 0
   name: good
-  nodePosition: {x: -177, y: 268}
+  nodePosition: {x: 1216, y: 88}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1360,7 +1360,7 @@ MonoBehaviour:
     trigger: Lobster
     startTime: 6
   name: peanuts
-  nodePosition: {x: -478, y: 491}
+  nodePosition: {x: 915, y: 311}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1393,7 +1393,7 @@ MonoBehaviour:
     trigger: Wrongguy
     startTime: 13
   name: KnifeQ3
-  nodePosition: {x: 1046, y: 361}
+  nodePosition: {x: 2439, y: 181}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -1420,7 +1420,7 @@ MonoBehaviour:
     trigger: Deny
     startTime: 17
   name: KnifeQ2Bad
-  nodePosition: {x: 710, y: 522}
+  nodePosition: {x: 2103, y: 342}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1453,7 +1453,7 @@ MonoBehaviour:
     trigger: Lobster1
     startTime: 14
   name: KnifeQ2Good
-  nodePosition: {x: 702, y: 187}
+  nodePosition: {x: 2095, y: 7}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1844,6 +1844,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &651960168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651960171}
+  - component: {fileID: 651960170}
+  - component: {fileID: 651960169}
+  m_Layer: 0
+  m_Name: Nodding Recognizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &651960169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651960168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf485d6c7a796146aaf352d94afac16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yesInteraction: yesnod
+  noInteraction: noshake
+  cooldown: 3
+--- !u!114 &651960170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651960168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90909e5f08798444aa89e4fcc2d9dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recognitionInterval: 4
+--- !u!4 &651960171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651960168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.7460938, y: 3.2075195, z: -2.2387695}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &864270256
 PrefabInstance:
   m_ObjectHideFlags: 0

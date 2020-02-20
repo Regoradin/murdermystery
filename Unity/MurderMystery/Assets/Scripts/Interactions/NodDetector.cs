@@ -45,6 +45,7 @@ public class NodDetector : MonoBehaviour
 	{
 		if (!coolingDown)
 		{
+            Debug.Log("Headshake detector");
 			StoryStructure.Instance.Interact(noInteraction);
 			coolingDown = true;
 			cooldownRemaining = cooldown;
