@@ -54,7 +54,8 @@ public class StoryNode
         }
         else
         {
-            this.story = StoryStructure.Instance.gameObject.AddComponent<Story>();
+            Debug.Log(StoryStructure.Instance);
+            this._storyID = StoryStructure.Instance.gameObject.AddComponent<Story>().GetInstanceID();
         }
     }
 
