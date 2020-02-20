@@ -53,7 +53,7 @@ public class StoryEditor : EditorWindow
 
     private void LoadSavedStories()
     {
-        foreach(Story story in StoryStructure.Instance.GetComponents<Story>())
+        foreach (Story story in StoryStructure.Instance.GetComponents<Story>())
         {
             OnClickAddNode(story.nodePosition, story);
         }
