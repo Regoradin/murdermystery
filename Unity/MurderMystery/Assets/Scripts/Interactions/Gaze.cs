@@ -14,4 +14,10 @@ public class Gaze : MonoBehaviour
 		collider.center = Vector3.forward * (distance / 2);
 	}
 
+	private void Update()
+	{
+		Debug.DrawRay(transform.position, transform.forward * distance, Color.red);
+	}
+
+
 }

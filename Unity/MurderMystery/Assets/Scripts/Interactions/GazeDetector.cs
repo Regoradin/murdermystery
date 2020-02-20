@@ -53,9 +53,9 @@ public class GazeDetector : MonoBehaviour
 	{
 		if (gazed == false)
 		{
+			Debug.Log("GAZING");
 			gazed = true;
-			GetComponent<Renderer>().material.color = Color.red;
-			Debug.Log("Being gazed at " + interaction);
+			StoryStructure.Instance.Interact(interaction);
 		}
 	}
 
