@@ -23,7 +23,7 @@ namespace FrameSynthesis.VR
         }
     }
 
-    public class VRGestureRecognizer : MonoBehaviour
+    public class VRGestureRecognizer : Singleton<VRGestureRecognizer>
     {
         public static VRGestureRecognizer Current { get; private set; }
 
@@ -36,11 +36,6 @@ namespace FrameSynthesis.VR
         public Queue<PoseSample> PoseSamples { get; } = new Queue<PoseSample>();
 
         float prevGestureTime;
-
-        void Awake()
-        {
-            Current = this;
-        }
 
         void Update()
         {
