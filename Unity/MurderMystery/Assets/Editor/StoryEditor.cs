@@ -53,7 +53,7 @@ public class StoryEditor : EditorWindow
 
     private void LoadSavedStories()
     {
-        foreach(Story story in StoryStructure.Instance.GetComponents<Story>())
+        foreach (Story story in StoryStructure.Instance.GetComponents<Story>())
         {
             OnClickAddNode(story.nodePosition, story);
         }
@@ -61,14 +61,13 @@ public class StoryEditor : EditorWindow
 
     private void LoadSavedInteractions()
     {
-		if (nodes != null)
-		{
-			foreach (StoryNode node in nodes)
-			{
-				node.LoadInteractionConnections();
-			}
-		}
-        
+        if (nodes != null)
+        {
+            foreach (StoryNode node in nodes)
+            {
+                node.LoadInteractionConnections();
+            }
+        }
     }
 
     private void OnGUI()

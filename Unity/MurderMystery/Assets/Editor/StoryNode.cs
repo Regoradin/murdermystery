@@ -25,7 +25,12 @@ public class StoryNode
     private GUIStyle outPointStyle;
     private Action<ConnectionPoint> OnClickOutPoint;
 
-    public Story story;
+    public Story story
+	{
+		get { return (Story)EditorUtility.InstanceIDToObject(_storyID); }
+		set { _storyID = value.GetInstanceID(); }
+	}
+	private int _storyID;
     private StoryEditor editor;
 
     public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<StoryNode> OnClickRemoveNode, StoryEditor editor, Story story)
@@ -49,7 +54,8 @@ public class StoryNode
         }
         else
         {
-            this.story = StoryStructure.Instance.gameObject.AddComponent<Story>();
+            Debug.Log(StoryStructure.Instance);
+            this._storyID = StoryStructure.Instance.gameObject.AddComponent<Story>().GetInstanceID();
         }
     }
 
