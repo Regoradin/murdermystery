@@ -5,11 +5,11 @@ using UnityEngine;
 public class ContactDetector : MonoBehaviour
 {
 
-	public string input;
+	public string interaction;
 	// Start is called before the first frame update
 	private void OnTriggerEnter(Collider other)
 	{
-		StoryStructure.Instance.Interact(input);
+		StoryStructure.Instance.Interact(interaction);
 	}
 
 }

@@ -7,6 +7,9 @@ public class TableSlammer : MonoBehaviour
 	[SerializeField]
 	private OVRInput.Controller controller;
 
+	public float minimumVelocity;
+	public string interactionName;
+
 	private Vector3 velocity;
 
 	private void OnTriggerEnter(Collider other)
@@ -14,7 +17,12 @@ public class TableSlammer : MonoBehaviour
 		Table table = other.GetComponent<Table>();
 		if (table)
 		{
-			table.Slam(OVRInput.GetLocalControllerVelocity(controller).magnitude);
+			float velocity = OVRInput.GetLocalControllerVelocity(controller).magnitude;
+			if (velocity >= minimumVelocity)
+			{
+				table.Slam(OVRInput.GetLocalControllerVelocity(controller).magnitude);
+				StoryStructure.Instance.Interact(interactionName);
+			}
 		}
 	}
 }
