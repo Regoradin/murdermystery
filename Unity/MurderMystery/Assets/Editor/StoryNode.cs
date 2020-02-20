@@ -105,11 +105,8 @@ public class StoryNode
         
         for (int i = 0; i < story.interactions.Count; i++)
         {
-			Debug.Log("Entering loop1: "+ story);
-
-			if (story.interactions[i].nextStory != null)
+            if (story.interactions[i].nextStory != null)
             {
-				Debug.Log("Entering loop2");
                 ConnectionPoint outPoint = outPoints[i];
                 ConnectionPoint inPoint = null;
                 foreach (StoryNode node in editor.nodes)

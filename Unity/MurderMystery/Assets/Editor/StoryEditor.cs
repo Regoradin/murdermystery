@@ -73,7 +73,6 @@ public class StoryEditor : EditorWindow
     private void OnGUI()
     {
 
-		Debug.Log("test: " + nodes);
         DrawGrid(20, 0.2f, Color.gray);
         DrawGrid(100, 0.4f, Color.gray);
 
@@ -312,7 +311,6 @@ public class StoryEditor : EditorWindow
 
     public void CreateConnection(ConnectionPoint outPoint, ConnectionPoint inPoint)
     {
-		Debug.Log("CreateConnectionCalled");
         if (connections == null)
         {
             connections = new List<Connection>();
