@@ -1195,7 +1195,7 @@ MonoBehaviour:
     trigger: Doyouknowwhereyouare
     startTime: 0
   name: Say yes
-  nodePosition: {x: 54, y: 410}
+  nodePosition: {x: -198, y: 229}
   isPlaying: 1
   isFinished: 0
   interactions:
@@ -1225,7 +1225,7 @@ MonoBehaviour:
     trigger: yesnod
     startTime: 0
   name: good
-  nodePosition: {x: 514, y: 192}
+  nodePosition: {x: 262, y: 11}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1249,7 +1249,7 @@ MonoBehaviour:
     trigger: noshake
     startTime: 0
   name: interrogation
-  nodePosition: {x: 513, y: 483}
+  nodePosition: {x: 261, y: 302}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1279,7 +1279,7 @@ MonoBehaviour:
     trigger: Lobster1
     startTime: 10
   name: KnifeQ1
-  nodePosition: {x: 1636, y: 248}
+  nodePosition: {x: 1384, y: 67}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1306,7 +1306,7 @@ MonoBehaviour:
     trigger: Suityourself
     startTime: 0
   name: suityourself
-  nodePosition: {x: 1219, y: 394}
+  nodePosition: {x: 967, y: 213}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1330,7 +1330,7 @@ MonoBehaviour:
     trigger: yesnod
     startTime: 0
   name: good
-  nodePosition: {x: 1216, y: 88}
+  nodePosition: {x: 964, y: -93}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1360,7 +1360,7 @@ MonoBehaviour:
     trigger: Lobster
     startTime: 6
   name: peanuts
-  nodePosition: {x: 915, y: 311}
+  nodePosition: {x: 663, y: 130}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1393,7 +1393,7 @@ MonoBehaviour:
     trigger: Wrongguy
     startTime: 13
   name: KnifeQ3
-  nodePosition: {x: 2439, y: 181}
+  nodePosition: {x: 2187, y: 0}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -1420,7 +1420,7 @@ MonoBehaviour:
     trigger: Deny
     startTime: 17
   name: KnifeQ2Bad
-  nodePosition: {x: 2103, y: 342}
+  nodePosition: {x: 1851, y: 161}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1453,7 +1453,7 @@ MonoBehaviour:
     trigger: Lobster1
     startTime: 14
   name: KnifeQ2Good
-  nodePosition: {x: 2095, y: 7}
+  nodePosition: {x: 1843, y: -174}
   isPlaying: 0
   isFinished: 0
   interactions:

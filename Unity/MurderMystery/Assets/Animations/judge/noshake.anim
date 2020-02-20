@@ -306,8 +306,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1
-    functionName: FinishCurrentStory
-    data: 
+    functionName: SendInteraction
+    data: next
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
