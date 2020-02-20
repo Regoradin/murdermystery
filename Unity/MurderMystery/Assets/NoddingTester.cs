@@ -8,8 +8,8 @@ public class NoddingTester : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        VRGestureRecognizer.Instance.NodHandler += OnNod;
-        VRGestureRecognizer.Instance.HeadshakeHandler += OnHeadshake;
+        VRGestureRecognizer.Current.NodHandler += OnNod;
+        VRGestureRecognizer.Current.HeadshakeHandler += OnHeadshake;
     }
 
     // Update is called once per frame
