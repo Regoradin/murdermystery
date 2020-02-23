@@ -190,7 +190,7 @@ public class StoryNode
         GUILayout.EndHorizontal();
 
         DrawAllInteractionFields();
-        DrawAllSnippetFields();
+        DrawAllAnimSnippetFields();
 
         GUILayout.EndArea();
     }
@@ -225,37 +225,37 @@ public class StoryNode
         story.UpdateInteractions(newInteractions);
     }
 
-    private void DrawAllSnippetFields()
+    private void DrawAllAnimSnippetFields()
     {
-        List<Snippet> newSnippets = new List<Snippet>();
+        List<AnimSnippet> newAnimSnippets = new List<AnimSnippet>();
 
-        if (story.snippets != null)
+        if (story.animSnippets != null)
         {
-            foreach(Snippet snippet in story.snippets)
+            foreach(AnimSnippet snippet in story.animSnippets)
             {
                 Animator anim = snippet.anim;
                 string trigger = snippet.trigger;
                 float time = snippet.startTime;
 
-                Snippet newSnippet = DrawSnippetField(anim, trigger, time);
+                AnimSnippet newSnippet = DrawAnimSnippetField(anim, trigger, time);
                 if (newSnippet != null)
                 {
-                    newSnippets.Add(newSnippet);
+                    newAnimSnippets.Add(newSnippet);
                 }
             }
 
         }
 
-        Snippet newBlankSnippet = DrawSnippetField(null, null, 0);
+        AnimSnippet newBlankSnippet = DrawAnimSnippetField(null, null, 0);
         if (newBlankSnippet != null)
         {
-            newSnippets.Add(newBlankSnippet);
+            newAnimSnippets.Add(newBlankSnippet);
         }
         
-        story.UpdateSnippets(newSnippets);
+        story.UpdateAnimSnippets(newAnimSnippets);
     }
 
-    private Snippet DrawSnippetField(Animator anim, string trigger, float time)
+    private AnimSnippet DrawAnimSnippetField(Animator anim, string trigger, float time)
     {
         GUILayout.BeginHorizontal();
 
@@ -275,7 +275,7 @@ public class StoryNode
 
         if(anim != null)
         {
-            return new Snippet(anim, trigger, time);
+            return new AnimSnippet(anim, trigger, time);
         }
         else
         {
