@@ -35,9 +35,10 @@ public class Story : MonoBehaviour
 
         public void Stop()
         {
-            anim.enabled = false;
+            anim.Play("Base", 0, 0);
             isPlaying = false;
         }
+
     }
 
     [Serializable]
