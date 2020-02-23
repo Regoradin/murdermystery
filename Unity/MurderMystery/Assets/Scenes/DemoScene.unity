@@ -613,10 +613,10 @@ RectTransform:
   m_Father: {fileID: 1467226735}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -354, y: -314.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.07319608, y: 0.033}
+  m_AnchorMax: {x: 0.231, y: 0.088749126}
+  m_AnchoredPosition: {x: 1, y: -2}
+  m_SizeDelta: {x: -2, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244052172
 MonoBehaviour:
@@ -1190,12 +1190,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
+  animSnippets:
   - anim: {fileID: 1322220637}
     trigger: Doyouknowwhereyouare
     startTime: 0
+  - anim: {fileID: 1814685497}
+    trigger: Howcouldyouforget
+    startTime: 5
   name: Say yes
-  nodePosition: {x: 199, y: 404}
+  nodePosition: {x: 29, y: 188}
   isPlaying: 1
   isFinished: 0
   interactions:
@@ -1220,12 +1223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
-  - anim: {fileID: 1322220637}
-    trigger: yesnod
+  animSnippets:
+  - anim: {fileID: 1814685497}
+    trigger: Nounhealthy
     startTime: 0
   name: good
-  nodePosition: {x: 659, y: 186}
+  nodePosition: {x: 338, y: 21}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1244,12 +1247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
-  - anim: {fileID: 1322220637}
-    trigger: noshake
-    startTime: 0
+  animSnippets: []
   name: interrogation
-  nodePosition: {x: 658, y: 477}
+  nodePosition: {x: 337, y: 312}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1268,18 +1268,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
-  - anim: {fileID: 1322220637}
-    trigger: Haveyouseenthisknifebefore
-    startTime: 0
-  - anim: {fileID: 1814685497}
-    trigger: Youknowwhatyoudid
-    startTime: 3
-  - anim: {fileID: 1689777757}
-    trigger: Lobster1
-    startTime: 10
+  animSnippets: []
   name: KnifeQ1
-  nodePosition: {x: 1781, y: 242}
+  nodePosition: {x: 1460, y: 77}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1301,12 +1292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
-  - anim: {fileID: 1322220637}
-    trigger: Suityourself
-    startTime: 0
+  animSnippets: []
   name: suityourself
-  nodePosition: {x: 1364, y: 388}
+  nodePosition: {x: 1043, y: 223}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1325,12 +1313,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
-  - anim: {fileID: 1322220637}
-    trigger: yesnod
-    startTime: 0
+  animSnippets: []
   name: good
-  nodePosition: {x: 1361, y: 82}
+  nodePosition: {x: 1040, y: -83}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1349,18 +1334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
-  - anim: {fileID: 1322220637}
-    trigger: Doyouwantsomepeanuts
-    startTime: 0
-  - anim: {fileID: 1814685497}
-    trigger: Nounhealthy
-    startTime: 3
-  - anim: {fileID: 1689777757}
-    trigger: Lobster
-    startTime: 6
+  animSnippets: []
   name: peanuts
-  nodePosition: {x: 1060, y: 305}
+  nodePosition: {x: 739, y: 140}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1382,18 +1358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
-  - anim: {fileID: 1322220637}
-    trigger: Didyoukillhimwiththeknife
-    startTime: 0
-  - anim: {fileID: 1814685497}
-    trigger: Itwillbeokay
-    startTime: 4
-  - anim: {fileID: 1689777757}
-    trigger: Wrongguy
-    startTime: 13
+  animSnippets: []
   name: KnifeQ3
-  nodePosition: {x: 2584, y: 175}
+  nodePosition: {x: 2263, y: 10}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -1409,18 +1376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
-  - anim: {fileID: 1322220637}
-    trigger: Werentyoujugglingtheseknives
-    startTime: 0
-  - anim: {fileID: 1814685497}
-    trigger: Justtellhim
-    startTime: 4
-  - anim: {fileID: 1689777757}
-    trigger: Deny
-    startTime: 17
+  animSnippets: []
   name: KnifeQ2Bad
-  nodePosition: {x: 2248, y: 336}
+  nodePosition: {x: 1927, y: 171}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1442,18 +1400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snippets:
-  - anim: {fileID: 1322220637}
-    trigger: Doyouknowwhatthisknifeisfor
-    startTime: 0
-  - anim: {fileID: 1814685497}
-    trigger: Howcouldyouforget
-    startTime: 4
-  - anim: {fileID: 1689777757}
-    trigger: TrueLobster1
-    startTime: 14
+  animSnippets: []
   name: KnifeQ2Good
-  nodePosition: {x: 2240, y: 1}
+  nodePosition: {x: 1919, y: -164}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2549,10 +2498,10 @@ RectTransform:
   m_Father: {fileID: 1467226735}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 312, y: -314.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.7262943, y: 0.033}
+  m_AnchorMax: {x: 0.88500005, y: 0.08025784}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: -2, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969673465
 MonoBehaviour:
@@ -3495,10 +3444,10 @@ RectTransform:
   m_Father: {fileID: 1467226735}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32, y: -314.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.38900003, y: 0.033}
+  m_AnchorMax: {x: 0.546, y: 0.08025784}
+  m_AnchoredPosition: {x: 1, y: 0.5}
+  m_SizeDelta: {x: 0, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336971783
 MonoBehaviour:

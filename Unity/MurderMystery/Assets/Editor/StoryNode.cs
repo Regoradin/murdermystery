@@ -6,34 +6,19 @@ using System;
 using System.Collections.Generic;
 using static Story;
 
-public class StoryNode
+public class StoryNode : Node
 {
-    public Rect rect;
-    public string title;
-    public bool isDragged;
-    public bool isSelected;
-
     public ConnectionPoint inPoint;
     public List<ConnectionPoint> outPoints;
     
-    public GUIStyle style;
-    public GUIStyle defaultNodeStyle;
-    public GUIStyle selectedNodeStyle;
-
-    public Action<StoryNode> OnRemoveNode;
-
-    private GUIStyle outPointStyle;
-    private Action<ConnectionPoint> OnClickOutPoint;
-
     public Story story
-	{
-		get { return (Story)EditorUtility.InstanceIDToObject(_storyID); }
-		set { _storyID = value.GetInstanceID(); }
-	}
-	private int _storyID;
-    private StoryEditor editor;
+    {
+        get { return (Story)EditorUtility.InstanceIDToObject(_storyID); }
+        set { _storyID = value.GetInstanceID(); }
+    }
+    private int _storyID;
 
-    public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<StoryNode> OnClickRemoveNode, StoryEditor editor, Story story)
+    public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<Node> OnClickRemoveNode, StoryEditor editor, Story story) : base(position, width, height, style, selectedStyle, inPointStyle, OnClickInPoint, outPointStyle, OnClickOutPoint, OnClickRemoveNode, editor)
     {
         rect = new Rect(position.x, position.y, width, height);
         this.defaultNodeStyle = style;
@@ -59,18 +44,15 @@ public class StoryNode
         }
     }
 
-    public void Drag(Vector2 delta)
+    public override void Drag(Vector2 delta)
     {
-        rect.position += delta;
+        base.Drag(delta);
         story.nodePosition = rect.position;
-
-        EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
     }
 
-    public void Draw()
+    public override void Draw()
     {
-        GUI.Box(rect, title, style);
-        DrawContents();
+        base.Draw();
 
         inPoint.Draw();
         if (outPoints != null)
@@ -109,7 +91,7 @@ public class StoryNode
             {
                 ConnectionPoint outPoint = outPoints[i];
                 ConnectionPoint inPoint = null;
-                foreach (StoryNode node in editor.nodes)
+                foreach (StoryNode node in editor.storyNodes)
                 {
                     if (node.story == story.interactions[i].nextStory)
                     {
@@ -124,75 +106,21 @@ public class StoryNode
         
     }
 
-    public bool ProcessEvents(Event e)
-    {
-        switch(e.type)
-        {
-            case EventType.MouseDown:
-                if (e.button == 0)
-                {
-                    if (rect.Contains(e.mousePosition))
-                    {
-                        isDragged = true;
-                        isSelected = true;
-                        style = selectedNodeStyle;
-                    }
-                    GUI.changed = true;
-                }
-                if (e.button == 1 && isSelected && rect.Contains(e.mousePosition))
-                {
-                    ProcessContextMenu();
-                    e.Use();
-                }
-                break;                
-                
-            case EventType.MouseUp:
-                isDragged = false;
-                style = defaultNodeStyle;
-                break;
-
-            case EventType.MouseDrag:
-                if (e.button == 0 && isDragged)
-                {
-                    Drag(e.delta);
-                    e.Use();
-                    return true;
-                }
-                break;
-        }
-        return false;
-    }
-
-    private void ProcessContextMenu()
-    {
-        GenericMenu genericMenu = new GenericMenu();
-        genericMenu.AddItem(new GUIContent("Remove node"), false, OnClickRemoveNode);
-        genericMenu.ShowAsContext();
-    }
-
-    private void OnClickRemoveNode()
+    private new void OnClickRemoveNode()
     {
         UnityEngine.Object.DestroyImmediate(story);
-
-        if (OnRemoveNode != null)
-        {
-            OnRemoveNode(this);
-        }
+        base.OnClickRemoveNode();
     }
 
-    private void DrawContents()
+    protected override void DrawContents()
     {
-        GUILayout.BeginArea(new Rect(rect.x + 10, rect.y + 10, rect.width - 20, rect.height - 20));
-
         GUILayout.BeginHorizontal();
         GUILayout.Label("Name: ");
         story.name = GUILayout.TextField(story.name);
         GUILayout.EndHorizontal();
-
+        
         DrawAllInteractionFields();
         DrawAllSnippetFields();
-
-        GUILayout.EndArea();
     }
 
     private void DrawAllInteractionFields()
@@ -308,10 +236,5 @@ public class StoryNode
         {
             return null;
         }
-    }
-
-    public void RemoveInteraction()
-    {
-        
     }
 }

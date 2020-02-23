@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 public class StoryEditor : EditorWindow
 {
-    public List<StoryNode> nodes;
+    public List<StoryNode> storyNodes;
     private List<Connection> connections;
 
     private GUIStyle nodeStyle;
@@ -61,9 +61,9 @@ public class StoryEditor : EditorWindow
 
     private void LoadSavedInteractions()
     {
-        if (nodes != null)
+        if (storyNodes != null)
         {
-            foreach (StoryNode node in nodes)
+            foreach (StoryNode node in storyNodes)
             {
                 node.LoadInteractionConnections();
             }
@@ -95,9 +95,9 @@ public class StoryEditor : EditorWindow
 
     private void DrawNodes()
     {
-        if (nodes != null)
+        if (storyNodes != null)
         {
-            foreach (StoryNode node in nodes)
+            foreach (StoryNode node in storyNodes)
             {
                 node.Draw();
             }
@@ -174,11 +174,11 @@ public class StoryEditor : EditorWindow
     
     private void ProcessNodeEvents(Event e)
     {
-        if (nodes != null)
+        if (storyNodes != null)
         {
-            for (int i = nodes.Count -1; i >= 0; i--)
+            for (int i = storyNodes.Count -1; i >= 0; i--)
             {
-                bool guiChanged = nodes[i].ProcessEvents(e);
+                bool guiChanged = storyNodes[i].ProcessEvents(e);
                 if (guiChanged)
                 {
                     GUI.changed = true;
@@ -222,11 +222,11 @@ public class StoryEditor : EditorWindow
 
     private void OnClickAddNode(Vector2 mousePosition, Story story = null)
     {
-        if (nodes == null)
+        if (storyNodes == null)
         {
-            nodes = new List<StoryNode>();
+            storyNodes = new List<StoryNode>();
         }
-        nodes.Add(new StoryNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story));
+        storyNodes.Add(new StoryNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story));
     }
 
     private void OnClickInPoint(ConnectionPoint inPoint)
@@ -246,9 +246,9 @@ public class StoryEditor : EditorWindow
     private void OnDrag(Vector2 delta)
     {
         drag = delta;
-        if (nodes != null)
+        if (storyNodes != null)
         {
-            foreach(StoryNode node in nodes)
+            foreach(StoryNode node in storyNodes)
             {
                 node.Drag(delta);
             }
@@ -270,25 +270,35 @@ public class StoryEditor : EditorWindow
         }
     }
 
-    private void OnClickRemoveNode(StoryNode node)
+    private void OnClickRemoveNode(Node node)
     {
-        if (connections != null)
+        StoryNode storyNode = node as StoryNode;
+        if (storyNode != null)
         {
-            List<Connection> connectionsToRemove = new List<Connection>();
-
-            for (int i = 0; i < connections.Count; i++)
+            if (connections != null)
             {
-                if (connections[i].inPoint == node.inPoint || node.outPoints.Contains(connections[i].outPoint))
+                List<Connection> connectionsToRemove = new List<Connection>();
+
+                for (int i = 0; i < connections.Count; i++)
                 {
-                    connectionsToRemove.Add(connections[i]);
-                }
-                foreach (Connection connection in connectionsToRemove)
-                {
-                    connections.Remove(connection);
+                    if (connections[i].inPoint == storyNode.inPoint || storyNode.outPoints.Contains(connections[i].outPoint))
+                    {
+                        connectionsToRemove.Add(connections[i]);
+                    }
+                    foreach (Connection connection in connectionsToRemove)
+                    {
+                        connections.Remove(connection);
+                    }
                 }
             }
+            storyNodes.Remove(storyNode);
         }
-        nodes.Remove(node);
+        else
+        {
+            Debug.Log("Implement sequence node removal");
+        }
+        //TODO Sequence node removal here;
+        
     }
     
     private void OnClickRemoveConnection(Connection connection)
