@@ -8,6 +8,7 @@ using System.Collections.Generic;
 public class StoryEditor : EditorWindow
 {
     public List<StoryNode> storyNodes;
+    public List<SequenceNode> sequenceNodes;
     private List<Connection> connections;
 
     private GUIStyle nodeStyle;
@@ -55,7 +56,7 @@ public class StoryEditor : EditorWindow
     {
         foreach (Story story in StoryStructure.Instance.GetComponents<Story>())
         {
-            OnClickAddNode(story.nodePosition, story);
+            OnClickAddStoryNode(story.nodePosition, story);
         }
     }
 
@@ -97,7 +98,14 @@ public class StoryEditor : EditorWindow
     {
         if (storyNodes != null)
         {
-            foreach (StoryNode node in storyNodes)
+            foreach (Node node in storyNodes)
+            {
+                node.Draw();
+            }
+        }
+        if (sequenceNodes != null)
+        {
+            foreach (Node node in sequenceNodes)
             {
                 node.Draw();
             }
@@ -216,11 +224,12 @@ public class StoryEditor : EditorWindow
     private void ProcessContextMenu(Vector2 mousePosition)
     {
         GenericMenu genericMenu = new GenericMenu();
-        genericMenu.AddItem(new GUIContent("Add Story"), false, () => OnClickAddNode(mousePosition));
+        genericMenu.AddItem(new GUIContent("Add Story"), false, () => OnClickAddStoryNode(mousePosition));
+        genericMenu.AddItem(new GUIContent("Add Sequence"), false, () => OnClickAddSequenceNode(mousePosition));
         genericMenu.ShowAsContext();
     }
 
-    private void OnClickAddNode(Vector2 mousePosition, Story story = null)
+    private void OnClickAddStoryNode(Vector2 mousePosition, Story story = null)
     {
         if (storyNodes == null)
         {
@@ -229,6 +238,16 @@ public class StoryEditor : EditorWindow
         storyNodes.Add(new StoryNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story));
     }
 
+    private void OnClickAddSequenceNode(Vector2 mousePosition)
+    {
+        if (sequenceNodes == null)
+        {
+            sequenceNodes = new List<SequenceNode>();
+        }
+        sequenceNodes.Add(new SequenceNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this));
+    }
+
+    
     private void OnClickInPoint(ConnectionPoint inPoint)
     {
         selectedInPoint = inPoint;
@@ -248,7 +267,14 @@ public class StoryEditor : EditorWindow
         drag = delta;
         if (storyNodes != null)
         {
-            foreach(StoryNode node in storyNodes)
+            foreach(Node node in storyNodes)
+            {
+                node.Drag(delta);
+            }
+        }
+        if (sequenceNodes != null)
+        {
+            foreach(Node node in sequenceNodes)
             {
                 node.Drag(delta);
             }
@@ -292,12 +318,28 @@ public class StoryEditor : EditorWindow
                 }
             }
             storyNodes.Remove(storyNode);
+            return;
         }
-        else
+        SequenceNode seqNode = node as SequenceNode;
+        if (seqNode != null)
         {
-            Debug.Log("Implement sequence node removal");
+            if (connections != null)
+            {
+                List<Connection> connectionsToRemove = new List<Connection>();
+                for (int i = 0; i < connections.Count; i++)
+                {
+                    if (seqNode.outPoints.Contains(connections[i].outPoint))
+                    {
+                        connectionsToRemove.Add(connections[i]);
+                    }
+                    foreach (Connection connection in connectionsToRemove)
+                    {
+                        connections.Remove(connection);
+                    }
+                }
+
+            }
         }
-        //TODO Sequence node removal here;
         
     }
     
