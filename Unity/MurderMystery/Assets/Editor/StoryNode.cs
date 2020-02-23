@@ -20,18 +20,7 @@ public class StoryNode : Node
 
     public StoryNode(Vector2 position, float width, float height, GUIStyle style, GUIStyle selectedStyle, GUIStyle inPointStyle, GUIStyle outPointStyle, Action<ConnectionPoint> OnClickInPoint, Action<ConnectionPoint> OnClickOutPoint, Action<Node> OnClickRemoveNode, StoryEditor editor, Story story) : base(position, width, height, style, selectedStyle, inPointStyle, OnClickInPoint, outPointStyle, OnClickOutPoint, OnClickRemoveNode, editor)
     {
-        rect = new Rect(position.x, position.y, width, height);
-        this.defaultNodeStyle = style;
-        this.selectedNodeStyle = selectedStyle;
-        this.style = defaultNodeStyle;
-        this.editor = editor;
-
-        this.outPointStyle = outPointStyle;
-        this.OnClickOutPoint = OnClickOutPoint;
-
         inPoint = new ConnectionPoint(this, ConnectionPointType.In, inPointStyle, OnClickInPoint);
-
-        this.OnRemoveNode = OnClickRemoveNode;
 
         if (story != null)
         {
