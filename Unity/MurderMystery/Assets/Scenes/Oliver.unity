@@ -355,14 +355,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animSnippets:
-  - anim: {fileID: 780354545}
+  - startTime: 0
+    anim: {fileID: 780354545}
     trigger: 2up
-    startTime: 0
-  - anim: {fileID: 157967709}
+  - startTime: 3
+    anim: {fileID: 157967709}
     trigger: 2left
-    startTime: 4
   name: 2up/2left
-  nodePosition: {x: 479, y: 237}
+  nodePosition: {x: 382, y: 235}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -379,14 +379,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animSnippets:
-  - anim: {fileID: 780354545}
+  - startTime: 0
+    anim: {fileID: 780354545}
     trigger: 1up
-    startTime: 0
-  - anim: {fileID: 157967709}
+  - startTime: 3
+    anim: {fileID: 157967709}
     trigger: 1left
-    startTime: 4
   name: 1up/1left
-  nodePosition: {x: 109, y: 289}
+  nodePosition: {x: 27, y: 274}
   isPlaying: 0
   isFinished: 0
   interactions:

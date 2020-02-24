@@ -9,7 +9,7 @@ public class Story : MonoBehaviour
     public abstract class Snippet
     {
         public float startTime;
-        private bool isPlaying;
+        protected bool isPlaying;
 
         public Snippet(float startTime)
         {
@@ -52,11 +52,12 @@ public class Story : MonoBehaviour
 
     }
 
-    public class AudioSnippet
+    [Serializable]
+    public class AudioSnippet : Snippet
     {
         public AudioSource audio;
 
-        public AudioSnippet (Audiosource audio, float startTime) : base(startTime)
+        public AudioSnippet (AudioSource audio, float startTime) : base(startTime)
         {
             this.audio = audio;
         }
