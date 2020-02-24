@@ -28,7 +28,6 @@ public class StoryNode : Node
         }
         else
         {
-            Debug.Log(StoryStructure.Instance);
             this._storyID = StoryStructure.Instance.gameObject.AddComponent<Story>().GetInstanceID();
         }
     }
@@ -95,7 +94,7 @@ public class StoryNode : Node
         
     }
 
-    private new void OnClickRemoveNode()
+    protected override void OnClickRemoveNode()
     {
         UnityEngine.Object.DestroyImmediate(story);
         base.OnClickRemoveNode();

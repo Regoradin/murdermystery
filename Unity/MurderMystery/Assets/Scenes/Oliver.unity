@@ -270,15 +270,15 @@ MonoBehaviour:
     trigger: 
     startTime: 0
   name: hello
-  nodePosition: {x: 2, y: 280}
+  nodePosition: {x: 12, y: 117}
   isPlaying: 0
   isFinished: 0
   interactions:
   - name: 1
-    nextStory: {fileID: 0}
+    nextStory: {fileID: 476522304}
     type: 1
   - name: 2
-    nextStory: {fileID: 476522304}
+    nextStory: {fileID: 0}
     type: 1
 --- !u!1 &476522300
 GameObject:
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snippets: []
   name: 3
-  nodePosition: {x: 355, y: 294}
+  nodePosition: {x: 357, y: 190}
   isPlaying: 0
   isFinished: 0
   interactions: []

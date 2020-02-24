@@ -35,8 +35,22 @@ public class Connection
                 OnClickRemoveConnection(this);
             }
         }
-
-        outPoint.node.story.ConnectInteraction(outPoint.interactionName, inPoint.node.story);
+        StoryNode outStoryNode = outPoint.node as StoryNode;
+        StoryNode inStoryNode = inPoint.node as StoryNode;
+        SequenceNode outSequenceNode = outPoint.node as SequenceNode;
+        if (outStoryNode != null && inStoryNode != null)
+        {
+            outStoryNode.story.ConnectInteraction(outPoint.interactionName, inStoryNode.story);
+        }
+        else if (outSequenceNode != null && inStoryNode != null)
+        {
+            outSequenceNode.AddStory(outPoint, inStoryNode.story);
+        }
+        else
+        {
+            Debug.Log("Not valid connection point");
+        }
+        
     }
 
 }

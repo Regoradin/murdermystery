@@ -70,6 +70,13 @@ public class StoryEditor : EditorWindow
                 node.LoadInteractionConnections();
             }
         }
+        if (sequenceNodes != null)
+        {
+            foreach (SequenceNode node in sequenceNodes)
+            {
+                node.LoadConnections();
+            }
+        }
     }
 
     private void OnGUI()
@@ -252,7 +259,13 @@ public class StoryEditor : EditorWindow
         {
             sequenceNodes = new List<SequenceNode>();
         }
-        SequenceNode newNode = new SequenceNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, -1);
+        if (StoryStructure.Instance.sequences == null)
+        {
+            StoryStructure.Instance.sequences = new List<ListWrapper<Story>>();
+        }
+        int index = StoryStructure.Instance.sequences.Count;
+        
+        SequenceNode newNode = new SequenceNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, index);
         sequenceNodes.Add(newNode);
         if (allNodes == null)
         {
@@ -264,12 +277,15 @@ public class StoryEditor : EditorWindow
     
     private void OnClickInPoint(ConnectionPoint inPoint)
     {
+        Debug.Log("onLcikc in point");
         selectedInPoint = inPoint;
 
         if (selectedOutPoint != null)
         {
+            Debug.Log("outpoint not null");
             if (selectedOutPoint.node != selectedInPoint.node)
             {
+                Debug.Log("Creating connection");
                 CreateConnection();
             }
             ClearConnectionSelection();
@@ -337,7 +353,6 @@ public class StoryEditor : EditorWindow
         SequenceNode seqNode = node as SequenceNode;
         if (seqNode != null)
         {
-            Debug.Log("Removing sequenceNode");
             if (connections != null)
             {
                 List<Connection> connectionsToRemove = new List<Connection>();
@@ -361,7 +376,8 @@ public class StoryEditor : EditorWindow
     
     private void OnClickRemoveConnection(Connection connection)
     {
-        connection.outPoint.node.story.RemoveInteraction(connection.outPoint.interactionName);
+        StoryNode storyNode = connection.outPoint.node as StoryNode;
+        storyNode.story.RemoveInteraction(connection.outPoint.interactionName);
         connections.Remove(connection);
     }
 
@@ -373,7 +389,6 @@ public class StoryEditor : EditorWindow
         }
 
         Connection newConnection = new Connection(selectedInPoint, selectedOutPoint, OnClickRemoveConnection);
-
         connections.Add(newConnection);
     }
 
@@ -385,7 +400,6 @@ public class StoryEditor : EditorWindow
         }
 
         Connection newConnection = new Connection(inPoint, outPoint, OnClickRemoveConnection);
-
         connections.Add(newConnection);
 
     }

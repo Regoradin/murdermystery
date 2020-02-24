@@ -11,14 +11,14 @@ public class ConnectionPoint
 
     public ConnectionPointType type;
 
-    public StoryNode node;
+    public Node node;
     public string interactionName;
 
     public GUIStyle style;
 
     public Action<ConnectionPoint> OnClickConnectionPoint;
 
-    public ConnectionPoint(StoryNode node, ConnectionPointType type, GUIStyle style, Action<ConnectionPoint> OnClickConnectionPoint, float yOffset = 0.5f, string interactionName = null)
+    public ConnectionPoint(Node node, ConnectionPointType type, GUIStyle style, Action<ConnectionPoint> OnClickConnectionPoint, float yOffset = 0.5f, string interactionName = null)
     {
         this.node = node;
         this.type = type;

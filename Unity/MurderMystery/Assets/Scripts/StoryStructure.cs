@@ -9,17 +9,15 @@ public class StoryStructure : Singleton<StoryStructure>
     public Story startingStory;
 
     private Stack<Story> storyStack;
-    private List<List<Story>> sequences;
+    public List<ListWrapper<Story>> sequences;
 
     private Dictionary<string, Interaction> interactions;
 
     private void Awake()
     {
         storyStack = new Stack<Story>();
-        sequences = new List<List<Story>>();
 
         interactions = new Dictionary<string, Interaction>();
-
     }
 
     private void Start()
@@ -102,7 +100,7 @@ public class StoryStructure : Singleton<StoryStructure>
         Debug.Log("Picking random story");
         while(sequences.Count > 0)
         {
-            List<Story> sequence = sequences[Random.Range(0, sequences.Count)];
+            ListWrapper<Story> sequence = sequences[Random.Range(0, sequences.Count)];
             Story nextStory = GetNextStoryInSequence(sequence);
             if (nextStory != null)
             {
@@ -114,13 +112,13 @@ public class StoryStructure : Singleton<StoryStructure>
         return null;
     }
 
-    private Story GetNextStoryInSequence(List<Story> sequence)
+    private Story GetNextStoryInSequence(ListWrapper<Story> sequence)
     {
-        foreach (Story story in sequence)
+        for (int i = 0; i < sequence.InnerList.Count; i++)
         {
-            if (!story.isFinished)
+            if (!sequence[i].isFinished)
             {
-                return story;
+                return sequence[i];
             }
         }
         return null;
