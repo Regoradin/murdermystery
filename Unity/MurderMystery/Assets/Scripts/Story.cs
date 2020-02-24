@@ -6,23 +6,34 @@ using System.Collections.Generic;
 public class Story : MonoBehaviour
 {
     [Serializable]
-    public class AnimSnippet
+    public abstract class Snippet
     {
-        public Animator anim;
-        public string trigger;
-
         public float startTime;
         private bool isPlaying;
 
-        public AnimSnippet (Animator anim, string trigger, float startTime)
+        public Snippet(float startTime)
         {
-            this.anim = anim;
-            this.trigger = trigger;
             this.startTime = startTime;
             isPlaying = false;
         }
 
-        public void Play()
+        public abstract void Play();
+        public abstract void Stop();
+    }
+    
+    [Serializable]
+    public class AnimSnippet : Snippet
+    {
+        public Animator anim;
+        public string trigger;
+
+        public AnimSnippet (Animator anim, string trigger, float startTime) : base(startTime)
+        {
+            this.anim = anim;
+            this.trigger = trigger;
+        }
+
+        public override void Play()
         {
             if (!isPlaying)
             {
@@ -33,12 +44,37 @@ public class Story : MonoBehaviour
             }
         }
 
-        public void Stop()
+        public override void Stop()
         {
             anim.Play("Base", 0, 0);
             isPlaying = false;
         }
 
+    }
+
+    public class AudioSnippet
+    {
+        public AudioSource audio;
+
+        public AudioSnippet (Audiosource audio, float startTime) : base(startTime)
+        {
+            this.audio = audio;
+        }
+
+        public override void Play()
+        {
+            if (!isPlaying)
+            {
+                audio.enabled = true;
+                audio.Play();
+                isPlaying = true;
+            }
+        }
+        public override void Stop()
+        {
+            audio.Stop();
+            isPlaying = false;
+        }
     }
 
     [Serializable]
