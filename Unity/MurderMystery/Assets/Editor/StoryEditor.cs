@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 public class StoryEditor : EditorWindow
 {
+    public List<Node> allNodes;
     public List<StoryNode> storyNodes;
     public List<SequenceNode> sequenceNodes;
     private List<Connection> connections;
@@ -182,11 +183,11 @@ public class StoryEditor : EditorWindow
     
     private void ProcessNodeEvents(Event e)
     {
-        if (storyNodes != null)
+        if (allNodes != null)
         {
-            for (int i = storyNodes.Count -1; i >= 0; i--)
+            for (int i = allNodes.Count -1; i >= 0; i--)
             {
-                bool guiChanged = storyNodes[i].ProcessEvents(e);
+                bool guiChanged = allNodes[i].ProcessEvents(e);
                 if (guiChanged)
                 {
                     GUI.changed = true;
@@ -235,7 +236,14 @@ public class StoryEditor : EditorWindow
         {
             storyNodes = new List<StoryNode>();
         }
-        storyNodes.Add(new StoryNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story));
+        StoryNode newNode = new StoryNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story);
+        storyNodes.Add(newNode);
+
+        if (allNodes == null)
+        {
+            allNodes = new List<Node>();
+        }
+        allNodes.Add(newNode);
     }
 
     private void OnClickAddSequenceNode(Vector2 mousePosition)
@@ -244,7 +252,13 @@ public class StoryEditor : EditorWindow
         {
             sequenceNodes = new List<SequenceNode>();
         }
-        sequenceNodes.Add(new SequenceNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this));
+        SequenceNode newNode = new SequenceNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, -1);
+        sequenceNodes.Add(newNode);
+        if (allNodes == null)
+        {
+            allNodes = new List<Node>();
+        }
+        allNodes.Add(newNode);
     }
 
     
@@ -323,6 +337,7 @@ public class StoryEditor : EditorWindow
         SequenceNode seqNode = node as SequenceNode;
         if (seqNode != null)
         {
+            Debug.Log("Removing sequenceNode");
             if (connections != null)
             {
                 List<Connection> connectionsToRemove = new List<Connection>();
@@ -337,8 +352,9 @@ public class StoryEditor : EditorWindow
                         connections.Remove(connection);
                     }
                 }
-
             }
+            sequenceNodes.Remove(seqNode);
+            return;
         }
         
     }

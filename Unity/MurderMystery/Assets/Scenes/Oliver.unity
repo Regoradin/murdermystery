@@ -269,8 +269,8 @@ MonoBehaviour:
   - anim: {fileID: 780354545}
     trigger: 
     startTime: 0
-  name: 
-  nodePosition: {x: 43, y: 201}
+  name: hello
+  nodePosition: {x: 2, y: 280}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snippets: []
   name: 3
-  nodePosition: {x: 396, y: 215}
+  nodePosition: {x: 355, y: 294}
   isPlaying: 0
   isFinished: 0
   interactions: []
