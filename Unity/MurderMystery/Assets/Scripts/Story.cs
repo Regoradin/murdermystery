@@ -19,12 +19,13 @@ public class Story : MonoBehaviour
 
         public virtual void Play()
         {
-            Debug.Log("You played a generic snippet :(");
+            Debug.Log("NOs");
         }
         public virtual void Stop()
         {
-            Debug.Log("You stopped a generic snippet :(");            
+            Debug.Log("NO");
         }
+
     }
     
     [Serializable]
@@ -105,7 +106,35 @@ public class Story : MonoBehaviour
         }
     }
 
-    public List<Snippet> snippets;
+    [SerializeField] private List<Snippet> _snippets;
+    public List<Snippet> snippets
+    {
+        get
+        {
+            return _snippets;
+        }
+        set
+        {
+            Debug.Log("Value: " + value);
+            _snippets = value;
+            foreach (Snippet snippet in _snippets)
+            {
+
+                animSnippets = new List<AnimSnippet>();
+                audioSnippets = new List<AudioSnippet>();
+                if (snippet is AnimSnippet)
+                {
+                    animSnippets.Add(snippet as AnimSnippet);
+                }
+                else if (snippet is AudioSnippet)
+                {
+                    audioSnippets.Add(snippet as AudioSnippet);
+                }
+            }
+        }
+    }
+    [SerializeField] private List<AnimSnippet> animSnippets;
+    [SerializeField] private List<AudioSnippet> audioSnippets;
 
     //Data to work properly with story editor window
     public string name;
