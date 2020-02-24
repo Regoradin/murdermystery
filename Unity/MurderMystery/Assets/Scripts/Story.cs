@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Story : MonoBehaviour
 {
     [Serializable]
-    public abstract class Snippet
+    public class Snippet
     {
         public float startTime;
         protected bool isPlaying;
@@ -17,8 +17,14 @@ public class Story : MonoBehaviour
             isPlaying = false;
         }
 
-        public abstract void Play();
-        public abstract void Stop();
+        public virtual void Play()
+        {
+            Debug.Log("You played a generic snippet :(");
+        }
+        public virtual void Stop()
+        {
+            Debug.Log("You stopped a generic snippet :(");            
+        }
     }
     
     [Serializable]
@@ -99,7 +105,7 @@ public class Story : MonoBehaviour
         }
     }
 
-    public List<AnimSnippet> animSnippets;
+    public List<Snippet> snippets;
 
     //Data to work properly with story editor window
     public string name;
@@ -115,12 +121,17 @@ public class Story : MonoBehaviour
     public void AddAnimSnippet(Animator anim, string trigger, float relativeStartTime)
     {
         AnimSnippet newSnippet = new AnimSnippet (anim, trigger, relativeStartTime);
-        animSnippets.Add(newSnippet);
+        snippets.Add(newSnippet);
+    }
+    public void AddAudioSnippet(AudioSource audio, float relativeStartTime)
+    {
+        AudioSnippet newSnippet = new AudioSnippet (audio, relativeStartTime);
+        snippets.Add(newSnippet);
     }
 
-    public void UpdateAnimSnippets(List<AnimSnippet> newSnippets)
+    public void UpdateSnippets(List<Snippet> newSnippets)
     {
-        animSnippets = newSnippets;
+        snippets = newSnippets;
     }
 
     public void UpdateInteractions(List<Interaction> newInteractions)
@@ -185,7 +196,7 @@ public class Story : MonoBehaviour
 
     private void StartNewSnippets()
     {
-        foreach (AnimSnippet snippet in animSnippets)
+        foreach (Snippet snippet in snippets)
         {
             if (Time.time - startTime  >= snippet.startTime)
             {
@@ -196,7 +207,7 @@ public class Story : MonoBehaviour
 
     private void StopAllSnippets()
     {
-        foreach (AnimSnippet snippet in animSnippets)
+        foreach (Snippet snippet in snippets)
         {
             snippet.Stop();
         }
