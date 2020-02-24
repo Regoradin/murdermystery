@@ -227,31 +227,21 @@ public class StoryNode
 
     private void DrawAllSnippetFields()
     {
-        List<Snippet> newSnippets = new List<Snippet>();
-        if (story.snippets != null)
+        List<AnimSnippet> newAnimSnippets = new List<AnimSnippet>();
+        List<AudioSnippet> newAudioSnippets = new List<AudioSnippet>();
+        if (story.animSnippets != null)
         {
-            foreach(Snippet snippet in story.snippets)
+            foreach(AnimSnippet animSnippet in story.animSnippets)
             {
-                Snippet newSnippet = null;
-                if (snippet is AnimSnippet)
-                {
-                    AnimSnippet animSnippet = snippet as AnimSnippet;
-                    Animator anim = animSnippet.anim;
-                    string trigger = animSnippet.trigger;
-                    float time = animSnippet.startTime;
-                    newSnippet = DrawAnimSnippetField(anim, trigger, time);
-                }
-                else if (snippet is AudioSnippet)
-                {
-                    AudioSnippet audioSnippet = snippet as AudioSnippet;
-                    AudioSource audio = audioSnippet.audio;
-                    float time = audioSnippet.startTime;
-                    newSnippet = DrawAudioSnippetField(audio, time);
-                }
-
+                AnimSnippet newSnippet = null;
+                Animator anim = animSnippet.anim;
+                string trigger = animSnippet.trigger;
+                float time = animSnippet.startTime;
+                newSnippet = DrawAnimSnippetField(anim, trigger, time);
+                
                 if (newSnippet != null)
                 {
-                    newSnippets.Add(newSnippet);
+                    newAnimSnippets.Add(newSnippet);
                 }
             }
 
@@ -260,15 +250,34 @@ public class StoryNode
         AnimSnippet newBlankAnimSnippet = DrawAnimSnippetField(null, null, 0);
         if (newBlankAnimSnippet != null)
         {
-            newSnippets.Add(newBlankAnimSnippet);
+            newAnimSnippets.Add(newBlankAnimSnippet);
         }
+
+        if (story.audioSnippets != null)
+        {
+            foreach(AudioSnippet audioSnippet in story.audioSnippets)
+            {
+                AudioSnippet newSnippet = null;
+                AudioSource audio = audioSnippet.audio;
+                float time = audioSnippet.startTime;
+                newSnippet = DrawAudioSnippetField(audio, time);
+
+                if (newSnippet != null)
+                {
+                    newAudioSnippets.Add(newSnippet);
+                }
+            }
+
+        }
+
         AudioSnippet newBlankAudioSnippet = DrawAudioSnippetField(null, 0);
         if (newBlankAudioSnippet != null)
         {
-            newSnippets.Add(newBlankAudioSnippet);
+            newAudioSnippets.Add(newBlankAudioSnippet);
         }
         
-        story.UpdateSnippets(newSnippets);
+        story.UpdateAnimSnippets(newAnimSnippets);
+        story.UpdateAudioSnippets(newAudioSnippets);
     }
 
     private AnimSnippet DrawAnimSnippetField(Animator anim, string trigger, float time)

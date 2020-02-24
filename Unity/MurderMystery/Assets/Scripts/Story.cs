@@ -29,18 +29,23 @@ public class Story : MonoBehaviour
     }
     
     [Serializable]
-    public class AnimSnippet : Snippet
+    public class AnimSnippet
     {
         public Animator anim;
         public string trigger;
+        public float startTime;
+        private bool isPlaying;
 
-        public AnimSnippet (Animator anim, string trigger, float startTime) : base(startTime)
+
+        public AnimSnippet (Animator anim, string trigger, float startTime)
         {
             this.anim = anim;
             this.trigger = trigger;
+            this.startTime = startTime;
+            isPlaying = false;
         }
 
-        public override void Play()
+        public void Play()
         {
             if (!isPlaying)
             {
@@ -51,7 +56,7 @@ public class Story : MonoBehaviour
             }
         }
 
-        public override void Stop()
+        public void Stop()
         {
             anim.Play("Base", 0, 0);
             isPlaying = false;
@@ -60,16 +65,20 @@ public class Story : MonoBehaviour
     }
 
     [Serializable]
-    public class AudioSnippet : Snippet
+    public class AudioSnippet
     {
         public AudioSource audio;
+        public float startTime;
+        private bool isPlaying;
 
-        public AudioSnippet (AudioSource audio, float startTime) : base(startTime)
+        public AudioSnippet (AudioSource audio, float startTime)
         {
             this.audio = audio;
+            this.startTime = startTime;
+            isPlaying = false;
         }
 
-        public override void Play()
+        public void Play()
         {
             if (!isPlaying)
             {
@@ -78,7 +87,7 @@ public class Story : MonoBehaviour
                 isPlaying = true;
             }
         }
-        public override void Stop()
+        public void Stop()
         {
             audio.Stop();
             isPlaying = false;
@@ -106,35 +115,8 @@ public class Story : MonoBehaviour
         }
     }
 
-    [SerializeField] private List<Snippet> _snippets;
-    public List<Snippet> snippets
-    {
-        get
-        {
-            return _snippets;
-        }
-        set
-        {
-            Debug.Log("Value: " + value);
-            _snippets = value;
-            foreach (Snippet snippet in _snippets)
-            {
-
-                animSnippets = new List<AnimSnippet>();
-                audioSnippets = new List<AudioSnippet>();
-                if (snippet is AnimSnippet)
-                {
-                    animSnippets.Add(snippet as AnimSnippet);
-                }
-                else if (snippet is AudioSnippet)
-                {
-                    audioSnippets.Add(snippet as AudioSnippet);
-                }
-            }
-        }
-    }
-    [SerializeField] private List<AnimSnippet> animSnippets;
-    [SerializeField] private List<AudioSnippet> audioSnippets;
+    public List<AnimSnippet> animSnippets;
+    public List<AudioSnippet> audioSnippets;
 
     //Data to work properly with story editor window
     public string name;
@@ -150,17 +132,21 @@ public class Story : MonoBehaviour
     public void AddAnimSnippet(Animator anim, string trigger, float relativeStartTime)
     {
         AnimSnippet newSnippet = new AnimSnippet (anim, trigger, relativeStartTime);
-        snippets.Add(newSnippet);
+        animSnippets.Add(newSnippet);
     }
     public void AddAudioSnippet(AudioSource audio, float relativeStartTime)
     {
         AudioSnippet newSnippet = new AudioSnippet (audio, relativeStartTime);
-        snippets.Add(newSnippet);
+        audioSnippets.Add(newSnippet);
     }
 
-    public void UpdateSnippets(List<Snippet> newSnippets)
+    public void UpdateAnimSnippets(List<AnimSnippet> newSnippets)
     {
-        snippets = newSnippets;
+        animSnippets = newSnippets;
+    }
+    public void UpdateAudioSnippets(List<AudioSnippet> newSnippets)
+    {
+        audioSnippets = newSnippets;
     }
 
     public void UpdateInteractions(List<Interaction> newInteractions)
@@ -225,20 +211,33 @@ public class Story : MonoBehaviour
 
     private void StartNewSnippets()
     {
-        foreach (Snippet snippet in snippets)
+        foreach (AnimSnippet snippet in animSnippets)
         {
             if (Time.time - startTime  >= snippet.startTime)
             {
                 snippet.Play();
             }
         }
+        foreach (AudioSnippet snippet in audioSnippets)
+        {
+            if (Time.time - startTime  >= snippet.startTime)
+            {
+                snippet.Play();
+            }
+        }
+
     }
 
     private void StopAllSnippets()
     {
-        foreach (Snippet snippet in snippets)
+        foreach (AnimSnippet snippet in animSnippets)
         {
             snippet.Stop();
         }
+        foreach (AudioSnippet snippet in audioSnippets)
+        {
+            snippet.Stop();
+        }
+
     }
 }

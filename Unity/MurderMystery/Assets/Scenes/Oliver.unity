@@ -354,7 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _snippets: []
   animSnippets: []
   audioSnippets: []
   name: 2up/2left
@@ -374,14 +373,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _snippets:
-  - startTime: 0
-  - startTime: 0
   animSnippets:
-  - startTime: 0
-    anim: {fileID: 157967709}
-    trigger: 
-  audioSnippets: []
+  - anim: {fileID: 157967709}
+    trigger: 21
+    startTime: 4
+  audioSnippets:
+  - audio: {fileID: 780354548}
+    startTime: 1
   name: 1up/1left
   nodePosition: {x: 18, y: 275}
   isPlaying: 0
