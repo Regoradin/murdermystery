@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Story : MonoBehaviour
 {
     [Serializable]
-    public class Snippet
+    public class AnimSnippet
     {
         public Animator anim;
         public string trigger;
@@ -14,7 +14,7 @@ public class Story : MonoBehaviour
         public float startTime;
         private bool isPlaying;
 
-        public Snippet (Animator anim, string trigger, float startTime)
+        public AnimSnippet (Animator anim, string trigger, float startTime)
         {
             this.anim = anim;
             this.trigger = trigger;
@@ -35,9 +35,10 @@ public class Story : MonoBehaviour
 
         public void Stop()
         {
-            anim.enabled = false;
+            anim.Play("Base", 0, 0);
             isPlaying = false;
         }
+
     }
 
     [Serializable]
@@ -61,7 +62,7 @@ public class Story : MonoBehaviour
         }
     }
 
-    public List<Snippet> snippets;
+    public List<AnimSnippet> animSnippets;
 
     //Data to work properly with story editor window
     public string name;
@@ -74,15 +75,15 @@ public class Story : MonoBehaviour
 
     public List<Interaction> interactions;
 
-    public void AddSnippet(Animator anim, string trigger, float relativeStartTime)
+    public void AddAnimSnippet(Animator anim, string trigger, float relativeStartTime)
     {
-        Snippet newSnippet = new Snippet (anim, trigger, relativeStartTime);
-        snippets.Add(newSnippet);
+        AnimSnippet newSnippet = new AnimSnippet (anim, trigger, relativeStartTime);
+        animSnippets.Add(newSnippet);
     }
 
-    public void UpdateSnippets(List<Snippet> newSnippets)
+    public void UpdateAnimSnippets(List<AnimSnippet> newSnippets)
     {
-        snippets = newSnippets;
+        animSnippets = newSnippets;
     }
 
     public void UpdateInteractions(List<Interaction> newInteractions)
@@ -147,7 +148,7 @@ public class Story : MonoBehaviour
 
     private void StartNewSnippets()
     {
-        foreach (Snippet snippet in snippets)
+        foreach (AnimSnippet snippet in animSnippets)
         {
             if (Time.time - startTime  >= snippet.startTime)
             {
@@ -158,7 +159,7 @@ public class Story : MonoBehaviour
 
     private void StopAllSnippets()
     {
-        foreach (Snippet snippet in snippets)
+        foreach (AnimSnippet snippet in animSnippets)
         {
             snippet.Stop();
         }
