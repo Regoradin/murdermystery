@@ -53,7 +53,7 @@ public class StoryEditor : EditorWindow
 
     private void LoadSavedStories()
     {
-        foreach(Story story in StoryStructure.Instance.GetComponents<Story>())
+        foreach (Story story in StoryStructure.Instance.GetComponents<Story>())
         {
             OnClickAddNode(story.nodePosition, story);
         }
@@ -61,14 +61,18 @@ public class StoryEditor : EditorWindow
 
     private void LoadSavedInteractions()
     {
-        foreach(StoryNode node in nodes)
+        if (nodes != null)
         {
-            node.LoadInteractionConnections();
+            foreach (StoryNode node in nodes)
+            {
+                node.LoadInteractionConnections();
+            }
         }
     }
 
     private void OnGUI()
     {
+
         DrawGrid(20, 0.2f, Color.gray);
         DrawGrid(100, 0.4f, Color.gray);
 
@@ -222,7 +226,7 @@ public class StoryEditor : EditorWindow
         {
             nodes = new List<StoryNode>();
         }
-        nodes.Add(new StoryNode(mousePosition, 200, 250, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story));
+        nodes.Add(new StoryNode(mousePosition, 200, 350, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story));
     }
 
     private void OnClickInPoint(ConnectionPoint inPoint)

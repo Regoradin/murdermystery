@@ -8,13 +8,36 @@ public class Story : MonoBehaviour
     [Serializable]
     public class Snippet
     {
+        public float startTime;
+        protected bool isPlaying;
+
+        public Snippet(float startTime)
+        {
+            this.startTime = startTime;
+            isPlaying = false;
+        }
+
+        public virtual void Play()
+        {
+            Debug.Log("NOs");
+        }
+        public virtual void Stop()
+        {
+            Debug.Log("NO");
+        }
+
+    }
+    
+    [Serializable]
+    public class AnimSnippet
+    {
         public Animator anim;
         public string trigger;
-
         public float startTime;
         private bool isPlaying;
 
-        public Snippet (Animator anim, string trigger, float startTime)
+
+        public AnimSnippet (Animator anim, string trigger, float startTime)
         {
             this.anim = anim;
             this.trigger = trigger;
@@ -35,7 +58,38 @@ public class Story : MonoBehaviour
 
         public void Stop()
         {
-            anim.enabled = false;
+            anim.Play("Base", 0, 0);
+            isPlaying = false;
+        }
+
+    }
+
+    [Serializable]
+    public class AudioSnippet
+    {
+        public AudioSource audio;
+        public float startTime;
+        private bool isPlaying;
+
+        public AudioSnippet (AudioSource audio, float startTime)
+        {
+            this.audio = audio;
+            this.startTime = startTime;
+            isPlaying = false;
+        }
+
+        public void Play()
+        {
+            if (!isPlaying)
+            {
+                audio.enabled = true;
+                audio.Play();
+                isPlaying = true;
+            }
+        }
+        public void Stop()
+        {
+            audio.Stop();
             isPlaying = false;
         }
     }
@@ -61,7 +115,8 @@ public class Story : MonoBehaviour
         }
     }
 
-    public List<Snippet> snippets;
+    public List<AnimSnippet> animSnippets;
+    public List<AudioSnippet> audioSnippets;
 
     //Data to work properly with story editor window
     public string name;
@@ -74,15 +129,24 @@ public class Story : MonoBehaviour
 
     public List<Interaction> interactions;
 
-    public void AddSnippet(Animator anim, string trigger, float relativeStartTime)
+    public void AddAnimSnippet(Animator anim, string trigger, float relativeStartTime)
     {
-        Snippet newSnippet = new Snippet (anim, trigger, relativeStartTime);
-        snippets.Add(newSnippet);
+        AnimSnippet newSnippet = new AnimSnippet (anim, trigger, relativeStartTime);
+        animSnippets.Add(newSnippet);
+    }
+    public void AddAudioSnippet(AudioSource audio, float relativeStartTime)
+    {
+        AudioSnippet newSnippet = new AudioSnippet (audio, relativeStartTime);
+        audioSnippets.Add(newSnippet);
     }
 
-    public void UpdateSnippets(List<Snippet> newSnippets)
+    public void UpdateAnimSnippets(List<AnimSnippet> newSnippets)
     {
-        snippets = newSnippets;
+        animSnippets = newSnippets;
+    }
+    public void UpdateAudioSnippets(List<AudioSnippet> newSnippets)
+    {
+        audioSnippets = newSnippets;
     }
 
     public void UpdateInteractions(List<Interaction> newInteractions)
@@ -147,20 +211,33 @@ public class Story : MonoBehaviour
 
     private void StartNewSnippets()
     {
-        foreach (Snippet snippet in snippets)
+        foreach (AnimSnippet snippet in animSnippets)
         {
             if (Time.time - startTime  >= snippet.startTime)
             {
                 snippet.Play();
             }
         }
+        foreach (AudioSnippet snippet in audioSnippets)
+        {
+            if (Time.time - startTime  >= snippet.startTime)
+            {
+                snippet.Play();
+            }
+        }
+
     }
 
     private void StopAllSnippets()
     {
-        foreach (Snippet snippet in snippets)
+        foreach (AnimSnippet snippet in animSnippets)
         {
             snippet.Stop();
         }
+        foreach (AudioSnippet snippet in audioSnippets)
+        {
+            snippet.Stop();
+        }
+
     }
 }
