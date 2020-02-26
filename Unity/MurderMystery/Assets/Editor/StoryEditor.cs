@@ -235,10 +235,7 @@ public class StoryEditor : EditorWindow
 
         if (selectedOutPoint != null)
         {
-            if (selectedOutPoint.node != selectedInPoint.node)
-            {
-                CreateConnection();
-            }
+            CreateConnection();
             ClearConnectionSelection();
         }
     }
@@ -262,10 +259,7 @@ public class StoryEditor : EditorWindow
         selectedOutPoint = outPoint;
         if (selectedInPoint != null)
         {
-            if (selectedOutPoint.node != selectedInPoint.node)
-            {
-                CreateConnection();
-            }
+            CreateConnection();
             ClearConnectionSelection();
         }
     }
