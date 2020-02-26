@@ -6,13 +6,36 @@ using System.Collections.Generic;
 public class Story : MonoBehaviour
 {
     [Serializable]
+    public class Snippet
+    {
+        public float startTime;
+        protected bool isPlaying;
+
+        public Snippet(float startTime)
+        {
+            this.startTime = startTime;
+            isPlaying = false;
+        }
+
+        public virtual void Play()
+        {
+            Debug.Log("NOs");
+        }
+        public virtual void Stop()
+        {
+            Debug.Log("NO");
+        }
+
+    }
+    
+    [Serializable]
     public class AnimSnippet
     {
         public Animator anim;
         public string trigger;
-
         public float startTime;
         private bool isPlaying;
+
 
         public AnimSnippet (Animator anim, string trigger, float startTime)
         {
@@ -42,6 +65,36 @@ public class Story : MonoBehaviour
     }
 
     [Serializable]
+    public class AudioSnippet
+    {
+        public AudioSource audio;
+        public float startTime;
+        private bool isPlaying;
+
+        public AudioSnippet (AudioSource audio, float startTime)
+        {
+            this.audio = audio;
+            this.startTime = startTime;
+            isPlaying = false;
+        }
+
+        public void Play()
+        {
+            if (!isPlaying)
+            {
+                audio.enabled = true;
+                audio.Play();
+                isPlaying = true;
+            }
+        }
+        public void Stop()
+        {
+            audio.Stop();
+            isPlaying = false;
+        }
+    }
+
+    [Serializable]
     public class Interaction
     {
         public enum InteractionType
@@ -63,6 +116,7 @@ public class Story : MonoBehaviour
     }
 
     public List<AnimSnippet> animSnippets;
+    public List<AudioSnippet> audioSnippets;
 
     //Data to work properly with story editor window
     public string name;
@@ -80,10 +134,19 @@ public class Story : MonoBehaviour
         AnimSnippet newSnippet = new AnimSnippet (anim, trigger, relativeStartTime);
         animSnippets.Add(newSnippet);
     }
+    public void AddAudioSnippet(AudioSource audio, float relativeStartTime)
+    {
+        AudioSnippet newSnippet = new AudioSnippet (audio, relativeStartTime);
+        audioSnippets.Add(newSnippet);
+    }
 
     public void UpdateAnimSnippets(List<AnimSnippet> newSnippets)
     {
         animSnippets = newSnippets;
+    }
+    public void UpdateAudioSnippets(List<AudioSnippet> newSnippets)
+    {
+        audioSnippets = newSnippets;
     }
 
     public void UpdateInteractions(List<Interaction> newInteractions)
@@ -155,6 +218,14 @@ public class Story : MonoBehaviour
                 snippet.Play();
             }
         }
+        foreach (AudioSnippet snippet in audioSnippets)
+        {
+            if (Time.time - startTime  >= snippet.startTime)
+            {
+                snippet.Play();
+            }
+        }
+
     }
 
     private void StopAllSnippets()
@@ -163,5 +234,10 @@ public class Story : MonoBehaviour
         {
             snippet.Stop();
         }
+        foreach (AudioSnippet snippet in audioSnippets)
+        {
+            snippet.Stop();
+        }
+
     }
 }
