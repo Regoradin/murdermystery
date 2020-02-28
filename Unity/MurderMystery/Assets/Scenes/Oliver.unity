@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 476522301}
   - component: {fileID: 476522304}
   - component: {fileID: 476522303}
+  - component: {fileID: 476522305}
   m_Layer: 0
   m_Name: Story Structure 1
   m_TagString: Untagged
@@ -357,7 +358,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: 2up/2left
-  nodePosition: {x: 390, y: 294}
+  nodePosition: {x: 392, y: 49}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -381,13 +382,32 @@ MonoBehaviour:
   - audio: {fileID: 780354548}
     startTime: 1
   name: 1up/1left
-  nodePosition: {x: 18, y: 275}
+  nodePosition: {x: 101, y: 159}
   isPlaying: 0
   isFinished: 0
   interactions:
-  - name: next
+  - name: 1
     nextStory: {fileID: 476522303}
     type: 1
+--- !u!114 &476522305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: 
+  nodePosition: {x: 383, y: 265}
+  isPlaying: 0
+  isFinished: 0
+  interactions: []
 --- !u!1 &682400172
 GameObject:
   m_ObjectHideFlags: 0
