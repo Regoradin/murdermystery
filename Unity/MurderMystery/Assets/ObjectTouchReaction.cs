@@ -17,6 +17,8 @@ public class ObjectTouchReaction : MonoBehaviour
     float time;
     [SerializeField]
     string hitObjectTag;
+    [SerializeField]
+    float changeRate;
 
     private void Start()
     {
@@ -33,7 +35,7 @@ public class ObjectTouchReaction : MonoBehaviour
         }
         if (isHighLighting)
         {
-            currentLightPower = Mathf.Lerp(currentLightPower, OuterRing, .02f);
+            currentLightPower = Mathf.Lerp(currentLightPower, OuterRing, changeRate);
             mat.SetFloat("_HighLightPower", currentLightPower);
             if(currentLightPower > OuterRing - .002f)
             {
@@ -42,7 +44,7 @@ public class ObjectTouchReaction : MonoBehaviour
         }
         if(!highLightOn && !isHighLighting)
         {
-            currentLightPower = Mathf.Lerp(currentLightPower, .1f, .02f);
+            currentLightPower = Mathf.Lerp(currentLightPower, .1f, changeRate);
             mat.SetFloat("_HighLightPower", currentLightPower);
             if(currentLightPower < .12f)
             {
