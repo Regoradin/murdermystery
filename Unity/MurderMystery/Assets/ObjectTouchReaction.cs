@@ -55,9 +55,9 @@ public class ObjectTouchReaction : MonoBehaviour
     }
 
 
-    //Pre: Requires the object hitting to have a rigidbody/box collider(might need both)
+    //Pre: Requires the object hitting to have a trigger
     //Must have the same tag as the one declared as the object tag variable
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Hit");
         if (other.gameObject.tag == hitObjectTag)
@@ -66,7 +66,7 @@ public class ObjectTouchReaction : MonoBehaviour
             mat.SetInt("_HighLight", 1);
         }
     }
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
         Debug.Log("left");
         if(other.gameObject.tag == hitObjectTag)

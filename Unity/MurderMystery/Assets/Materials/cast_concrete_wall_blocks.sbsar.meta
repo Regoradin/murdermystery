@@ -28,7 +28,8 @@ ScriptedImporter:
     shaderName: Lightweight Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-      shaderKeywords: _MAINTEX _METALLICGLOSSMAP _NORMALMAP _OCCLUSIONMAP _SPECGLOSSMAP
+      shaderKeywords: _GLOSSINESSMAP _MAINTEX _METALLICGLOSSMAP _NORMALMAP _OCCLUSIONMAP
+        _OTHERTEX _PARALLAXMAP _ROUGHNESSMAP _SPECGLOSSMAP
       lightmapFlags: 4
       texEnvs:
       - name: _BaseMap
@@ -57,8 +58,7 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MainTex
-        texture: {fileID: -2756812264814062347, guid: 218b434f072d102438cc7dd8ebb31c16,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
@@ -319,7 +319,6 @@ ScriptedImporter:
     material: {fileID: -5454075467190940129, guid: 218b434f072d102438cc7dd8ebb31c16,
       type: 3}
     generatedTextures:
-    - {fileID: -2756812264814062347, guid: 218b434f072d102438cc7dd8ebb31c16, type: 3}
     - {fileID: 4626403411278878834, guid: 218b434f072d102438cc7dd8ebb31c16, type: 3}
     - {fileID: -7182179648604806207, guid: 218b434f072d102438cc7dd8ebb31c16, type: 3}
     - {fileID: 5994876746076124784, guid: 218b434f072d102438cc7dd8ebb31c16, type: 3}
