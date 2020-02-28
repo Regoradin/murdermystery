@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//** THIS SCRIPT ONLY WORKS WITH THE HIGHLIGHT SHADER, DO NOT TRY THIS WITH OTHER SHADERS**
 public class ObjectTouchReaction : MonoBehaviour
 {
     Material mat;
@@ -11,7 +11,12 @@ public class ObjectTouchReaction : MonoBehaviour
     float currentLightPower;
     [SerializeField]
     float OuterRing;
+    [SerializeField]
+    [ColorUsage(true, true)]
+    Color highLightColor;
     float time;
+    [SerializeField]
+    string hitObjectTag;
 
     private void Start()
     {
@@ -44,15 +49,16 @@ public class ObjectTouchReaction : MonoBehaviour
                 mat.SetInt("_HighLight", 0);
             }
         }
-        Debug.Log(highLightOn);
-        Debug.Log(isHighLighting);
+        mat.SetColor("_EmmisionColor", highLightColor);
     }
 
 
+    //Pre: Requires the object hitting to have a rigidbody/box collider(might need both)
+    //Must have the same tag as the one declared as the object tag variable
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("Hit");
-        if (other.gameObject.tag == "MainCamera")
+        if (other.gameObject.tag == hitObjectTag)
         {
             highLightOn = true;
             mat.SetInt("_HighLight", 1);
@@ -61,7 +67,7 @@ public class ObjectTouchReaction : MonoBehaviour
     private void OnCollisionExit(Collision other)
     {
         Debug.Log("left");
-        if(other.gameObject.tag == "MainCamera")
+        if(other.gameObject.tag == hitObjectTag)
         {
             highLightOn = false;
         }
