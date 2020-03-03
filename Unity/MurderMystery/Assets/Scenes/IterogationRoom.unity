@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 8be338eab82906147b9bc89f048e2816,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -531,6 +531,762 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 474bef76a34c92445be86af098ff8bc0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00ae7c6a6d20d8344952380b1bfd2ab1, type: 3}
+--- !u!1 &458084783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458084814}
+  - component: {fileID: 458084813}
+  - component: {fileID: 458084812}
+  - component: {fileID: 458084811}
+  - component: {fileID: 458084810}
+  - component: {fileID: 458084809}
+  - component: {fileID: 458084808}
+  - component: {fileID: 458084807}
+  - component: {fileID: 458084806}
+  - component: {fileID: 458084805}
+  - component: {fileID: 458084804}
+  - component: {fileID: 458084803}
+  - component: {fileID: 458084802}
+  - component: {fileID: 458084801}
+  - component: {fileID: 458084800}
+  - component: {fileID: 458084799}
+  - component: {fileID: 458084798}
+  - component: {fileID: 458084797}
+  - component: {fileID: 458084796}
+  - component: {fileID: 458084795}
+  - component: {fileID: 458084794}
+  - component: {fileID: 458084793}
+  - component: {fileID: 458084792}
+  - component: {fileID: 458084791}
+  - component: {fileID: 458084790}
+  - component: {fileID: 458084789}
+  - component: {fileID: 458084788}
+  - component: {fileID: 458084787}
+  - component: {fileID: 458084786}
+  - component: {fileID: 458084785}
+  - component: {fileID: 458084784}
+  m_Layer: 0
+  m_Name: Story Structure 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &458084784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: good ending
+  nodePosition: {x: 5416, y: 525}
+  isPlaying: 0
+  isFinished: 0
+  interactions: []
+--- !u!114 &458084785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: you did it
+  nodePosition: {x: 4936, y: 727}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 458084789}
+    type: 1
+--- !u!114 &458084786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: couple more suspects
+  nodePosition: {x: 5121, y: 372}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: pick
+    nextStory: {fileID: 458084784}
+    type: 1
+--- !u!114 &458084787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: believe you
+  nodePosition: {x: 4616, y: 543}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084786}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084785}
+    type: 1
+--- !u!114 &458084788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: just to be sure
+  nodePosition: {x: 4308, y: 453}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084789}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084787}
+    type: 1
+--- !u!114 &458084789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: go to jail
+  nodePosition: {x: 5073, y: -450}
+  isPlaying: 0
+  isFinished: 0
+  interactions: []
+--- !u!114 &458084790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: kill bunches three
+  nodePosition: {x: 4894, y: -77}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084789}
+    type: 1
+  - name: no
+    nextStory: {fileID: 0}
+    type: 1
+--- !u!114 &458084791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: kill bunches two
+  nodePosition: {x: 4674, y: -182}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084789}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084790}
+    type: 1
+--- !u!114 &458084792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: kill bunches one
+  nodePosition: {x: 4452, y: -259}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084789}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084791}
+    type: 1
+--- !u!114 &458084793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: juggling knives
+  nodePosition: {x: 3970, y: 296}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084792}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084788}
+    type: 1
+--- !u!114 &458084794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: knife used for
+  nodePosition: {x: 3973, y: -59}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084792}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084792}
+    type: 1
+--- !u!114 &458084795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: seen this knife
+  nodePosition: {x: 3678, y: 150}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084794}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084793}
+    type: 1
+--- !u!114 &458084796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: found at scene
+  nodePosition: {x: 2759, y: 744}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 458084799}
+    type: 1
+--- !u!114 &458084797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: fingerprints
+  nodePosition: {x: 2552, y: 1014}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 458084796}
+    type: 1
+--- !u!114 &458084798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: this your unicycle
+  nodePosition: {x: 2301, y: 865}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084796}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084797}
+    type: 1
+--- !u!114 &458084799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: see this clown
+  nodePosition: {x: 2842, y: 373}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 458084800}
+    type: 1
+--- !u!114 &458084800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: is this your bag
+  nodePosition: {x: 3344, y: 162}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084795}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084795}
+    type: 1
+--- !u!114 &458084801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: changing your story
+  nodePosition: {x: 2800, y: -216}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 458084800}
+    type: 1
+--- !u!114 &458084802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: clown tryouts
+  nodePosition: {x: 2156, y: 393}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084799}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084798}
+    type: 1
+--- !u!114 &458084803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: bunches right next
+  nodePosition: {x: 2527, y: -123}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084801}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084800}
+    type: 1
+--- !u!114 &458084804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: clown tryouts
+  nodePosition: {x: 2161, y: 36}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084803}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084798}
+    type: 1
+--- !u!114 &458084805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: seen bunches recently
+  nodePosition: {x: 1880, y: -172}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084800}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084804}
+    type: 1
+--- !u!114 &458084806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: do you know a clown
+  nodePosition: {x: 1562, y: 196}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084805}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084802}
+    type: 1
+--- !u!114 &458084807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: suit yourself
+  nodePosition: {x: 1120, y: 304}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 458084806}
+    type: 1
+--- !u!114 &458084808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: good second
+  nodePosition: {x: 1119, y: 105}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 458084806}
+    type: 1
+--- !u!114 &458084809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: interrogation room
+  nodePosition: {x: 650, y: 332}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 458084810}
+    type: 1
+--- !u!114 &458084810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: peanuts?
+  nodePosition: {x: 874, y: 159}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084808}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084807}
+    type: 1
+--- !u!114 &458084811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: good first
+  nodePosition: {x: 651, y: 119}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 458084810}
+    type: 1
+--- !u!114 &458084812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: Do you know?
+  nodePosition: {x: 393, y: 177}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 458084811}
+    type: 1
+  - name: no
+    nextStory: {fileID: 458084809}
+    type: 1
+--- !u!114 &458084813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b36208b86a29dc72b8d986c1b3424d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingStory: {fileID: 458084812}
+--- !u!4 &458084814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458084783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &462668798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 422740, guid: ba1fa4a8c66106b4988c88fe4b8e8502,
@@ -831,50 +1587,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.07, y: 1, z: 3.52}
   m_Center: {x: -0.57, y: 3.48, z: 0.13}
---- !u!1 &1202313969
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1202313971}
-  - component: {fileID: 1202313970}
-  m_Layer: 0
-  m_Name: StoryStructure (Singleton)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1202313970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202313969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b36208b86a29dc72b8d986c1b3424d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingStory: {fileID: 0}
---- !u!4 &1202313971
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202313969}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1264191337
 PrefabInstance:
   m_ObjectHideFlags: 0
