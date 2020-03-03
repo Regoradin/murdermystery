@@ -306,9 +306,23 @@ GameObject:
   m_Component:
   - component: {fileID: 476522302}
   - component: {fileID: 476522301}
+  - component: {fileID: 476522306}
+  - component: {fileID: 476522305}
   - component: {fileID: 476522304}
   - component: {fileID: 476522303}
-  - component: {fileID: 476522305}
+  - component: {fileID: 476522308}
+  - component: {fileID: 476522307}
+  - component: {fileID: 476522312}
+  - component: {fileID: 476522311}
+  - component: {fileID: 476522310}
+  - component: {fileID: 476522309}
+  - component: {fileID: 476522315}
+  - component: {fileID: 476522314}
+  - component: {fileID: 476522313}
+  - component: {fileID: 476522319}
+  - component: {fileID: 476522318}
+  - component: {fileID: 476522317}
+  - component: {fileID: 476522316}
   m_Layer: 0
   m_Name: Story Structure 1
   m_TagString: Untagged
@@ -328,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b36208b86a29dc72b8d986c1b3424d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingStory: {fileID: 476522304}
+  startingStory: {fileID: 476522306}
 --- !u!4 &476522302
 Transform:
   m_ObjectHideFlags: 0
@@ -357,11 +371,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animSnippets: []
   audioSnippets: []
-  name: 2up/2left
-  nodePosition: {x: 392, y: 49}
+  name: interrogation room
+  nodePosition: {x: -2085, y: 492}
   isPlaying: 0
   isFinished: 0
-  interactions: []
+  interactions:
+  - name: end
+    nextStory: {fileID: 476522304}
+    type: 1
 --- !u!114 &476522304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,20 +391,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animSnippets:
-  - anim: {fileID: 157967709}
-    trigger: 21
-    startTime: 4
-  audioSnippets:
-  - audio: {fileID: 780354548}
-    startTime: 1
-  name: 1up/1left
-  nodePosition: {x: 101, y: 159}
+  animSnippets: []
+  audioSnippets: []
+  name: peanuts?
+  nodePosition: {x: -1861, y: 319}
   isPlaying: 0
   isFinished: 0
   interactions:
-  - name: 1
-    nextStory: {fileID: 476522303}
+  - name: yes
+    nextStory: {fileID: 476522308}
+    type: 1
+  - name: no
+    nextStory: {fileID: 476522307}
     type: 1
 --- !u!114 &476522305
 MonoBehaviour:
@@ -403,11 +418,340 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animSnippets: []
   audioSnippets: []
-  name: 
-  nodePosition: {x: 383, y: 265}
+  name: good first
+  nodePosition: {x: -2084, y: 279}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 476522304}
+    type: 1
+--- !u!114 &476522306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: Do you know?
+  nodePosition: {x: -2342, y: 337}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 476522305}
+    type: 1
+  - name: no
+    nextStory: {fileID: 476522303}
+    type: 1
+--- !u!114 &476522307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: suit yourself
+  nodePosition: {x: -1615, y: 464}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 476522312}
+    type: 1
+--- !u!114 &476522308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: good second
+  nodePosition: {x: -1616, y: 265}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 476522312}
+    type: 1
+--- !u!114 &476522309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: bunches right next
+  nodePosition: {x: -208, y: 37}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 476522314}
+    type: 1
+  - name: no
+    nextStory: {fileID: 476522313}
+    type: 1
+--- !u!114 &476522310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: clown tryouts
+  nodePosition: {x: -574, y: 196}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 476522309}
+    type: 1
+  - name: no
+    nextStory: {fileID: 476522318}
+    type: 1
+--- !u!114 &476522311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: seen bunches recently
+  nodePosition: {x: -855, y: -12}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 476522313}
+    type: 1
+  - name: no
+    nextStory: {fileID: 476522310}
+    type: 1
+--- !u!114 &476522312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: do you know a clown
+  nodePosition: {x: -1173, y: 356}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 476522311}
+    type: 1
+  - name: no
+    nextStory: {fileID: 476522315}
+    type: 1
+--- !u!114 &476522313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: is this your bag
+  nodePosition: {x: 609, y: 322}
   isPlaying: 0
   isFinished: 0
   interactions: []
+--- !u!114 &476522314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: changing your story
+  nodePosition: {x: 65, y: -56}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 476522313}
+    type: 1
+--- !u!114 &476522315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: clown tryouts
+  nodePosition: {x: -579, y: 553}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 476522319}
+    type: 1
+  - name: no
+    nextStory: {fileID: 476522318}
+    type: 1
+--- !u!114 &476522316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: found at scene
+  nodePosition: {x: 24, y: 904}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 476522319}
+    type: 1
+--- !u!114 &476522317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: fingerprints
+  nodePosition: {x: -183, y: 1174}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 476522316}
+    type: 1
+--- !u!114 &476522318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: this your unicycle
+  nodePosition: {x: -434, y: 1025}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: yes
+    nextStory: {fileID: 476522316}
+    type: 1
+  - name: no
+    nextStory: {fileID: 476522317}
+    type: 1
+--- !u!114 &476522319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476522300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animSnippets: []
+  audioSnippets: []
+  name: see this clown
+  nodePosition: {x: 107, y: 533}
+  isPlaying: 0
+  isFinished: 0
+  interactions:
+  - name: end
+    nextStory: {fileID: 476522313}
+    type: 1
 --- !u!1 &682400172
 GameObject:
   m_ObjectHideFlags: 0
