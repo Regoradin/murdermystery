@@ -384,7 +384,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: interrogation room
-  nodePosition: {x: -3674, y: 183}
+  nodePosition: {x: 196, y: 384}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -406,7 +406,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: peanuts?
-  nodePosition: {x: -3450, y: 10}
+  nodePosition: {x: 420, y: 211}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -431,7 +431,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good first
-  nodePosition: {x: -3673, y: -30}
+  nodePosition: {x: 197, y: 171}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -453,7 +453,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: Do you know?
-  nodePosition: {x: -3931, y: 28}
+  nodePosition: {x: -61, y: 229}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -478,7 +478,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: suit yourself
-  nodePosition: {x: -3204, y: 155}
+  nodePosition: {x: 666, y: 356}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -500,7 +500,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good second
-  nodePosition: {x: -3205, y: -44}
+  nodePosition: {x: 665, y: 157}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -522,7 +522,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: bunches right next
-  nodePosition: {x: -1797, y: -272}
+  nodePosition: {x: 2073, y: -71}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -547,7 +547,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: clown tryouts
-  nodePosition: {x: -2163, y: -113}
+  nodePosition: {x: 1707, y: 88}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -572,7 +572,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: seen bunches recently
-  nodePosition: {x: -2444, y: -321}
+  nodePosition: {x: 1426, y: -120}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -597,7 +597,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: do you know a clown
-  nodePosition: {x: -2762, y: 47}
+  nodePosition: {x: 1108, y: 248}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -622,7 +622,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: is this your bag
-  nodePosition: {x: -980, y: 13}
+  nodePosition: {x: 2890, y: 214}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -647,7 +647,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: changing your story
-  nodePosition: {x: -1524, y: -365}
+  nodePosition: {x: 2346, y: -164}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -669,7 +669,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: clown tryouts
-  nodePosition: {x: -2168, y: 244}
+  nodePosition: {x: 1702, y: 445}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -694,7 +694,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: found at scene
-  nodePosition: {x: -1565, y: 595}
+  nodePosition: {x: 2305, y: 796}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -716,7 +716,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: fingerprints
-  nodePosition: {x: -1772, y: 865}
+  nodePosition: {x: 2098, y: 1066}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -738,7 +738,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: this your unicycle
-  nodePosition: {x: -2023, y: 716}
+  nodePosition: {x: 1847, y: 917}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -763,7 +763,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: see this clown
-  nodePosition: {x: -1482, y: 224}
+  nodePosition: {x: 2388, y: 425}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -785,7 +785,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: juggling knives
-  nodePosition: {x: -354, y: 147}
+  nodePosition: {x: 3516, y: 348}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -810,7 +810,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: knife used for
-  nodePosition: {x: -351, y: -208}
+  nodePosition: {x: 3519, y: -7}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -835,7 +835,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: seen this knife
-  nodePosition: {x: -646, y: 1}
+  nodePosition: {x: 3224, y: 202}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -860,7 +860,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: go to jail
-  nodePosition: {x: 749, y: -599}
+  nodePosition: {x: 4619, y: -398}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -879,7 +879,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: kill bunches three
-  nodePosition: {x: 570, y: -226}
+  nodePosition: {x: 4440, y: -25}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -904,7 +904,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: kill bunches two
-  nodePosition: {x: 350, y: -331}
+  nodePosition: {x: 4220, y: -130}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -929,7 +929,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: kill bunches one
-  nodePosition: {x: 128, y: -408}
+  nodePosition: {x: 3998, y: -207}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -954,7 +954,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good ending
-  nodePosition: {x: 0, y: 0}
+  nodePosition: {x: 4962, y: 577}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -973,7 +973,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: you did it
-  nodePosition: {x: 612, y: 578}
+  nodePosition: {x: 4482, y: 779}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -995,7 +995,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: couple more suspects
-  nodePosition: {x: 797, y: 223}
+  nodePosition: {x: 4667, y: 424}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: believe you
-  nodePosition: {x: 292, y: 394}
+  nodePosition: {x: 4162, y: 595}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: just to be sure
-  nodePosition: {x: -16, y: 304}
+  nodePosition: {x: 3854, y: 505}
   isPlaying: 0
   isFinished: 0
   interactions:
