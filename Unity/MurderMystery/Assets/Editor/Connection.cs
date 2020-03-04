@@ -28,11 +28,24 @@ public class Connection
                            2f
                            );
 
-        if (Handles.Button((inPoint.rect.center + outPoint.rect.center) * 0.5f, Quaternion.identity, 4, 8, Handles.RectangleCap))
+        if (inPoint.node != outPoint.node)
         {
-            if (OnClickRemoveConnection != null)
+            if (Handles.Button((inPoint.rect.center + outPoint.rect.center) * 0.5f, Quaternion.identity, 4, 8, Handles.RectangleCap))
             {
-                OnClickRemoveConnection(this);
+                if (OnClickRemoveConnection != null)
+                {
+                    OnClickRemoveConnection(this);
+                }
+            }
+        }
+        else
+        {
+            if (Handles.Button(outPoint.GetCenter() + Vector2.right * 15f, Quaternion.identity, 4, 8, Handles.RectangleCap))
+            {
+                if (OnClickRemoveConnection != null)
+                {
+                    OnClickRemoveConnection(this);
+                }
             }
         }
 
