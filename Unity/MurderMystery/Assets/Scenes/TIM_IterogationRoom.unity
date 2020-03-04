@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 8be338eab82906147b9bc89f048e2816,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -311,6 +311,98 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &148187627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 148187631}
+  - component: {fileID: 148187630}
+  - component: {fileID: 148187629}
+  - component: {fileID: 148187628}
+  m_Layer: 0
+  m_Name: floor (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!65 &148187628
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148187627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &148187629
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148187627}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5ee8033ea24af644f96fd0d261bdd728, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &148187630
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148187627}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &148187631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148187627}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9899998, y: 3.1459758, z: -0.7134924}
+  m_LocalScale: {x: 5.16299, y: 0.04260794, z: 5.16299}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &195973267 stripped
 Transform:
@@ -592,7 +684,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good ending
-  nodePosition: {x: 5416, y: 525}
+  nodePosition: {x: 5375, y: 258}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -611,7 +703,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: you did it
-  nodePosition: {x: 4936, y: 727}
+  nodePosition: {x: 4895, y: 460}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -633,7 +725,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: couple more suspects
-  nodePosition: {x: 5121, y: 372}
+  nodePosition: {x: 5080, y: 105}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -655,7 +747,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: believe you
-  nodePosition: {x: 4616, y: 543}
+  nodePosition: {x: 4575, y: 276}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -680,7 +772,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: just to be sure
-  nodePosition: {x: 4308, y: 453}
+  nodePosition: {x: 4267, y: 186}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -705,7 +797,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: go to jail
-  nodePosition: {x: 5073, y: -450}
+  nodePosition: {x: 5032, y: -717}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -724,7 +816,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: kill bunches three
-  nodePosition: {x: 4894, y: -77}
+  nodePosition: {x: 4853, y: -344}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -749,7 +841,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: kill bunches two
-  nodePosition: {x: 4674, y: -182}
+  nodePosition: {x: 4633, y: -449}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -774,7 +866,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: kill bunches one
-  nodePosition: {x: 4452, y: -259}
+  nodePosition: {x: 4411, y: -526}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -799,7 +891,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: juggling knives
-  nodePosition: {x: 3970, y: 296}
+  nodePosition: {x: 3929, y: 29}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -824,7 +916,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: knife used for
-  nodePosition: {x: 3973, y: -59}
+  nodePosition: {x: 3932, y: -326}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -849,7 +941,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: seen this knife
-  nodePosition: {x: 3678, y: 150}
+  nodePosition: {x: 3637, y: -117}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -874,7 +966,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: found at scene
-  nodePosition: {x: 2759, y: 744}
+  nodePosition: {x: 2718, y: 477}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -896,7 +988,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: fingerprints
-  nodePosition: {x: 2552, y: 1014}
+  nodePosition: {x: 2511, y: 747}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -918,7 +1010,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: this your unicycle
-  nodePosition: {x: 2301, y: 865}
+  nodePosition: {x: 2260, y: 598}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -943,7 +1035,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: see this clown
-  nodePosition: {x: 2842, y: 373}
+  nodePosition: {x: 2801, y: 106}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -965,7 +1057,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: is this your bag
-  nodePosition: {x: 3344, y: 162}
+  nodePosition: {x: 3303, y: -105}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -990,7 +1082,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: changing your story
-  nodePosition: {x: 2800, y: -216}
+  nodePosition: {x: 2759, y: -483}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1012,7 +1104,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: clown tryouts
-  nodePosition: {x: 2156, y: 393}
+  nodePosition: {x: 2115, y: 126}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1037,7 +1129,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: bunches right next
-  nodePosition: {x: 2527, y: -123}
+  nodePosition: {x: 2486, y: -390}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1062,7 +1154,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: clown tryouts
-  nodePosition: {x: 2161, y: 36}
+  nodePosition: {x: 2120, y: -231}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1087,7 +1179,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: seen bunches recently
-  nodePosition: {x: 1880, y: -172}
+  nodePosition: {x: 1839, y: -439}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1112,7 +1204,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: do you know a clown
-  nodePosition: {x: 1562, y: 196}
+  nodePosition: {x: 1521, y: -71}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1137,7 +1229,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: suit yourself
-  nodePosition: {x: 1120, y: 304}
+  nodePosition: {x: 1079, y: 37}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1159,7 +1251,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good second
-  nodePosition: {x: 1119, y: 105}
+  nodePosition: {x: 1091, y: -327}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1181,7 +1273,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: interrogation room
-  nodePosition: {x: 650, y: 332}
+  nodePosition: {x: 609, y: 65}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1203,7 +1295,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: peanuts?
-  nodePosition: {x: 874, y: 159}
+  nodePosition: {x: 833, y: -108}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1228,7 +1320,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good first
-  nodePosition: {x: 651, y: 119}
+  nodePosition: {x: 610, y: -148}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1250,7 +1342,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: Do you know?
-  nodePosition: {x: 393, y: 177}
+  nodePosition: {x: 352, y: -90}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1293,6 +1385,98 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1264191337}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &560159505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 560159509}
+  - component: {fileID: 560159508}
+  - component: {fileID: 560159507}
+  - component: {fileID: 560159506}
+  m_Layer: 0
+  m_Name: floor (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!65 &560159506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560159505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &560159507
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560159505}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -5454075467190940129, guid: 218b434f072d102438cc7dd8ebb31c16, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &560159508
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560159505}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &560159509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560159505}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.9899998, y: 1.5911782, z: 1.6113282}
+  m_LocalScale: {x: 5.16299, y: 0.04260798, z: 3.6878517}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &562400964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,6 +1751,98 @@ Transform:
   m_Children: []
   m_Father: {fileID: 562400965}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &894264479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894264483}
+  - component: {fileID: 894264482}
+  - component: {fileID: 894264481}
+  - component: {fileID: 894264480}
+  m_Layer: 0
+  m_Name: floor (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &894264480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894264479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &894264481
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894264479}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5ee8033ea24af644f96fd0d261bdd728, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &894264482
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894264479}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &894264483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894264479}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9899998, y: -0.040326584, z: -0.7134924}
+  m_LocalScale: {x: 5.16299, y: 0.04260794, z: 5.16299}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &894920217 stripped
 GameObject:
@@ -2120,6 +2396,98 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 132.553, y: -90, z: -90}
+--- !u!1 &2049513550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2049513554}
+  - component: {fileID: 2049513553}
+  - component: {fileID: 2049513552}
+  - component: {fileID: 2049513551}
+  m_Layer: 0
+  m_Name: floor (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!65 &2049513551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049513550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2049513552
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049513550}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -5454075467190940129, guid: 218b434f072d102438cc7dd8ebb31c16, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &2049513553
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049513550}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2049513554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049513550}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.99, y: 1.5897031, z: -3.1312463}
+  m_LocalScale: {x: 5.16299, y: 0.04260798, z: 3.6878517}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &2098828878
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2504,7 @@ GameObject:
   - component: {fileID: 2098828884}
   - component: {fileID: 2098828885}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: KnifeBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2226,8 +2594,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098828878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.571, y: 0.749, z: -1.042}
-  m_LocalScale: {x: 0.0762, y: 0.0762, z: 0.0762}
+  m_LocalPosition: {x: -3.6364, y: 0.773, z: -0.8285}
+  m_LocalScale: {x: 0.20691349, y: 0.1242441, z: 0.4474881}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -5341,7 +5709,7 @@ Animator:
   m_GameObject: {fileID: 6003490373080522057}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: bf9cee5d5a23fae48a82f196a8d5ce93, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6b79926e86e31841a535c67b4ea432c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -23985,6 +24353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7281185314463805274}
   - component: {fileID: 829212873135964704}
+  - component: {fileID: 6003490373080522058}
   m_Layer: 0
   m_Name: Judge
   m_TagString: Untagged
@@ -23992,6 +24361,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6003490373080522058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003490373080522057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07068e0a2f9e81e498387e819d2ece1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {x: 0, y: 0, z: 0}
+  montageSpawnPosition: {x: 0, y: 0, z: 0}
+  currentSpawn: {fileID: 0}
+  currentMontage: {fileID: 0}
+  knifeBag: {fileID: 2098828878}
+  knife: {fileID: 0}
+  knifeMontage: {fileID: 0}
+  jugglingMontage: {fileID: 0}
 --- !u!1 &6006177698276892129
 GameObject:
   m_ObjectHideFlags: 0
