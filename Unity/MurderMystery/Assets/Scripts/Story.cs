@@ -80,8 +80,10 @@ public class Story : MonoBehaviour
 
         public void Play()
         {
+
             if (!isPlaying)
             {
+                Debug.Log("AudioSnippet Activating");
                 audio.enabled = true;
                 audio.Play();
                 isPlaying = true;
@@ -89,6 +91,7 @@ public class Story : MonoBehaviour
         }
         public void Stop()
         {
+            Debug.Log("AudioSnippet Stoping");
             audio.Stop();
             isPlaying = false;
         }
