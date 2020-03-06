@@ -69,6 +69,9 @@ public class StoryNode
 
     public void Draw()
     {
+        rect.height = 170 +
+            (50 * (story.animSnippets.Count + story.audioSnippets.Count)) +
+            (30 * story.interactions.Count);
         GUI.Box(rect, title, style);
         DrawContents();
 

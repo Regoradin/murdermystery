@@ -15,20 +15,6 @@ public class NodDetector : MonoBehaviour
 
 
     public List<Animator> interruptingAnimators;
-    private bool animatorsAtBase
-    {
-        get
-        {
-            foreach (Animator anim in interruptingAnimators)
-            {
-                if(!anim.GetAnimatorStateInfo.IsName("Base"))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-    }
 
     private void Start()
     {
@@ -52,7 +38,7 @@ public class NodDetector : MonoBehaviour
 
     private void OnNod()
     {
-        if (!coolingDown && gaze.isGazing() && animatorsAtBase)
+        if (!coolingDown && gaze.isGazing() && IsAnimatorsAtBase())
         {
             Debug.Log("Nodding detector");
             StoryStructure.Instance.Interact(yesInteraction);
@@ -62,7 +48,7 @@ public class NodDetector : MonoBehaviour
     }
     private void OnHeadshake()
     {
-        if (!coolingDown && gaze.isGazing && animatorsAtBase)
+        if (!coolingDown && gaze.isGazing() && IsAnimatorsAtBase())
         {
             Debug.Log("Headshake detector");
             StoryStructure.Instance.Interact(noInteraction);
@@ -70,5 +56,18 @@ public class NodDetector : MonoBehaviour
             cooldownRemaining = cooldown;
         }
     }
+
+    private bool IsAnimatorsAtBase()
+    {
+        foreach (Animator anim in interruptingAnimators)
+        {
+            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Base"))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }
