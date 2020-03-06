@@ -38,6 +38,7 @@ public class NodDetector : MonoBehaviour
 
     private void OnNod()
     {
+		Debug.Log("Nodding, cooling: " + coolingDown + " gazing: " + gaze.isGazing() + " animators: " + IsAnimatorsAtBase());
         if (!coolingDown && gaze.isGazing() && IsAnimatorsAtBase())
         {
             Debug.Log("Nodding detector");
