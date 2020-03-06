@@ -53,6 +53,8 @@ public class GazeDetectorMontage : MonoBehaviour
 		{
 			gazeHeldTimeRemaining = gazeHeldTime;
 			gazed = false;
+
+            //Stop the montageplayer
             montagePlayer.Pause();
             Debug.Log("Paused video");
         }
@@ -65,6 +67,7 @@ public class GazeDetectorMontage : MonoBehaviour
 			Debug.Log("Playing Video");
 			gazed = true;
             //StoryStructure.Instance.Interact(interaction);
+            //Start the montageplayer
             montagePlayer.Play();
             montageFX.Stop();
             
