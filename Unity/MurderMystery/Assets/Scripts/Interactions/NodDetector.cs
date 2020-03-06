@@ -11,9 +11,11 @@ public class NodDetector : MonoBehaviour
 	public float cooldown;
 	private float cooldownRemaining;
 	private bool coolingDown = false;
+    private TakeResponse gaze;
 
 	private void Start()
 	{
+        gaze = (TakeResponse)FindObjectOfType(typeof(TakeResponse));
 		cooldownRemaining = cooldown;
 		VRGestureRecognizer.Current.NodHandler += OnNod;
 		VRGestureRecognizer.Current.HeadshakeHandler += OnHeadshake;
@@ -33,7 +35,7 @@ public class NodDetector : MonoBehaviour
 
 	private void OnNod()
 	{
-		if (!coolingDown)
+		if (!coolingDown && gaze.isGazing())
 		{
 			Debug.Log("Nodding detector");
 			StoryStructure.Instance.Interact(yesInteraction);
