@@ -2270,6 +2270,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.006989013
       objectReference: {fileID: 0}
+    - target: {fileID: -4100137996843591066, guid: a5e27b814e9169642a816a01ef88874f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2347
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5e27b814e9169642a816a01ef88874f, type: 3}
 --- !u!1 &745248944
@@ -2575,7 +2580,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1030672697}
+    m_TransformParent: {fileID: 1917946256}
     m_Modifications:
     - target: {fileID: -927199367670048503, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
@@ -2585,37 +2590,37 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.04
+      value: 0.102894
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.91
+      value: -0.38500363
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.61
+      value: -0.17142735
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
@@ -2640,17 +2645,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.014707209
+      value: 0.0067550247
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.014707209
+      value: 0.0064287353
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 701af0a44fe5d744d85dbb63f19dcb54,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.014707209
+      value: 0.005962306
+      objectReference: {fileID: 0}
+    - target: {fileID: -4100137996843591066, guid: 701af0a44fe5d744d85dbb63f19dcb54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1044
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701af0a44fe5d744d85dbb63f19dcb54, type: 3}
@@ -2681,10 +2691,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -1.766, y: 0.887, z: -2.027}
   m_LocalScale: {x: 0.4593, y: 0.43711463, z: 0.4054}
-  m_Children:
-  - {fileID: 40433561}
+  m_Children: []
   m_Father: {fileID: 1917946256}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!82 &1030672698
 AudioSource:
@@ -4155,6 +4164,7 @@ Transform:
   m_LocalPosition: {x: -3.1173, y: 0.887, z: -2.027}
   m_LocalScale: {x: 0.4593, y: 0.43711463, z: 0.4054}
   m_Children:
+  - {fileID: 40433561}
   - {fileID: 1030672697}
   m_Father: {fileID: 0}
   m_RootOrder: 15
