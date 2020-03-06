@@ -1114,7 +1114,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good ending
-  nodePosition: {x: 5180, y: 484}
+  nodePosition: {x: 5074, y: 366}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -1133,7 +1133,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: you did it
-  nodePosition: {x: 4700, y: 686}
+  nodePosition: {x: 4594, y: 568}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: couple more suspects
-  nodePosition: {x: 4885, y: 331}
+  nodePosition: {x: 4779, y: 213}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: believe you
-  nodePosition: {x: 4380, y: 502}
+  nodePosition: {x: 4274, y: 384}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: just to be sure
-  nodePosition: {x: 4072, y: 412}
+  nodePosition: {x: 3966, y: 294}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: go to jail
-  nodePosition: {x: 4837, y: -491}
+  nodePosition: {x: 4731, y: -609}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: kill bunches three
-  nodePosition: {x: 4658, y: -118}
+  nodePosition: {x: 4552, y: -236}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: kill bunches two
-  nodePosition: {x: 4438, y: -223}
+  nodePosition: {x: 4332, y: -341}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1296,7 +1296,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: kill bunches one
-  nodePosition: {x: 4216, y: -300}
+  nodePosition: {x: 4110, y: -418}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: juggling knives
-  nodePosition: {x: 3734, y: 255}
+  nodePosition: {x: 3628, y: 137}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: knife used for
-  nodePosition: {x: 3737, y: -100}
+  nodePosition: {x: 3631, y: -218}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: seen this knife
-  nodePosition: {x: 3442, y: 109}
+  nodePosition: {x: 3336, y: -9}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1396,7 +1396,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: found at scene
-  nodePosition: {x: 2523, y: 703}
+  nodePosition: {x: 2417, y: 585}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: fingerprints
-  nodePosition: {x: 2316, y: 973}
+  nodePosition: {x: 2210, y: 855}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1440,7 +1440,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: this your unicycle
-  nodePosition: {x: 2065, y: 824}
+  nodePosition: {x: 1959, y: 706}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1465,7 +1465,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: see this clown
-  nodePosition: {x: 2606, y: 332}
+  nodePosition: {x: 2500, y: 214}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1487,7 +1487,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: is this your bag
-  nodePosition: {x: 3108, y: 121}
+  nodePosition: {x: 3002, y: 3}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1512,7 +1512,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: changing your story
-  nodePosition: {x: 2564, y: -257}
+  nodePosition: {x: 2458, y: -375}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: clown tryouts
-  nodePosition: {x: 1920, y: 352}
+  nodePosition: {x: 1814, y: 234}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: bunches right next
-  nodePosition: {x: 2291, y: -164}
+  nodePosition: {x: 2185, y: -282}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1584,7 +1584,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: clown tryouts
-  nodePosition: {x: 1925, y: -5}
+  nodePosition: {x: 1819, y: -123}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1609,7 +1609,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: seen bunches recently
-  nodePosition: {x: 1644, y: -213}
+  nodePosition: {x: 1538, y: -331}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1634,7 +1634,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: do you know a clown
-  nodePosition: {x: 1326, y: 155}
+  nodePosition: {x: 1220, y: 37}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1664,7 +1664,7 @@ MonoBehaviour:
   - audio: {fileID: 1910089113}
     startTime: 0
   name: suit yourself
-  nodePosition: {x: 884, y: 263}
+  nodePosition: {x: 778, y: 145}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1691,7 +1691,7 @@ MonoBehaviour:
   - audio: {fileID: 1561973325}
     startTime: 0
   name: good second
-  nodePosition: {x: 896, y: -101}
+  nodePosition: {x: 790, y: -219}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   - audio: {fileID: 86013627}
     startTime: 0
   name: interrogation room
-  nodePosition: {x: 414, y: 291}
+  nodePosition: {x: 310, y: 261}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1745,7 +1745,7 @@ MonoBehaviour:
   - audio: {fileID: 2100061719}
     startTime: 0
   name: peanuts?
-  nodePosition: {x: 638, y: 118}
+  nodePosition: {x: 532, y: 0}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1775,7 +1775,7 @@ MonoBehaviour:
   - audio: {fileID: 1561973325}
     startTime: 0
   name: good first
-  nodePosition: {x: 415, y: 78}
+  nodePosition: {x: 309, y: -40}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1809,7 +1809,7 @@ MonoBehaviour:
   - audio: {fileID: 1369205329}
     startTime: 6.804
   name: Do you know?
-  nodePosition: {x: 143, y: 146}
+  nodePosition: {x: 37, y: 28}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2024,6 +2024,10 @@ MonoBehaviour:
   yesInteraction: yes
   noInteraction: no
   cooldown: 0
+  interruptingAnimators:
+  - {fileID: 829212873135964704}
+  - {fileID: 851104080}
+  - {fileID: 1939046512}
 --- !u!4 &565050426
 Transform:
   m_ObjectHideFlags: 0
@@ -2368,6 +2372,12 @@ Transform:
   m_Father: {fileID: 562400965}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &851104080 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 701af0a44fe5d744d85dbb63f19dcb54,
+    type: 3}
+  m_PrefabInstance: {fileID: 956555764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &894264479
 GameObject:
   m_ObjectHideFlags: 0
@@ -4182,6 +4192,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 4aee307b623c0504ea679e58e7e19d50, type: 2}
+--- !u!95 &1939046512 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: a5e27b814e9169642a816a01ef88874f,
+    type: 3}
+  m_PrefabInstance: {fileID: 708051933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1962475304
 GameObject:
   m_ObjectHideFlags: 0
