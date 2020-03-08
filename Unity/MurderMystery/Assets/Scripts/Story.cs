@@ -83,16 +83,14 @@ public class Story : MonoBehaviour
 
             if (!isPlaying)
             {
-                Debug.Log("AudioSnippet Activating");
                 audio.enabled = true;
                 audio.Play();
                 isPlaying = true;
             }
         }
-        public void Stop()
-        {
-            Debug.Log("AudioSnippet Stoping");
-            audio.Stop();
+        public void Stop()	
+		{
+			audio.Stop();
             isPlaying = false;
         }
     }

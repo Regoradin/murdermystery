@@ -15,8 +15,6 @@ public class NodDetector : MonoBehaviour
 	public bool isListening;
 
 
-    public List<Animator> interruptingAnimators;
-
     private void Start()
     {
         gaze = (TakeResponse)FindObjectOfType(typeof(TakeResponse));
@@ -42,23 +40,37 @@ public class NodDetector : MonoBehaviour
     private void OnNod()
     {
 		Debug.Log("Nodding, cooling: " + coolingDown + " gazing: " + gaze.isGazing() + " listening: " + isListening);
-        if (!coolingDown && gaze.isGazing() && isListening)
-        {
-            Debug.Log("Nodding detector");
+		//if (!coolingDown && gaze.isGazing() && isListening)
+		if (!coolingDown && isListening)
+		{
+            Debug.Log("Sending nod");
             StoryStructure.Instance.Interact(yesInteraction);
             coolingDown = true;
             cooldownRemaining = cooldown;
         }
     }
     private void OnHeadshake()
-    {
-        if (!coolingDown && gaze.isGazing() && isListening)
-        {
-            Debug.Log("Headshake detector");
+	{
+		Debug.Log("Headshaking, cooling: " + coolingDown + " gazing: " + gaze.isGazing() + " listening: " + isListening);
+		//if (!coolingDown && gaze.isGazing() && isListening)
+		if (!coolingDown && isListening)
+		{
+            Debug.Log("Sending headshake");
             StoryStructure.Instance.Interact(noInteraction);
             coolingDown = true;
             cooldownRemaining = cooldown;
         }
     }
+
+	public void SetListeningFalse()
+	{
+		Debug.Log("listeming false");
+		isListening = false;
+	}
+	public void SetListeningTrue()
+	{
+		Debug.Log("listening true");
+		isListening = true;
+	}
 
 }
