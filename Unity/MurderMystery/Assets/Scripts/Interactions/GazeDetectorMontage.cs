@@ -12,9 +12,10 @@ public class GazeDetectorMontage : MonoBehaviour
 	public float gazeHeldTime;
     public VideoPlayer montagePlayer;
     public ParticleSystem montageFX;
+    public bool gazed = false;
 
     private float gazeHeldTimeRemaining;
-	private bool gazed = false;
+
 
 
 	private void Awake()
@@ -53,6 +54,8 @@ public class GazeDetectorMontage : MonoBehaviour
 		{
 			gazeHeldTimeRemaining = gazeHeldTime;
 			gazed = false;
+
+            //Stop the montageplayer
             montagePlayer.Pause();
             Debug.Log("Paused video");
         }
@@ -65,6 +68,7 @@ public class GazeDetectorMontage : MonoBehaviour
 			Debug.Log("Playing Video");
 			gazed = true;
             //StoryStructure.Instance.Interact(interaction);
+            //Start the montageplayer
             montagePlayer.Play();
             montageFX.Stop();
             

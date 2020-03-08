@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3166851071390052740}
   - component: {fileID: 3166851071390052736}
   - component: {fileID: 3166851071390052738}
+  - component: {fileID: 1993344036252073528}
+  - component: {fileID: 4781387542176812063}
   m_Layer: 0
   m_Name: MontagePlayerBackdrop
   m_TagString: Untagged
@@ -160,8 +162,39 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15.61, y: 0.0000035762791, z: 18.03}
+  m_Size: {x: 10.779224, y: 0.0000035762791, z: 18.03}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1993344036252073528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166851071390052739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f466d1dd48d65514e936e1a6cd5d4bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &4781387542176812063
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166851071390052739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0daebb5165b95548af3e3aeb93b3346, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3166851071697895069
 PrefabInstance:
   m_ObjectHideFlags: 0
