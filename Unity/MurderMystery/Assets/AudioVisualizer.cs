@@ -8,7 +8,7 @@ public class AudioVisualizer : MonoBehaviour
     private AudioSource[] potentialAudios;
     private AudioSource audioPlaying;
     private bool mePlaying,collectedSpectrum;
-    private float amplitude;
+    private float amplitude,TimeStamp;
     private float[] spectrum;
     [SerializeField]
     private Material mat;
@@ -23,9 +23,6 @@ public class AudioVisualizer : MonoBehaviour
     private void Update()
     {
         mat.SetFloat("Vector1_569C1A10", amplitude);
-        string spectrumString = "";
-
-        Debug.Log(spectrumString);
         mePlaying = false;
         foreach(AudioSource audio in potentialAudios)
         {
@@ -33,26 +30,25 @@ public class AudioVisualizer : MonoBehaviour
             {
                 mePlaying = true;
                 audioPlaying = audio;
-                Debug.Log("Is Playing!");
+                //Debug.Log("Is Playing!");
                 
             }
         }
 
         if (mePlaying)
         {
+            TimeStamp += Time.deltaTime;
             if (!collectedSpectrum)
             {
                 audioPlaying.GetSpectrumData(spectrum, 0, FFTWindow.Rectangular);
                 collectedSpectrum = true;
+                amplitude = spectrum[0];
             }
             else
             {
-                for (int i = 0; i < spectrum.Length; i++)
-                {
-                    amplitude = Mathf.Max(amplitude, spectrum[i]*5+2);
-                }
+                int index = Mathf.RoundToInt(TimeStamp);
+                amplitude = spectrum[index]*1000000000;
             }
-
             
             
         }
@@ -60,6 +56,7 @@ public class AudioVisualizer : MonoBehaviour
         {
             collectedSpectrum = false;
             amplitude = 1;
+            TimeStamp = 0;
         }
 
 

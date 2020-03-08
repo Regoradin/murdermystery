@@ -37,18 +37,6 @@ ScriptedImporter:
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
-      - name: _DetailAlbedoMap
-        texture: {instanceID: 0}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
-      - name: _DetailMask
-        texture: {instanceID: 0}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
-      - name: _DetailNormalMap
-        texture: {instanceID: 0}
-        scale: {x: 1, y: 1}
-        offset: {x: 0, y: 0}
       - name: _EmissionMap
         texture: {instanceID: 0}
         scale: {x: 1, y: 1}
@@ -68,8 +56,13 @@ ScriptedImporter:
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
+<<<<<<< HEAD
       - name: _ParallaxMap
         texture: {fileID: 7090388444934885671, guid: 218b434f072d102438cc7dd8ebb31c16,
+=======
+      - name: _SpecGlossMap
+        texture: {fileID: -7182179648604806207, guid: 218b434f072d102438cc7dd8ebb31c16,
+>>>>>>> master
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -78,8 +71,6 @@ ScriptedImporter:
         float: 1
       - name: _Cutoff
         float: 0.5
-      - name: _DetailNormalMapScale
-        float: 1
       - name: _DstBlend
         float: 0
       - name: _GlossMapScale
@@ -90,20 +81,34 @@ ScriptedImporter:
         float: 1
       - name: _Metallic
         float: 0
-      - name: _Mode
-        float: 0
       - name: _OcclusionStrength
         float: 1
+<<<<<<< HEAD
       - name: _Parallax
         float: 0.0239
+=======
+      - name: _QueueOffset
+        float: 0
+      - name: _ReceiveShadows
+        float: 1
+      - name: _Smoothness
+        float: 0.5
+>>>>>>> master
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
         float: 1
       - name: _SrcBlend
         float: 1
+<<<<<<< HEAD
       - name: _UVSec
         float: 0
+=======
+      - name: _Surface
+        float: 0
+      - name: _WorkflowMode
+        float: 1
+>>>>>>> master
       - name: _ZWrite
         float: 1
       colors:

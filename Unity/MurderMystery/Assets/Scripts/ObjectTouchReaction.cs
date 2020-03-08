@@ -59,7 +59,6 @@ public class ObjectTouchReaction : MonoBehaviour
     //Must have the same tag as the one declared as the object tag variable
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit");
         if (other.gameObject.tag == hitObjectTag)
         {
             highLightOn = true;
@@ -68,7 +67,6 @@ public class ObjectTouchReaction : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("left");
         if(other.gameObject.tag == hitObjectTag)
         {
             highLightOn = false;

@@ -226,7 +226,7 @@ public class StoryEditor : EditorWindow
         {
             nodes = new List<StoryNode>();
         }
-        nodes.Add(new StoryNode(mousePosition, 200, 350, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story));
+        nodes.Add(new StoryNode(mousePosition, 250, 170, nodeStyle, selectedNodeStyle, inPointStyle, outPointStyle, OnClickInPoint, OnClickOutPoint, OnClickRemoveNode, this, story));
     }
 
     private void OnClickInPoint(ConnectionPoint inPoint)
