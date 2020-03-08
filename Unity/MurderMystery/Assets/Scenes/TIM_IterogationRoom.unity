@@ -604,6 +604,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1475043041}
   - {fileID: 1517514704}
   - {fileID: 1534003452}
   - {fileID: 1433607948}
@@ -885,7 +886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268389918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5635, y: 0.305, z: -2.9068}
+  m_LocalPosition: {x: -2.5635, y: 3.8205001, z: -2.5727599}
   m_LocalScale: {x: 0.3105, y: 0.60075635, z: 1.14602}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1353,7 +1354,7 @@ Transform:
   - {fileID: 724370172}
   - {fileID: 1987609888}
   m_Father: {fileID: 147550232}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &370128330
 PrefabInstance:
@@ -1523,7 +1524,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 0.25
-  m_Range: 3.0992212
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1933,7 +1934,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good ending
-  nodePosition: {x: 2952, y: -141}
+  nodePosition: {x: 830, y: 1177}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -1952,7 +1953,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: you did it
-  nodePosition: {x: 2472, y: 61}
+  nodePosition: {x: 350, y: 1379}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1974,7 +1975,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: couple more suspects
-  nodePosition: {x: 2657, y: -294}
+  nodePosition: {x: 535, y: 1024}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1996,7 +1997,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: believe you
-  nodePosition: {x: 2152, y: -123}
+  nodePosition: {x: 30, y: 1195}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2021,7 +2022,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: just to be sure
-  nodePosition: {x: 1857, y: -208}
+  nodePosition: {x: -265, y: 1110}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2043,10 +2044,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8105b797b9993d85697a0df315b0a5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animSnippets: []
-  audioSnippets: []
+  animSnippets:
+  - anim: {fileID: 829212873135964704}
+    trigger: SpawnJailTime
+    startTime: 0
+  audioSnippets:
+  - audio: {fileID: 1475043040}
+    startTime: 0
   name: go to jail
-  nodePosition: {x: 2609, y: -1116}
+  nodePosition: {x: 487, y: 202}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -2067,7 +2073,7 @@ MonoBehaviour:
   - audio: {fileID: 1987609889}
     startTime: 0
   name: kill bunches three
-  nodePosition: {x: 2430, y: -743}
+  nodePosition: {x: 308, y: 575}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2094,7 +2100,7 @@ MonoBehaviour:
   - audio: {fileID: 724370173}
     startTime: 0
   name: kill bunches two
-  nodePosition: {x: 2210, y: -848}
+  nodePosition: {x: 88, y: 470}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2121,7 +2127,7 @@ MonoBehaviour:
   - audio: {fileID: 1020118517}
     startTime: 0
   name: kill bunches one
-  nodePosition: {x: 1988, y: -925}
+  nodePosition: {x: -134, y: 393}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2161,7 +2167,7 @@ MonoBehaviour:
   - audio: {fileID: 1247143962}
     startTime: 12.3
   name: juggling knives
-  nodePosition: {x: 1513, y: -405}
+  nodePosition: {x: -609, y: 913}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2198,7 +2204,7 @@ MonoBehaviour:
   - audio: {fileID: 1041468919}
     startTime: 6.3
   name: knife used for
-  nodePosition: {x: 1543, y: -890}
+  nodePosition: {x: -579, y: 428}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2241,7 +2247,7 @@ MonoBehaviour:
   - audio: {fileID: 1849605437}
     startTime: 5.9
   name: seen this knife
-  nodePosition: {x: 1214, y: -516}
+  nodePosition: {x: -908, y: 802}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2274,7 +2280,7 @@ MonoBehaviour:
   - audio: {fileID: 2021332775}
     startTime: 0
   name: found at scene
-  nodePosition: {x: 313, y: 101}
+  nodePosition: {x: -1809, y: 1419}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2306,7 +2312,7 @@ MonoBehaviour:
   - audio: {fileID: 1984656921}
     startTime: 4.131
   name: fingerprints
-  nodePosition: {x: 277, y: 390}
+  nodePosition: {x: -1845, y: 1708}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2346,7 +2352,7 @@ MonoBehaviour:
   - audio: {fileID: 1341775574}
     startTime: 6.8
   name: this your unicycle
-  nodePosition: {x: -56, y: 206}
+  nodePosition: {x: -2178, y: 1524}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2383,7 +2389,7 @@ MonoBehaviour:
   - audio: {fileID: 490518891}
     startTime: 8.8
   name: see this clown
-  nodePosition: {x: 446, y: -373}
+  nodePosition: {x: -1676, y: 945}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2423,7 +2429,7 @@ MonoBehaviour:
   - audio: {fileID: 1706436022}
     startTime: 4.9
   name: is this your bag
-  nodePosition: {x: 851, y: -514}
+  nodePosition: {x: -1271, y: 804}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2456,7 +2462,7 @@ MonoBehaviour:
   - audio: {fileID: 857760714}
     startTime: 0
   name: changing your story
-  nodePosition: {x: 336, y: -882}
+  nodePosition: {x: -1786, y: 436}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2490,7 +2496,7 @@ MonoBehaviour:
   - audio: {fileID: 1784210686}
     startTime: 7.2
   name: clown tryouts
-  nodePosition: {x: -303, y: -150}
+  nodePosition: {x: -2425, y: 1168}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2527,7 +2533,7 @@ MonoBehaviour:
   - audio: {fileID: 1284288129}
     startTime: 9.3
   name: bunches right next
-  nodePosition: {x: 63, y: -789}
+  nodePosition: {x: -2059, y: 529}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2564,7 +2570,7 @@ MonoBehaviour:
   - audio: {fileID: 1784210686}
     startTime: 7.2
   name: clown tryouts
-  nodePosition: {x: -303, y: -630}
+  nodePosition: {x: -2425, y: 688}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2601,7 +2607,7 @@ MonoBehaviour:
   - audio: {fileID: 581867085}
     startTime: 8.82
   name: seen bunches recently
-  nodePosition: {x: -555, y: -870}
+  nodePosition: {x: -2677, y: 448}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2638,7 +2644,7 @@ MonoBehaviour:
   - audio: {fileID: 1913605776}
     startTime: 5.93
   name: do you know a clown
-  nodePosition: {x: -861, y: -489}
+  nodePosition: {x: -2983, y: 829}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2671,7 +2677,7 @@ MonoBehaviour:
   - audio: {fileID: 1910089113}
     startTime: 0
   name: suit yourself
-  nodePosition: {x: -1215, y: -363}
+  nodePosition: {x: -3337, y: 955}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2704,7 +2710,7 @@ MonoBehaviour:
   - audio: {fileID: 1561973325}
     startTime: 0
   name: good second
-  nodePosition: {x: -1213, y: -719}
+  nodePosition: {x: -3335, y: 599}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2734,7 +2740,7 @@ MonoBehaviour:
   - audio: {fileID: 86013627}
     startTime: 0
   name: interrogation room
-  nodePosition: {x: -1778, y: -253}
+  nodePosition: {x: -3900, y: 1065}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2765,7 +2771,7 @@ MonoBehaviour:
   - audio: {fileID: 1583304839}
     startTime: 6.8
   name: peanuts?
-  nodePosition: {x: -1488, y: -511}
+  nodePosition: {x: -3610, y: 807}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2798,7 +2804,7 @@ MonoBehaviour:
   - audio: {fileID: 1561973325}
     startTime: 0
   name: good first
-  nodePosition: {x: -1778, y: -730}
+  nodePosition: {x: -3900, y: 588}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2832,7 +2838,7 @@ MonoBehaviour:
   - audio: {fileID: 1369205329}
     startTime: 6.804
   name: Do you know?
-  nodePosition: {x: -2259, y: -464}
+  nodePosition: {x: -4381, y: 854}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2884,7 +2890,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: 
-  nodePosition: {x: 1627, y: -1134}
+  nodePosition: {x: -495, y: 184}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -5469,7 +5475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997800746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0044, y: 0.1818, z: -2.9068}
+  m_LocalPosition: {x: -2.0044, y: 3.6973, z: -2.5727599}
   m_LocalScale: {x: 0.25466603, y: 0.07953816, z: 0.116306074}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6108,7 +6114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033621124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.50109, y: 0.1215, z: -2.86104}
+  m_LocalPosition: {x: -2.50109, y: 3.637, z: -2.527}
   m_LocalScale: {x: 0.20812555, y: 0.011459392, z: 0.20776714}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6404,6 +6410,150 @@ Transform:
   m_Father: {fileID: 466544554}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1119482600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119482607}
+  - component: {fileID: 1119482606}
+  - component: {fileID: 1119482605}
+  - component: {fileID: 1119482604}
+  - component: {fileID: 1119482603}
+  - component: {fileID: 1119482602}
+  - component: {fileID: 1119482601}
+  m_Layer: 0
+  m_Name: JailTime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1119482601
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119482600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1119482602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119482600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e1c7b11966d3d84b92833e089ea576e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OuterRing: 0.33
+  highLightColor: {r: 0, g: 2.6666667, b: 4, a: 0}
+  hitObjectTag: Hand
+  changeRate: 0.35
+--- !u!54 &1119482603
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119482600}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1119482604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119482600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+--- !u!23 &1119482605
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119482600}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 4ef026b6f7fade04d96f48afe0d57b27, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1119482606
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119482600}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1119482607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119482600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1056, y: 3.82042, z: -2.10884}
+  m_LocalScale: {x: 0.05218107, y: 0.3257874, z: 0.54123527}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157781043
 GameObject:
   m_ObjectHideFlags: 0
@@ -6436,7 +6586,7 @@ Transform:
   - {fileID: 1900824872}
   - {fileID: 1246039221}
   m_Father: {fileID: 147550232}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204603053
 GameObject:
@@ -8241,7 +8391,7 @@ Transform:
   - {fileID: 418309509}
   - {fileID: 888569935}
   m_Father: {fileID: 147550232}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434931958
 GameObject:
@@ -8463,6 +8613,134 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &1475043039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1475043041}
+  - component: {fileID: 1475043040}
+  m_Layer: 0
+  m_Name: DUN DUN DUUUUUN
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1475043040
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475043039}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1114677228171239447, guid: da94c87f79abac746afbdbc0140e5c69,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: d1ab873940389a5448ac2b4b45ec73e1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.564
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1475043041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475043039}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.042954687, y: 0.86799896, z: 1.661488}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 147550232}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1481755015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 195418, guid: ba1fa4a8c66106b4988c88fe4b8e8502,
@@ -8593,7 +8871,7 @@ Transform:
   - {fileID: 2100061718}
   - {fileID: 86013626}
   m_Father: {fileID: 147550232}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521933616
 GameObject:
@@ -8807,7 +9085,7 @@ Transform:
   - {fileID: 289732904}
   - {fileID: 1095436766}
   m_Father: {fileID: 147550232}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1535916306
 GameObject:
@@ -9254,7 +9532,7 @@ Transform:
   m_Children:
   - {fileID: 798146141}
   m_Father: {fileID: 147550232}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594356260
 GameObject:
@@ -11993,12 +12271,12 @@ GameObject:
   - component: {fileID: 2026205780}
   - component: {fileID: 2026205779}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DebugCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2026205779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12294,7 +12572,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098828878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2661, y: 0.1777, z: -2.923}
+  m_LocalPosition: {x: -2.2661, y: 3.6932, z: -2.58896}
   m_LocalScale: {x: 0.038333617, y: 0.06768689, z: 0.08384672}
   m_Children: []
   m_Father: {fileID: 0}
@@ -34246,6 +34524,7 @@ MonoBehaviour:
   knife: {fileID: 268389918}
   peanut: {fileID: 2098828878}
   unicycle: {fileID: 1033621124}
+  JailTime: {fileID: 1119482600}
 --- !u!114 &6003490373080522059
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject knife;
     public GameObject peanut;
     public GameObject unicycle;
+    public GameObject JailTime;
 
     
     void Start()
@@ -58,6 +59,16 @@ public class ObjectSpawner : MonoBehaviour
             Destroy(currentSpawn);
         }
         currentSpawn = Instantiate(unicycle);
+        currentSpawn.transform.position = spawnPosition.position;
+
+    }
+    void spawnJailTime()
+    {
+        if (currentSpawn != null)
+        {
+            Destroy(currentSpawn);
+        }
+        currentSpawn = Instantiate(JailTime);
         currentSpawn.transform.position = spawnPosition.position;
 
     }
