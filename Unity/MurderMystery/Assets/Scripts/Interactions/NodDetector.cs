@@ -12,9 +12,8 @@ public class NodDetector : MonoBehaviour
     private float cooldownRemaining;
     private bool coolingDown = false;
     private TakeResponse gaze;
+	public bool isListening;
 
-
-    public List<Animator> interruptingAnimators;
 
     private void Start()
     {
@@ -22,6 +21,8 @@ public class NodDetector : MonoBehaviour
         cooldownRemaining = cooldown;
         VRGestureRecognizer.Current.NodHandler += OnNod;
         VRGestureRecognizer.Current.HeadshakeHandler += OnHeadshake;
+
+		isListening = true;
     }
 
     private void Update()
@@ -38,36 +39,38 @@ public class NodDetector : MonoBehaviour
 
     private void OnNod()
     {
-        if (!coolingDown && gaze.isGazing() && IsAnimatorsAtBase())
-        {
-            Debug.Log("Nodding detector");
+		Debug.Log("Nodding, cooling: " + coolingDown + " gazing: " + gaze.isGazing() + " listening: " + isListening);
+		//if (!coolingDown && gaze.isGazing() && isListening)
+		if (!coolingDown && isListening)
+		{
+            Debug.Log("Sending nod");
             StoryStructure.Instance.Interact(yesInteraction);
             coolingDown = true;
             cooldownRemaining = cooldown;
         }
     }
     private void OnHeadshake()
-    {
-        if (!coolingDown && gaze.isGazing() && IsAnimatorsAtBase())
-        {
-            Debug.Log("Headshake detector");
+	{
+		Debug.Log("Headshaking, cooling: " + coolingDown + " gazing: " + gaze.isGazing() + " listening: " + isListening);
+		//if (!coolingDown && gaze.isGazing() && isListening)
+		if (!coolingDown && isListening)
+		{
+            Debug.Log("Sending headshake");
             StoryStructure.Instance.Interact(noInteraction);
             coolingDown = true;
             cooldownRemaining = cooldown;
         }
     }
 
-    private bool IsAnimatorsAtBase()
-    {
-        foreach (Animator anim in interruptingAnimators)
-        {
-            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Base"))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
+	public void SetListeningFalse()
+	{
+		Debug.Log("listeming false");
+		isListening = false;
+	}
+	public void SetListeningTrue()
+	{
+		Debug.Log("listening true");
+		isListening = true;
+	}
 
 }

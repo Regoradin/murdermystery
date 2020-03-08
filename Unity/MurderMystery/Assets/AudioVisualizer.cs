@@ -23,7 +23,6 @@ public class AudioVisualizer : MonoBehaviour
     private void Update()
     {
         mat.SetFloat("Vector1_569C1A10", amplitude);
-        Debug.Log("Amplitude: " +amplitude);
         mePlaying = false;
         foreach(AudioSource audio in potentialAudios)
         {
@@ -31,7 +30,7 @@ public class AudioVisualizer : MonoBehaviour
             {
                 mePlaying = true;
                 audioPlaying = audio;
-                Debug.Log("Is Playing!");
+                //Debug.Log("Is Playing!");
                 
             }
         }
