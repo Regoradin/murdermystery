@@ -7,7 +7,9 @@ public class PlayOnlyOnce : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public Animator anim;
+    public Animation stopAnim;
     public GazeDetectorMontage gaze;
+    public MontageVideoManager montageManager;
     bool playing;
     bool stopMontage;
 
@@ -20,6 +22,7 @@ public class PlayOnlyOnce : MonoBehaviour
         anim = GetComponent<Animator>();
         gaze = GetComponent<GazeDetectorMontage>();
         stopMontage = false;
+        
     }
 
     // Update is called once per frame
@@ -33,9 +36,19 @@ public class PlayOnlyOnce : MonoBehaviour
         {
             videoPlayer.loopPointReached += CheckOver; 
         }
+        if(stopAnim.isPlaying)
+        {
+
+        }
 
 
     }
+    //Instantiate the child's parent
+    public void setMontageManager(GameObject montage)
+    {
+        montageManager = montage.GetComponent<MontageVideoManager>();
+    }
+
     //Play the video once gazed upon
     void playVideo()
     {
@@ -44,14 +57,20 @@ public class PlayOnlyOnce : MonoBehaviour
         playing = true;
     }
 
-    //Check to see if the video is done playing
+    //Check to see if the video is done playing, and if so, do this
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
         //print("Video Is Over");
         playing = false;
         anim.SetTrigger("ScreenClose");
         stopMontage = true;
+        montageManager.StartInteraction();
+        gaze.StopGazeDetection();
     }
 
-    
+    public void DestroyMontage()
+    {
+        montageManager.currentMontage = null;
+        Destroy(this.gameObject);
+    }
 }

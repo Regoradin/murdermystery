@@ -13,6 +13,7 @@ public class GazeDetectorMontage : MonoBehaviour
     public VideoPlayer montagePlayer;
     public ParticleSystem montageFX;
     public bool gazed = false;
+    public bool stopGazeDetection = false;
 
     private float gazeHeldTimeRemaining;
 
@@ -50,7 +51,7 @@ public class GazeDetectorMontage : MonoBehaviour
 	private void OnTriggerExit(Collider other)
 	{
 		Gaze gaze = other.GetComponent<Gaze>();
-		if (gaze != null)
+		if (gaze != null && !stopGazeDetection)
 		{
 			gazeHeldTimeRemaining = gazeHeldTime;
 			gazed = false;
@@ -63,7 +64,7 @@ public class GazeDetectorMontage : MonoBehaviour
 	
 	private void ActivateGaze()
 	{
-		if (gazed == false)
+		if (gazed == false && !stopGazeDetection)
 		{
 			Debug.Log("Playing Video");
 			gazed = true;
@@ -76,4 +77,8 @@ public class GazeDetectorMontage : MonoBehaviour
 		}
 	}
 
+    public void StopGazeDetection()
+    {
+        stopGazeDetection = true;
+    }
 }

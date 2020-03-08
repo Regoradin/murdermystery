@@ -99,7 +99,7 @@ public class StoryStructure : Singleton<StoryStructure>
 
     private Story pickRandomStory()
     {
-        Debug.Log("Picking random story");
+        //Debug.Log("Picking random story");
         while(sequences.Count > 0)
         {
             List<Story> sequence = sequences[Random.Range(0, sequences.Count)];

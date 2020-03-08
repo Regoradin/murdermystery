@@ -40,7 +40,7 @@ public class NodDetector : MonoBehaviour
     private void OnNod()
     {
 		Debug.Log("Nodding, cooling: " + coolingDown + " gazing: " + gaze.isGazing() + " listening: " + isListening);
-		//if (!coolingDown && gaze.isGazing() && isListening)
+		if (!coolingDown && gaze.isGazing() && isListening)
 		if (!coolingDown && isListening)
 		{
             Debug.Log("Sending nod");
@@ -52,7 +52,7 @@ public class NodDetector : MonoBehaviour
     private void OnHeadshake()
 	{
 		Debug.Log("Headshaking, cooling: " + coolingDown + " gazing: " + gaze.isGazing() + " listening: " + isListening);
-		//if (!coolingDown && gaze.isGazing() && isListening)
+		if (!coolingDown && gaze.isGazing() && isListening)
 		if (!coolingDown && isListening)
 		{
             Debug.Log("Sending headshake");
@@ -64,7 +64,7 @@ public class NodDetector : MonoBehaviour
 
 	public void SetListeningFalse()
 	{
-		Debug.Log("listeming false");
+		Debug.Log("listening false");
 		isListening = false;
 	}
 	public void SetListeningTrue()

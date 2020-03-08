@@ -97,7 +97,7 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 556dff9bd2059b0458d534d08f41b275, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: Texture2D_BF01FD67
@@ -151,6 +151,8 @@ MonoBehaviour:
   gazeHeldTime: 0.4
   montagePlayer: {fileID: 3166851071390052737}
   montageFX: {fileID: 3870903470129720159}
+  gazed: 0
+  stopGazeDetection: 0
 --- !u!65 &3166851071390052738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,6 +178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f466d1dd48d65514e936e1a6cd5d4bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 3166851071390052737}
+  anim: {fileID: 4781387542176812063}
+  stopAnim: {fileID: 0}
+  gaze: {fileID: 3166851071390052736}
+  montageManager: {fileID: 0}
 --- !u!95 &4781387542176812063
 Animator:
   serializedVersion: 3
@@ -245,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 2182799373509236173, guid: 976abd807a1144b48b4fff38bb5b3287,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.791763
+      value: -55.78
       objectReference: {fileID: 0}
     - target: {fileID: 2182799373509236173, guid: 976abd807a1144b48b4fff38bb5b3287,
         type: 3}
