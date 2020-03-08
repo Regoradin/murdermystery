@@ -7,6 +7,7 @@ public class NodDetector : MonoBehaviour
 {
     public string yesInteraction;
     public string noInteraction;
+    public Light recordingLight;
 
     public float cooldown;
     private float cooldownRemaining;
@@ -66,11 +67,13 @@ public class NodDetector : MonoBehaviour
 	{
 		Debug.Log("listening false");
 		isListening = false;
-	}
+        recordingLight.enabled = false;
+    }
 	public void SetListeningTrue()
 	{
 		Debug.Log("listening true");
 		isListening = true;
+        recordingLight.enabled = true;
 	}
 
 }

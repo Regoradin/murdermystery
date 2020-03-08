@@ -5,15 +5,15 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Vector3 spawnPosition;
-    public Vector3 montageSpawnPosition;
+    public Transform spawnPosition;
     public GameObject currentSpawn;
-    public GameObject currentMontage;
+
 
     public GameObject knifeBag;
     public GameObject knife;
-    public GameObject knifeMontage;
-    public GameObject jugglingMontage;
+    public GameObject peanut;
+    public GameObject unicycle;
+
     
     void Start()
     {
@@ -28,21 +28,41 @@ public class ObjectSpawner : MonoBehaviour
             Destroy(currentSpawn);
         }
         currentSpawn = Instantiate(knifeBag);
-        currentSpawn.transform.position = spawnPosition;
+        currentSpawn.transform.position = spawnPosition.position;
         
     }
-
-    //This is for montages
-    void spawnKnifeMontage()
+    void spawnKnife()
     {
-        if (currentMontage != null)
+        if (currentSpawn != null)
         {
-            Destroy(currentMontage);
+            Destroy(currentSpawn);
         }
-        currentMontage = Instantiate(knifeMontage);
-        currentMontage.transform.position = montageSpawnPosition;
+        currentSpawn = Instantiate(knife);
+        currentSpawn.transform.position = spawnPosition.position;
 
     }
+    void spawnPeanut()
+    {
+        if (currentSpawn != null)
+        {
+            Destroy(currentSpawn);
+        }
+        currentSpawn = Instantiate(peanut);
+        currentSpawn.transform.position = spawnPosition.position;
+
+    }
+    void spawnunicycle()
+    {
+        if (currentSpawn != null)
+        {
+            Destroy(currentSpawn);
+        }
+        currentSpawn = Instantiate(unicycle);
+        currentSpawn.transform.position = spawnPosition.position;
+
+    }
+
+
     // Update is called once per frame
     void Update()
     {
