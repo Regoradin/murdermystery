@@ -12,6 +12,7 @@ public class NodDetector : MonoBehaviour
     private float cooldownRemaining;
     private bool coolingDown = false;
     private TakeResponse gaze;
+	public bool isListening;
 
 
     public List<Animator> interruptingAnimators;
@@ -22,6 +23,8 @@ public class NodDetector : MonoBehaviour
         cooldownRemaining = cooldown;
         VRGestureRecognizer.Current.NodHandler += OnNod;
         VRGestureRecognizer.Current.HeadshakeHandler += OnHeadshake;
+
+		isListening = true;
     }
 
     private void Update()
@@ -38,8 +41,8 @@ public class NodDetector : MonoBehaviour
 
     private void OnNod()
     {
-		Debug.Log("Nodding, cooling: " + coolingDown + " gazing: " + gaze.isGazing() + " animators: " + IsAnimatorsAtBase());
-        if (!coolingDown && gaze.isGazing() && IsAnimatorsAtBase())
+		Debug.Log("Nodding, cooling: " + coolingDown + " gazing: " + gaze.isGazing() + " listening: " + isListening);
+        if (!coolingDown && gaze.isGazing() && isListening)
         {
             Debug.Log("Nodding detector");
             StoryStructure.Instance.Interact(yesInteraction);
@@ -49,7 +52,7 @@ public class NodDetector : MonoBehaviour
     }
     private void OnHeadshake()
     {
-        if (!coolingDown && gaze.isGazing() && IsAnimatorsAtBase())
+        if (!coolingDown && gaze.isGazing() && isListening)
         {
             Debug.Log("Headshake detector");
             StoryStructure.Instance.Interact(noInteraction);
@@ -57,18 +60,5 @@ public class NodDetector : MonoBehaviour
             cooldownRemaining = cooldown;
         }
     }
-
-    private bool IsAnimatorsAtBase()
-    {
-        foreach (Animator anim in interruptingAnimators)
-        {
-            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Base"))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
 
 }

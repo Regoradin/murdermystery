@@ -1989,6 +1989,7 @@ GameObject:
   - component: {fileID: 565050426}
   - component: {fileID: 565050425}
   - component: {fileID: 565050424}
+  - component: {fileID: 565050427}
   m_Layer: 0
   m_Name: Nod Detector
   m_TagString: Untagged
@@ -2024,6 +2025,7 @@ MonoBehaviour:
   yesInteraction: yes
   noInteraction: no
   cooldown: 0
+  isListening: 0
   interruptingAnimators:
   - {fileID: 829212873135964704}
   - {fileID: 851104080}
@@ -2042,6 +2044,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &565050427
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565050423}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2eee0bca8980ac429d34ea668cbfad1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &606939371
 GameObject:
   m_ObjectHideFlags: 0
