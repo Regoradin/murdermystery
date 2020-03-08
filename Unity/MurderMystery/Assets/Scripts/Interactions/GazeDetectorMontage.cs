@@ -12,9 +12,10 @@ public class GazeDetectorMontage : MonoBehaviour
 	public float gazeHeldTime;
     public VideoPlayer montagePlayer;
     public ParticleSystem montageFX;
+    public bool gazed = false;
 
     private float gazeHeldTimeRemaining;
-	private bool gazed = false;
+
 
 
 	private void Awake()
