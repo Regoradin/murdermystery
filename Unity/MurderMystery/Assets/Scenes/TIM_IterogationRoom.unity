@@ -548,6 +548,7 @@ Transform:
   - {fileID: 1534003452}
   - {fileID: 1433607948}
   - {fileID: 1157781044}
+  - {fileID: 323359031}
   m_Father: {fileID: 7281185314463805274}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1202,6 +1203,39 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bf97ad83bb4aef342b14e845ecec1901, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+--- !u!1 &323359030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323359031}
+  m_Layer: 0
+  m_Name: confession
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323359031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323359030}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.07553352, y: 0.9112321, z: 0.6959377}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1020118516}
+  - {fileID: 724370172}
+  - {fileID: 1987609888}
+  m_Father: {fileID: 147550232}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &370128330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1656,7 +1690,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good ending
-  nodePosition: {x: 1858, y: 813}
+  nodePosition: {x: 1475, y: 745}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -1675,7 +1709,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: you did it
-  nodePosition: {x: 1378, y: 1015}
+  nodePosition: {x: 995, y: 947}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1697,7 +1731,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: couple more suspects
-  nodePosition: {x: 1563, y: 660}
+  nodePosition: {x: 1180, y: 592}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1719,7 +1753,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: believe you
-  nodePosition: {x: 1058, y: 831}
+  nodePosition: {x: 675, y: 763}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1744,7 +1778,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: just to be sure
-  nodePosition: {x: 750, y: 741}
+  nodePosition: {x: 367, y: 673}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1769,7 +1803,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: go to jail
-  nodePosition: {x: 1515, y: -162}
+  nodePosition: {x: 1132, y: -230}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -1786,9 +1820,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animSnippets: []
-  audioSnippets: []
+  audioSnippets:
+  - audio: {fileID: 1987609889}
+    startTime: 0
   name: kill bunches three
-  nodePosition: {x: 1336, y: 211}
+  nodePosition: {x: 953, y: 143}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1811,9 +1847,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animSnippets: []
-  audioSnippets: []
+  audioSnippets:
+  - audio: {fileID: 724370173}
+    startTime: 0
   name: kill bunches two
-  nodePosition: {x: 1116, y: 106}
+  nodePosition: {x: 733, y: 38}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1836,9 +1874,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animSnippets: []
-  audioSnippets: []
+  audioSnippets:
+  - audio: {fileID: 1020118517}
+    startTime: 0
   name: kill bunches one
-  nodePosition: {x: 894, y: 29}
+  nodePosition: {x: 511, y: -39}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1875,7 +1915,7 @@ MonoBehaviour:
   - audio: {fileID: 1247143962}
     startTime: 12.3
   name: juggling knives
-  nodePosition: {x: 412, y: 584}
+  nodePosition: {x: 29, y: 516}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1912,7 +1952,7 @@ MonoBehaviour:
   - audio: {fileID: 1041468919}
     startTime: 6.3
   name: knife used for
-  nodePosition: {x: 449, y: 64}
+  nodePosition: {x: 66, y: -4}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1949,7 +1989,7 @@ MonoBehaviour:
   - audio: {fileID: 1849605437}
     startTime: 5.9
   name: seen this knife
-  nodePosition: {x: 120, y: 438}
+  nodePosition: {x: -263, y: 370}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1976,7 +2016,7 @@ MonoBehaviour:
   - audio: {fileID: 2021332775}
     startTime: 0
   name: found at scene
-  nodePosition: {x: -781, y: 1055}
+  nodePosition: {x: -1164, y: 987}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2008,7 +2048,7 @@ MonoBehaviour:
   - audio: {fileID: 1984656921}
     startTime: 4.131
   name: fingerprints
-  nodePosition: {x: -903, y: 1357}
+  nodePosition: {x: -1286, y: 1289}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2042,7 +2082,7 @@ MonoBehaviour:
   - audio: {fileID: 1341775574}
     startTime: 6.8
   name: this your unicycle
-  nodePosition: {x: -1174, y: 1160}
+  nodePosition: {x: -1557, y: 1092}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2079,7 +2119,7 @@ MonoBehaviour:
   - audio: {fileID: 490518891}
     startTime: 8.8
   name: see this clown
-  nodePosition: {x: -716, y: 661}
+  nodePosition: {x: -1099, y: 593}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2113,7 +2153,7 @@ MonoBehaviour:
   - audio: {fileID: 1706436022}
     startTime: 4.9
   name: is this your bag
-  nodePosition: {x: -243, y: 440}
+  nodePosition: {x: -626, y: 372}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2146,7 +2186,7 @@ MonoBehaviour:
   - audio: {fileID: 857760714}
     startTime: 0
   name: changing your story
-  nodePosition: {x: -758, y: 72}
+  nodePosition: {x: -1141, y: 4}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2180,7 +2220,7 @@ MonoBehaviour:
   - audio: {fileID: 1784210686}
     startTime: 7.2
   name: clown tryouts
-  nodePosition: {x: -1397, y: 804}
+  nodePosition: {x: -1780, y: 736}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2217,7 +2257,7 @@ MonoBehaviour:
   - audio: {fileID: 1284288129}
     startTime: 9.3
   name: bunches right next
-  nodePosition: {x: -1031, y: 165}
+  nodePosition: {x: -1414, y: 97}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2254,7 +2294,7 @@ MonoBehaviour:
   - audio: {fileID: 1784210686}
     startTime: 7.2
   name: clown tryouts
-  nodePosition: {x: -1397, y: 324}
+  nodePosition: {x: -1780, y: 256}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2291,7 +2331,7 @@ MonoBehaviour:
   - audio: {fileID: 581867085}
     startTime: 8.82
   name: seen bunches recently
-  nodePosition: {x: -1649, y: 84}
+  nodePosition: {x: -2032, y: 16}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2325,7 +2365,7 @@ MonoBehaviour:
   - audio: {fileID: 1913605776}
     startTime: 5.93
   name: do you know a clown
-  nodePosition: {x: -1895, y: 475}
+  nodePosition: {x: -2278, y: 407}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2358,7 +2398,7 @@ MonoBehaviour:
   - audio: {fileID: 1910089113}
     startTime: 0
   name: suit yourself
-  nodePosition: {x: -2309, y: 591}
+  nodePosition: {x: -2692, y: 523}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2388,7 +2428,7 @@ MonoBehaviour:
   - audio: {fileID: 1561973325}
     startTime: 0
   name: good second
-  nodePosition: {x: -2307, y: 235}
+  nodePosition: {x: -2690, y: 167}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2418,7 +2458,7 @@ MonoBehaviour:
   - audio: {fileID: 86013627}
     startTime: 0
   name: interrogation room
-  nodePosition: {x: -2872, y: 701}
+  nodePosition: {x: -3255, y: 633}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2449,7 +2489,7 @@ MonoBehaviour:
   - audio: {fileID: 1583304839}
     startTime: 6.8
   name: peanuts?
-  nodePosition: {x: -2582, y: 443}
+  nodePosition: {x: -2965, y: 375}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2482,7 +2522,7 @@ MonoBehaviour:
   - audio: {fileID: 1561973325}
     startTime: 0
   name: good first
-  nodePosition: {x: -2869, y: 229}
+  nodePosition: {x: -3252, y: 161}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2516,7 +2556,7 @@ MonoBehaviour:
   - audio: {fileID: 1369205329}
     startTime: 6.804
   name: Do you know?
-  nodePosition: {x: -3179, y: 475}
+  nodePosition: {x: -3562, y: 407}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -3451,6 +3491,133 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5e27b814e9169642a816a01ef88874f, type: 3}
+--- !u!1 &724370171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724370172}
+  - component: {fileID: 724370173}
+  m_Layer: 0
+  m_Name: confession_judge_did you kill (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &724370172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724370171}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.96554905, y: -0.043233156, z: -0.032578945}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 323359031}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &724370173
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724370171}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e5ed8bc4637753d4dbf4f4c926b1b9b1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.564
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &725595103
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,6 +4684,133 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 57b2dbdc4d39956479725d1600c10d9f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &1020118515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1020118516}
+  - component: {fileID: 1020118517}
+  m_Layer: 0
+  m_Name: confession_judge_did you kill (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1020118516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020118515}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.96554905, y: -0.043233156, z: -0.032578945}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 323359031}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1020118517
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020118515}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ea7d0a7963aca5c45b703cf92a669729, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.564
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9127,6 +9421,133 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b0fa7ce24e5457947882e18caf982468, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.564
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &1987609887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987609888}
+  - component: {fileID: 1987609889}
+  m_Layer: 0
+  m_Name: confession_judge_did you kill (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1987609888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987609887}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.96554905, y: -0.043233156, z: -0.032578945}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 323359031}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1987609889
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987609887}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9210b0d5b87149a47978517228ac0120, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.564
   m_Pitch: 1
