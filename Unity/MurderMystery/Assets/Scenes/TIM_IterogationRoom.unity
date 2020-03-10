@@ -1373,11 +1373,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 2502203975881118265, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -8554551787032521420, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1388,16 +1383,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 2910751756359535026, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
+    - target: {fileID: -7020743739122362315, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: -1114837970193853208, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fd6c33da6849b3c4a95aead6baa594f7, type: 2}
     - target: {fileID: -4216859302048453862, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1468,16 +1458,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3466601
       objectReference: {fileID: 0}
-    - target: {fileID: -7020743739122362315, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fd6c33da6849b3c4a95aead6baa594f7, type: 2}
     - target: {fileID: -2620666146099996666, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fd6c33da6849b3c4a95aead6baa594f7, type: 2}
+    - target: {fileID: -1114837970193853208, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -500009994020900149, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1488,6 +1478,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 474bef76a34c92445be86af098ff8bc0, type: 2}
+    - target: {fileID: 2502203975881118265, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2910751756359535026, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3135350001231399664, guid: 00ae7c6a6d20d8344952380b1bfd2ab1,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1934,7 +1934,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: good ending
-  nodePosition: {x: 830, y: 1177}
+  nodePosition: {x: 1177, y: 1086}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -1953,7 +1953,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: you did it
-  nodePosition: {x: 350, y: 1379}
+  nodePosition: {x: 697, y: 1288}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1975,7 +1975,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: couple more suspects
-  nodePosition: {x: 535, y: 1024}
+  nodePosition: {x: 882, y: 933}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: believe you
-  nodePosition: {x: 30, y: 1195}
+  nodePosition: {x: 377, y: 1104}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2022,7 +2022,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: just to be sure
-  nodePosition: {x: -265, y: 1110}
+  nodePosition: {x: 82, y: 1019}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2052,7 +2052,7 @@ MonoBehaviour:
   - audio: {fileID: 1475043040}
     startTime: 0
   name: go to jail
-  nodePosition: {x: 487, y: 202}
+  nodePosition: {x: 834, y: 111}
   isPlaying: 0
   isFinished: 0
   interactions: []
@@ -2073,7 +2073,7 @@ MonoBehaviour:
   - audio: {fileID: 1987609889}
     startTime: 0
   name: kill bunches three
-  nodePosition: {x: 308, y: 575}
+  nodePosition: {x: 655, y: 484}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2081,7 +2081,7 @@ MonoBehaviour:
     nextStory: {fileID: 458084789}
     type: 1
   - name: no
-    nextStory: {fileID: 0}
+    nextStory: {fileID: 458084789}
     type: 1
 --- !u!114 &458084791
 MonoBehaviour:
@@ -2100,7 +2100,7 @@ MonoBehaviour:
   - audio: {fileID: 724370173}
     startTime: 0
   name: kill bunches two
-  nodePosition: {x: 88, y: 470}
+  nodePosition: {x: 435, y: 379}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2127,7 +2127,7 @@ MonoBehaviour:
   - audio: {fileID: 1020118517}
     startTime: 0
   name: kill bunches one
-  nodePosition: {x: -134, y: 393}
+  nodePosition: {x: 213, y: 302}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2167,7 +2167,7 @@ MonoBehaviour:
   - audio: {fileID: 1247143962}
     startTime: 12.3
   name: juggling knives
-  nodePosition: {x: -609, y: 913}
+  nodePosition: {x: -262, y: 822}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2204,7 +2204,7 @@ MonoBehaviour:
   - audio: {fileID: 1041468919}
     startTime: 6.3
   name: knife used for
-  nodePosition: {x: -579, y: 428}
+  nodePosition: {x: -232, y: 337}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2247,7 +2247,7 @@ MonoBehaviour:
   - audio: {fileID: 1849605437}
     startTime: 5.9
   name: seen this knife
-  nodePosition: {x: -908, y: 802}
+  nodePosition: {x: -561, y: 711}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2280,7 +2280,7 @@ MonoBehaviour:
   - audio: {fileID: 2021332775}
     startTime: 0
   name: found at scene
-  nodePosition: {x: -1809, y: 1419}
+  nodePosition: {x: -1462, y: 1328}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2312,7 +2312,7 @@ MonoBehaviour:
   - audio: {fileID: 1984656921}
     startTime: 4.131
   name: fingerprints
-  nodePosition: {x: -1845, y: 1708}
+  nodePosition: {x: -1498, y: 1617}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2352,7 +2352,7 @@ MonoBehaviour:
   - audio: {fileID: 1341775574}
     startTime: 6.8
   name: this your unicycle
-  nodePosition: {x: -2178, y: 1524}
+  nodePosition: {x: -1831, y: 1433}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2389,7 +2389,7 @@ MonoBehaviour:
   - audio: {fileID: 490518891}
     startTime: 8.8
   name: see this clown
-  nodePosition: {x: -1676, y: 945}
+  nodePosition: {x: -1329, y: 854}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2429,7 +2429,7 @@ MonoBehaviour:
   - audio: {fileID: 1706436022}
     startTime: 4.9
   name: is this your bag
-  nodePosition: {x: -1271, y: 804}
+  nodePosition: {x: -924, y: 713}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2462,7 +2462,7 @@ MonoBehaviour:
   - audio: {fileID: 857760714}
     startTime: 0
   name: changing your story
-  nodePosition: {x: -1786, y: 436}
+  nodePosition: {x: -1439, y: 345}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2496,7 +2496,7 @@ MonoBehaviour:
   - audio: {fileID: 1784210686}
     startTime: 7.2
   name: clown tryouts
-  nodePosition: {x: -2425, y: 1168}
+  nodePosition: {x: -2078, y: 1077}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2533,7 +2533,7 @@ MonoBehaviour:
   - audio: {fileID: 1284288129}
     startTime: 9.3
   name: bunches right next
-  nodePosition: {x: -2059, y: 529}
+  nodePosition: {x: -1712, y: 438}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2570,7 +2570,7 @@ MonoBehaviour:
   - audio: {fileID: 1784210686}
     startTime: 7.2
   name: clown tryouts
-  nodePosition: {x: -2425, y: 688}
+  nodePosition: {x: -2078, y: 597}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2607,7 +2607,7 @@ MonoBehaviour:
   - audio: {fileID: 581867085}
     startTime: 8.82
   name: seen bunches recently
-  nodePosition: {x: -2677, y: 448}
+  nodePosition: {x: -2330, y: 357}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2644,7 +2644,7 @@ MonoBehaviour:
   - audio: {fileID: 1913605776}
     startTime: 5.93
   name: do you know a clown
-  nodePosition: {x: -2983, y: 829}
+  nodePosition: {x: -2636, y: 738}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2677,7 +2677,7 @@ MonoBehaviour:
   - audio: {fileID: 1910089113}
     startTime: 0
   name: suit yourself
-  nodePosition: {x: -3337, y: 955}
+  nodePosition: {x: -2990, y: 864}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2710,7 +2710,7 @@ MonoBehaviour:
   - audio: {fileID: 1561973325}
     startTime: 0
   name: good second
-  nodePosition: {x: -3335, y: 599}
+  nodePosition: {x: -2988, y: 508}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2740,7 +2740,7 @@ MonoBehaviour:
   - audio: {fileID: 86013627}
     startTime: 0
   name: interrogation room
-  nodePosition: {x: -3900, y: 1065}
+  nodePosition: {x: -3553, y: 974}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2771,7 +2771,7 @@ MonoBehaviour:
   - audio: {fileID: 1583304839}
     startTime: 6.8
   name: peanuts?
-  nodePosition: {x: -3610, y: 807}
+  nodePosition: {x: -3263, y: 716}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2804,7 +2804,7 @@ MonoBehaviour:
   - audio: {fileID: 1561973325}
     startTime: 0
   name: good first
-  nodePosition: {x: -3900, y: 588}
+  nodePosition: {x: -3553, y: 497}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2838,7 +2838,7 @@ MonoBehaviour:
   - audio: {fileID: 1369205329}
     startTime: 6.804
   name: Do you know?
-  nodePosition: {x: -4381, y: 854}
+  nodePosition: {x: -4034, y: 763}
   isPlaying: 0
   isFinished: 0
   interactions:
@@ -2890,7 +2890,7 @@ MonoBehaviour:
   animSnippets: []
   audioSnippets: []
   name: 
-  nodePosition: {x: -495, y: 184}
+  nodePosition: {x: -148, y: 93}
   isPlaying: 0
   isFinished: 0
   interactions: []
